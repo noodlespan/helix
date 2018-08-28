@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: phored.service
-Upstart: phored.conf
-OpenRC:  phored.openrc
-         phored.openrcconf
-CentOS:  phored.init
+SystemD: helixd.service
+Upstart: helixd.conf
+OpenRC:  helixd.openrc
+         helixd.openrcconf
+CentOS:  helixd.init
 
 have been made available to assist packagers in creating node packages here.
 

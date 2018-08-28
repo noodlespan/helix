@@ -13,7 +13,7 @@ static const int MODEL_UPDATE_DELAY = 1000;
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* Phore GUI -- Size of icons in status bar */
+/* Helix GUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -24,7 +24,7 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 /* Transaction list -- unconfirmed transaction */
 #define COLOR_UNCONFIRMED QColor(91, 76, 134)
 /* Transaction list -- negative amount */
-#define COLOR_NEGATIVE QColor(206, 0, 188)
+#define COLOR_NEGATIVE QColor(90, 101, 171)
 /* Transaction list -- bare address (without label) */
 #define COLOR_BAREADDRESS QColor(140, 140, 140)
 /* Transaction list -- TX status decoration - open until date */
@@ -50,9 +50,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "Phore"
-#define QAPP_ORG_DOMAIN "phore.org"
-#define QAPP_APP_NAME_DEFAULT "Phore-Qt"
-#define QAPP_APP_NAME_TESTNET "Phore-Qt-testnet"
+#define QAPP_ORG_NAME "Helix"
+#define QAPP_ORG_DOMAIN "helix.org"
+#define QAPP_APP_NAME_DEFAULT "Helix-Qt"
+#define QAPP_APP_NAME_TESTNET "Helix-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

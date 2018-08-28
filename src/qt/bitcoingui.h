@@ -6,7 +6,7 @@
 #define BITCOIN_QT_BITCOINGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/phore-config.h"
+#include "config/helix-config.h"
 #endif
 
 #include "amount.h"
@@ -87,6 +87,7 @@ private:
     QPushButton* labelConnectionsIcon;
     QLabel* labelBlocksIcon;
     QLabel* progressBarLabel;
+    QLabel *mainIcon;
     QProgressBar* progressBar;
     QProgressDialog* progressDialog;
 

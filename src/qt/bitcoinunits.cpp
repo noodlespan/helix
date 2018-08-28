@@ -19,18 +19,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(PHR);
-    unitlist.append(mPHR);
-    unitlist.append(uPHR);
+    unitlist.append(HLIX);
+    unitlist.append(mHLIX);
+    unitlist.append(uHLIX);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case PHR:
-    case mPHR:
-    case uPHR:
+    case HLIX:
+    case mHLIX:
+    case uHLIX:
         return true;
     default:
         return false;
@@ -40,12 +40,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case PHR:
-        return QString("phore");
-    case mPHR:
-        return QString("mphore");
-    case uPHR:
-        return QString::fromUtf8("uphore");
+    case HLIX:
+        return QString("helix");
+    case mHLIX:
+        return QString("mhelix");
+    case uHLIX:
+        return QString::fromUtf8("uhelix");
     default:
         return QString("???");
     }
@@ -55,23 +55,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case PHR:
-            return QString("PHR");
-        case mPHR:
-            return QString("mPHR");
-        case uPHR:
-            return QString::fromUtf8("μPHR");
+        case HLIX:
+            return QString("HLIX");
+        case mHLIX:
+            return QString("mHLIX");
+        case uHLIX:
+            return QString::fromUtf8("μHLIX");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case PHR:
-            return QString("tPHR");
-        case mPHR:
-            return QString("mtPHR");
-        case uPHR:
-            return QString::fromUtf8("μtPHR");
+        case HLIX:
+            return QString("tHLIX");
+        case mHLIX:
+            return QString("mtHLIX");
+        case uHLIX:
+            return QString::fromUtf8("μtHLIX");
         default:
             return QString("???");
         }
@@ -82,23 +82,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case PHR:
-            return QString("PHR");
-        case mPHR:
-            return QString("Milli-PHR (1 / 1" THIN_SP_UTF8 "000)");
-        case uPHR:
-            return QString("Micro-PHR (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case HLIX:
+            return QString("HLIX");
+        case mHLIX:
+            return QString("Milli-HLIX (1 / 1" THIN_SP_UTF8 "000)");
+        case uHLIX:
+            return QString("Micro-HLIX (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case PHR:
-            return QString("TestPHRs");
-        case mPHR:
-            return QString("Milli-TestPHR (1 / 1" THIN_SP_UTF8 "000)");
-        case uPHR:
-            return QString("Micro-TestPHR (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case HLIX:
+            return QString("TestHLIXs");
+        case mHLIX:
+            return QString("Milli-TestHLIX (1 / 1" THIN_SP_UTF8 "000)");
+        case uHLIX:
+            return QString("Micro-TestHLIX (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -108,11 +108,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case PHR:
+    case HLIX:
         return 100000000;
-    case mPHR:
+    case mHLIX:
         return 100000;
-    case uPHR:
+    case uHLIX:
         return 100;
     default:
         return 100000000;
@@ -122,11 +122,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case PHR:
+    case HLIX:
         return 8;
-    case mPHR:
+    case mHLIX:
         return 5;
-    case uPHR:
+    case uHLIX:
         return 2;
     default:
         return 0;

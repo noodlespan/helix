@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017 The Phore developers
+// Copyright (c) 2017 The Helix developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -265,10 +265,10 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Phore server.");
+            "\nStop Helix server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Phore server stopping";
+    return "Helix server stopping";
 }
 
 
@@ -327,7 +327,7 @@ static const CRPCCommand vRPCCommands[] =
         /* Coin generation */
         {"generating", "getgenerate", &getgenerate, true, false, false},
         {"generating", "gethashespersec", &gethashespersec, true, false, false},
-        {"generating", "setgenerate", &setgenerate, true, true, false},
+//        {"generating", "setgenerate", &setgenerate, true, true, false},
 #endif
 
         /* Raw transactions */
@@ -352,38 +352,38 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Phore features */
-        {"phore", "masternode", &masternode, true, true, false},
-        {"phore", "listmasternodes", &listmasternodes, true, true, false},
-        {"phore", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"phore", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"phore", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"phore", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"phore", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"phore", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"phore", "masternodedebug", &masternodedebug, true, true, false},
-        {"phore", "startmasternode", &startmasternode, true, true, false},
-        {"phore", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"phore", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"phore", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"phore", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"phore", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"phore", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"phore", "mnbudget", &mnbudget, true, true, false},
-        {"phore", "preparebudget", &preparebudget, true, true, false},
-        {"phore", "submitbudget", &submitbudget, true, true, false},
-        {"phore", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"phore", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"phore", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"phore", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"phore", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"phore", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"phore", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"phore", "checkbudgets", &checkbudgets, true, true, false},
-        {"phore", "mnsync", &mnsync, true, true, false},
-        {"phore", "spork", &spork, true, true, false},
-        {"phore", "getpoolinfo", &getpoolinfo, true, true, false},
-        {"phore", "makekeypair", &makekeypair, true, true, false},
+        /* Helix features */
+        {"helix", "masternode", &masternode, true, true, false},
+        {"helix", "listmasternodes", &listmasternodes, true, true, false},
+        {"helix", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"helix", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"helix", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"helix", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"helix", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"helix", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"helix", "masternodedebug", &masternodedebug, true, true, false},
+        {"helix", "startmasternode", &startmasternode, true, true, false},
+        {"helix", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"helix", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"helix", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"helix", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"helix", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"helix", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"helix", "mnbudget", &mnbudget, true, true, false},
+        {"helix", "preparebudget", &preparebudget, true, true, false},
+        {"helix", "submitbudget", &submitbudget, true, true, false},
+        {"helix", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"helix", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"helix", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"helix", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"helix", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"helix", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"helix", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"helix", "checkbudgets", &checkbudgets, true, true, false},
+        {"helix", "mnsync", &mnsync, true, true, false},
+        {"helix", "spork", &spork, true, true, false},
+        {"helix", "getpoolinfo", &getpoolinfo, true, true, false},
+        {"helix", "makekeypair", &makekeypair, true, true, false},
 #ifdef ENABLE_WALLET
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -450,8 +450,8 @@ static const CRPCCommand vRPCCommands[] =
         {"zerocoin", "exportzerocoins", &exportzerocoins, false, false, true},
         {"zerocoin", "reconsiderzerocoins", &reconsiderzerocoins, false, false, true},
         {"zerocoin", "getspentzerocoinamount", &getspentzerocoinamount, false, false, false},
-        {"zerocoin", "getzphrseed", &getzphrseed, false, false, true},
-        {"zerocoin", "setzphrseed", &setzphrseed, false, false, true}
+        {"zerocoin", "getzhlixseed", &getzhlixseed, false, false, true},
+        {"zerocoin", "setzhlixseed", &setzhlixseed, false, false, true}
 
 #endif // ENABLE_WALLET
 };
@@ -615,14 +615,14 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> phore-cli " + methodname + " " + args + "\n";
+    return "> helix-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +
-           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:11772/\n";
+           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:37416/\n";
 }
 
 void RPCRegisterTimerInterface(RPCTimerInterface *iface)
