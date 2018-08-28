@@ -9,7 +9,7 @@ cache:
   - $HOME/.ccache
 env:
   global:
-    - MAKEJOBS=-j3
+    - MAKEJOBS=-j5
     - RUN_TESTS=true
     - CHECK_DOC=1
     - CHECK_LOGPRINT=1
@@ -34,7 +34,7 @@ env:
 # No wallet
 #    - HOST=x86_64-unknown-linux-gnu PACKAGES="python3" DEP_OPTS="NO_WALLET=1" RUN_TESTS=true GOAL="install" BITCOIN_CONFIG="--enable-glibc-back-compat --enable-reduce-exports"
 # Cross-Mac
-    - HOST=x86_64-apple-darwin11 PACKAGES="cmake imagemagick libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools python-dev" BITCOIN_CONFIG="--enable-gui --enable-reduce-exports" OSX_SDK=10.11 GOAL="deploy"
+    - HOST=x86_64-apple-darwin14 PACKAGES="cmake imagemagick libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools python-dev" BITCOIN_CONFIG="--enable-gui --enable-reduce-exports" OSX_SDK=10.11 GOAL="deploy"
 
 before_install:
     - export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" | sed "s|::|:|g")
@@ -70,4 +70,4 @@ after_script:
     - echo $TRAVIS_COMMIT_LOG
 notifications:
   slack:
-    secure: w22XjHoG/3xplxWzddS9Ma7i99Q/hq4FA3Q56xS+RtO2vlFgDT+eDzCppstdx96mn2/4e+/V1aiQ4E6GVEvJMeldqSUhPv9OBnKR0KJVAOwu4haNXt+0ZeQFt8lIndKB5cMVyOJkoq6peGoHNXslClM0lGuBn7g7VC2QPQYNWrJNrrGL7IiVb6fNOIKHWcC4URkzSvXAhO/WIqSSlmKxAAx0B2oEsM8LhdAbcjbp7Sm7zH87TIVGBZ7iTVuMc6B9+SfClbE8bBuRtvjTX57Q4UUZzn0zDtKdPdCte0oXdaQF4RdVim9mDodBGIpDo+avW4WL7EE+AK33fs94pwH5bu0LEandR/aeEvVpbSpQ2XsEKSe+6woizgl5i4GXFVZduJF62y/o1f+S/zC3qW9lIEEpiZc4PpX7pDy30X3p6S5nMrW7T/zNh+SjLhS1VP6XKdQtpD3WRCY4GKZYammZhk5RbOy3jTXAahIXuttWdhl/Q3Rb5VqfFJWlrG/qQXt73qOk2/DgJnABxXE6gnWO4MpHAq+kdomNR+nod4HeXI3DOk1wRuQRVoW1rSjiqQd6Db+TP56RKYgt4M4csOD0DG9G+W0AOtZkuKHTeoEtmQfkKFPZLYAQumv41cDN2UE9gKIECmvJSevj4sMCDTWtozKWqay/W4n2+cmhbzmGflY=
+    secure:
