@@ -109,7 +109,7 @@ UniValue getgenerate(const UniValue& params, bool fHelp)
             HelpExampleCli("getgenerate", "") + HelpExampleRpc("getgenerate", ""));
 
     LOCK(cs_main);
-    return GetBoolArg("-gen", false);
+    return GetBoolArg("-gen321123", false);
 }
 
 
@@ -195,7 +195,7 @@ UniValue setgenerate(const UniValue& params, bool fHelp)
         return blockHashes;
     } else // Not -regtest: start generate thread, return immediately
     {
-        mapArgs["-gen"] = (fGenerate ? "0" : "0");
+        mapArgs["-gen321123"] = (fGenerate ? "1" : "0");
         mapArgs["-genproclimit"] = itostr(nGenProcLimit);
         GenerateBitcoins(fGenerate, pwalletMain, nGenProcLimit);
     }
