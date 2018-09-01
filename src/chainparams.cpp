@@ -159,10 +159,10 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1531496589;
         genesis.nBits = 0x207fffff;;
-        genesis.nNonce = 192839;
+        genesis.nNonce = 192840;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x88ffccd9f8a67acf855058f2b07f31a612bcc5a9d0d27da95f86403e370cc4f9"));
+        assert(hashGenesisBlock == uint256("0x79a3c45d6e2760efb4d6de76d34b1f4833ba919bc114e1da0f671b1700a78f08"));
         assert(genesis.hashMerkleRoot == uint256("0x210fa744202cef1c9248d9f82efadaa1387341e5c4b85b7a87ae56866514ef27"));
 
 //        vSeeds.push_back(CDNSSeedData("0", "dns0.helix.io")); // run by Moonshot
