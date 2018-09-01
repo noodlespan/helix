@@ -94,134 +94,6 @@ UniValue getnetworkhashps(const UniValue& params, bool fHelp)
     return GetNetworkHashPS(params.size() > 0 ? params[0].get_int() : 120, params.size() > 1 ? params[1].get_int() : -1);
 }
 
-#ifdef ENABLE_WALLET
-UniValue getgenerate(const UniValue& params, bool fHelp)
-{
-    if (fHelp || params.size() != 0)
-        throw runtime_error(
-            "getgenerate\n"
-            "\nReturn if the server is set to generate coins or not. The default is false.\n"
-            "It is set with the command line argument -gen (or helix.conf setting gen)\n"
-            "It can also be set with the setgenerate call.\n"
-            "\nResult\n"
-            "true|false      (boolean) If the server is set to generate coins or not\n"
-            "\nExamples:\n" +
-            HelpExampleCli("getgenerate", "") + HelpExampleRpc("getgenerate", ""));
-
-    LOCK(cs_main);
-    return GetBoolArg("-gen", false);
-}
-
-
-UniValue setgenerate(const UniValue& params, bool fHelp)
-{
-    if (fHelp || params.size() < 1 || params.size() > 2)
-        throw runtime_error(
-            "setgenerate generate ( genproclimit )\n"
-            "\nSet 'generate' true or false to turn generation on or off.\n"
-            "Generation is limited to 'genproclimit' processors, -1 is unlimited.\n"
-            "See the getgenerate call for the current setting.\n"
-            "\nArguments:\n"
-            "1. generate         (boolean, required) Set to true to turn on generation, false to turn off.\n"
-            "2. genproclimit     (numeric, optional) Set the processor limit for when generation is on. Can be -1 for unlimited.\n"
-            "                    Note: in -regtest mode, genproclimit controls how many blocks are generated immediately.\n"
-            "\nResult\n"
-            "[ blockhashes ]     (array, -regtest only) hashes of blocks generated\n"
-            "\nExamples:\n"
-            "\nSet the generation on with a limit of one processor\n" +
-            HelpExampleCli("setgenerate", "true 1") +
-            "\nCheck the setting\n" + HelpExampleCli("getgenerate", "") +
-            "\nTurn off generation\n" + HelpExampleCli("setgenerate", "false") +
-            "\nUsing json rpc\n" + HelpExampleRpc("setgenerate", "true, 1"));
-
-    if (pwalletMain == NULL)
-        throw JSONRPCError(RPC_METHOD_NOT_FOUND, "Method not found (disabled)");
-
-    bool fGenerate = true;
-    if (params.size() > 0)
-        fGenerate = params[0].get_bool();
-
-    int nGenProcLimit = -1;
-    if (params.size() > 1) {
-        nGenProcLimit = params[1].get_int();
-        if (nGenProcLimit == 0)
-            fGenerate = false;
-    }
-
-    // -regtest mode: don't return until nGenProcLimit blocks are generated
-    if (fGenerate && Params().MineBlocksOnDemand()) {
-        int nHeightStart = 0;
-        int nHeightEnd = 0;
-        int nHeight = 0;
-        int nGenerate = (nGenProcLimit > 0 ? nGenProcLimit : 1);
-        CReserveKey reservekey(pwalletMain);
-
-        { // Don't keep cs_main locked
-            LOCK(cs_main);
-            nHeightStart = chainActive.Height();
-            nHeight = nHeightStart;
-            nHeightEnd = nHeightStart + nGenerate;
-        }
-        unsigned int nExtraNonce = 0;
-        UniValue blockHashes(UniValue::VARR);
-        while (nHeight < nHeightEnd) {
-            CPubKey pubkey;
-            if (!reservekey.GetReservedKey(pubkey))
-                throw JSONRPCError(RPC_INTERNAL_ERROR, "Wallet keypool empty");
-
-            CScript scriptPubKey = CScript() << ToByteVector(pubkey) << OP_CHECKSIG;
-            CBlockTemplate* pblocktemplate;
-            try {
-                pblocktemplate = CreateNewBlock(scriptPubKey, pwalletMain, false);
-            } catch(std::runtime_error err) {
-                throw JSONRPCError(RPC_MISC_ERROR, err.what());
-            }
-            CBlock* pblock = &pblocktemplate->block;
-            {
-                LOCK(cs_main);
-                IncrementExtraNonce(pblock, chainActive.Tip(), nExtraNonce);
-            }
-            while (!CheckProofOfWork(pblock->GetHash(), pblock->nBits)) {
-                // Yes, there is a chance every nonce could fail to satisfy the -regtest
-                // target -- 1 in 2^(2^32). That ain't gonna happen.
-                ++pblock->nNonce;
-            }
-            CValidationState state;
-            if (!ProcessNewBlock(state, NULL, pblock))
-                throw JSONRPCError(RPC_INTERNAL_ERROR, "ProcessNewBlock, block not accepted");
-            ++nHeight;
-            blockHashes.push_back(pblock->GetHash().GetHex());
-        }
-        return blockHashes;
-    } else // Not -regtest: start generate thread, return immediately
-    {
-        mapArgs["-gen"] = (fGenerate ? "1" : "0");
-        mapArgs["-genproclimit"] = itostr(nGenProcLimit);
-        GenerateBitcoins(fGenerate, pwalletMain, nGenProcLimit);
-    }
-
-    return NullUniValue;
-}
-
-UniValue gethashespersec(const UniValue& params, bool fHelp)
-{
-    if (fHelp || params.size() != 0)
-        throw runtime_error(
-            "gethashespersec\n"
-            "\nReturns a recent hashes per second performance measurement while generating.\n"
-            "See the getgenerate and setgenerate calls to turn generation on and off.\n"
-            "\nResult:\n"
-            "n            (numeric) The recent hashes per second when generation is on (will return 0 if generation is off)\n"
-            "\nExamples:\n" +
-            HelpExampleCli("gethashespersec", "") + HelpExampleRpc("gethashespersec", ""));
-
-    if (GetTimeMillis() - nHPSTimerStart > 8000)
-        return (int64_t)0;
-    return (int64_t)dHashesPerSec;
-}
-#endif
-
-
 UniValue getmininginfo(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
@@ -235,10 +107,7 @@ UniValue getmininginfo(const UniValue& params, bool fHelp)
             "  \"currentblocktx\": nnn,     (numeric) The last block transaction\n"
             "  \"difficulty\": xxx.xxxxx    (numeric) The current difficulty\n"
             "  \"errors\": \"...\"          (string) Current errors\n"
-            "  \"generate\": true|false     (boolean) If the generation is on or off (see getgenerate or setgenerate calls)\n"
-            "  \"genproclimit\": n          (numeric) The processor limit for generation. -1 if no generation. (see getgenerate or setgenerate calls)\n"
-            "  \"hashespersec\": n          (numeric) The hashes per second of the generation, or 0 if no generation.\n"
-            "  \"pooledtx\": n              (numeric) The size of the mem pool\n"
+             "  \"pooledtx\": n              (numeric) The size of the mem pool\n"
             "  \"testnet\": true|false      (boolean) If using testnet or not\n"
             "  \"chain\": \"xxxx\",         (string) current network name as defined in BIP70 (main, test, regtest)\n"
             "}\n"
@@ -253,15 +122,10 @@ UniValue getmininginfo(const UniValue& params, bool fHelp)
     obj.push_back(Pair("currentblocktx",   (uint64_t)nLastBlockTx));
     obj.push_back(Pair("difficulty",       (double)GetDifficulty()));
     obj.push_back(Pair("errors",           GetWarnings("statusbar")));
-    obj.push_back(Pair("genproclimit",     (int)GetArg("-genproclimit", -1)));
     obj.push_back(Pair("networkhashps",    getnetworkhashps(params, false)));
     obj.push_back(Pair("pooledtx",         (uint64_t)mempool.size()));
     obj.push_back(Pair("testnet",          Params().TestnetToBeDeprecatedFieldRPC()));
     obj.push_back(Pair("chain",            Params().NetworkIDString()));
-#ifdef ENABLE_WALLET
-    obj.push_back(Pair("generate",         getgenerate(params, false)));
-    obj.push_back(Pair("hashespersec",     gethashespersec(params, false)));
-#endif
     return obj;
 }
 
