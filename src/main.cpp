@@ -5776,7 +5776,9 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             pfrom->cleanSubVer = SanitizeString(pfrom->strSubVer);
         }
         // broken release with wrong protocol version
-        if (pfrom->cleanSubVer == "/Helix Core:1.0.3.0/") {
+        if (pfrom->cleanSubVer == "/Helix Core:1.0.3.0/" ||
+            pfrom->cleanSubVer == "/Helix Core:1.0.3.1/" ||
+			pfrom->cleanSubVer == "/Helix Core:1.0.3.2/") {
             LOCK(cs_main);
             Misbehaving(pfrom->GetId(), 100); // instantly ban them because they have old block data
             return false;
