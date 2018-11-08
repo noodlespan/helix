@@ -198,6 +198,8 @@ extern UniValue importwallet(const UniValue& params, bool fHelp);
 extern UniValue bip38encrypt(const UniValue& params, bool fHelp);
 extern UniValue bip38decrypt(const UniValue& params, bool fHelp);
 
+extern UniValue getgenerate(const UniValue& params, bool fHelp); // in rpcmining.cpp
+extern UniValue setgenerate(const UniValue& params, bool fHelp);
 extern UniValue getnetworkhashps(const UniValue& params, bool fHelp);
 extern UniValue gethashespersec(const UniValue& params, bool fHelp);
 extern UniValue getmininginfo(const UniValue& params, bool fHelp);
