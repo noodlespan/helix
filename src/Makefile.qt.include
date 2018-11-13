@@ -350,8 +350,6 @@ endif
 
 RES_IMAGES = \
   qt/res/images/about.png \
-  qt/res/images/splash.png \
-  qt/res/images/splash_testnet.png \
   qt/res/images/helix_logo_horizontal.png \
   qt/res/images/downArrow.png \
   qt/res/images/downArrow_dark.png \
@@ -368,13 +366,12 @@ RES_IMAGES = \
   qt/res/images/upArrow_small.png \
   qt/res/images/upArrow_small_dark.png \
   qt/res/images/walletFrame.png \
-  qt/res/images/walletFrame_bg.png \
   qt/res/images/walletFrame_bg.png
 
 RES_CSS = \
   qt/res/css/default.css
 
-  RES_TEXT = \
+RES_TEXT = \
   qt/res/fonts/Hind-Bold.ttf \
   qt/res/fonts/Hind-Light.ttf \
   qt/res/fonts/Hind-Medium.ttf \
@@ -396,7 +393,7 @@ qt_libbitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
 
 qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_TEXT) $(RES_MOVIES) 
-  
+
 nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
 
