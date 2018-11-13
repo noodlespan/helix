@@ -48,10 +48,10 @@ static bool AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help")) {
         // First part of help message is specific to this utility
-        std::string strUsage = _("Helix Core helix-tx utility version") + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = _("Phore Core phore-tx utility version") + " " + FormatFullVersion() + "\n\n" +
                                _("Usage:") + "\n" +
-                               "  helix-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded helix transaction") + "\n" +
-                               "  helix-tx [options] -create [commands]   " + _("Create hex-encoded helix transaction") + "\n" +
+                               "  phore-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded phore transaction") + "\n" +
+                               "  phore-tx [options] -create [commands]   " + _("Create hex-encoded phore transaction") + "\n" +
                                "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());
@@ -222,7 +222,9 @@ static void MutateTxAddOutAddr(CMutableTransaction& tx, const string& strInput)
 
     // extract and validate ADDRESS
     string strAddr = strInput.substr(pos + 1, string::npos);
+
     if (!IsValidDestinationString(strAddr))
+
         throw runtime_error("invalid TX output address");
 
     // build standard output script via GetScriptForDestination()
@@ -566,7 +568,7 @@ static int CommandLineRawTx(int argc, char* argv[])
             if (argc < 2)
                 throw runtime_error("too few parameters");
 
-            // param: hex-encoded helix transaction
+            // param: hex-encoded phore transaction
             string strHexTx(argv[1]);
             if (strHexTx == "-") // "-" implies standard input
                 strHexTx = readStdin();
