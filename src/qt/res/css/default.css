@@ -187,6 +187,11 @@ QLabel#labelOverviewHeaderLeft {
 	font-weight: 600;
 	qproperty-minimumSize:464px 30px; 
 }
+QLabel#labelOverviewHeaderRight {
+qproperty-alignment: 'AlignTop | AlignRight';
+background-image: url(':/images/helix_logo_horizontal');
+background-repeat: no-repeat;
+}
 .QRadioButton {
 	/* Radio Button Labels */
 	color: #333333;
@@ -245,7 +250,7 @@ QPushButton {
 	text-transform: uppercase;
 }
 QPushButton:hover {
-	background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #01906E, stop: .1 #555f6b, stop: .95 #555f6b, stop: 1 #232828);
+	/* background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #555f6b, stop: .1 #555f6b, stop: .95 #555f6b, stop: 1 #232828); */
 }
 QPushButton:focus {
 	border: none;
@@ -622,9 +627,8 @@ QDialog .QTabWidget QTabBar::tab:last {
 } */
 QDialog .QTabWidget QTabBar::tab:selected,
 QDialog .QTabWidget QTabBar::tab:hover {
-	/* background-color: #232828fff;
-    color: #333; */
-    color:#232828;
+	background-color: #ffffff;
+    	color:#333;
 }
 QDialog .QTabWidget .QWidget {
 	background-color: #ffffff;
@@ -829,7 +833,7 @@ QWidget#PrivacyDialog QPushButton {
 	padding-bottom: 5px;
 }
 QWidget#PrivacyDialog QPushButton:hover {
-	/* background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #01906E, stop: .1 #01905E, stop: .95 #01905E, stop: 1 #232828); */
+	/* background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #555f6b, stop: .1 #555f6b, stop: .95 #555f6b, stop: 1 #232828); */
 }
 QWidget#PrivacyDialog QPushButton:focus {
 	/* border: none;
@@ -1626,7 +1630,7 @@ QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget {
 }
 QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::item {
 	background-color:transparent;
-	color:white;
+	color:black;
 	padding-left:0;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 } 
@@ -1941,9 +1945,9 @@ AmountSpinBox::down-arrow {
 QPushButton#pushButtonSpentReset, QPushButton#pushButtonMintReset {
     /* background-color: transparent; */
 	border: 2px solid #707780;
-    color: #707780;
-    border-radius:0px;
-    padding-left: 20px;
+    	color: #707780;
+    	border-radius:0px;
+   	padding-left: 20px;
 	padding-right: 20px;
 }
 
