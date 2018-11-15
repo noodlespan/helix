@@ -20,7 +20,7 @@ QStatusBar {
 	border: 0px solid #fff;
 }
 QMenuBar {
-	background-color: #ffffff;
+	background-color: #232828;
 }
 QMenuBar::item {
 	background-color: #ffffff;
@@ -413,7 +413,7 @@ QHeaderView::section:hover {
 #tableWidgetMyMasternodes {
 	/* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
 	background: transparent;
-	border: none;
+	border: 1px;
 	alternate-background-color: transparent;
 	padding-right: 12px;
 }
@@ -424,12 +424,20 @@ QTableView::item,
 	background-color: transparent;
 	font-size: 12px;
 	border: 0;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-	/* border-top: 1px solid rgba(255, 255, 255, 0.05); */
+	border-bottom: 1px solid rgba(0, 0, 0);
 	padding-right: 12px;
 	qproperty-alignment: 'AlignLeft';
-    text-align: left;
-    
+    	text-align: left;
+}
+QTableView#tableWidgetMyMasternodes::item:selected {
+	/* Table Item */
+	background-color: #333;
+	font-size: 12px;
+	border: 0;
+	color: #fff;
+	padding-right: 12px;
+	qproperty-alignment: 'AlignLeft';
+    	text-align: left;
 }
 QTableView::item:selected {
 	/* Table Item Selected */
@@ -1964,7 +1972,7 @@ QGroupBox::title {
 }
 
 #labelBalancez, #labelTotalz {
-    font-size:36px;
+    font-size:20px;
 }
 
 #labelTotalz span {
@@ -1972,12 +1980,12 @@ QGroupBox::title {
 }
 
 #labelTotalz {
-    font-weight:500;
+    font-weight: bold;
     
 }
 
 #labelBalance, #labelUnconfirmed, #labelImmature, #labelLockedBalance, #labelTotal, #labelzBalanceMature, #labelzBalance{
-    font-size:22px;
+    font-size: 16px;
     
 }
 
@@ -1986,7 +1994,7 @@ QGroupBox::title {
 }
 
 #labelBalance, #labelUnconfirmed, #labelImmature, #labelLockedBalance, #labelTotal, #labelzBalanceMature, #labelzBalance, #labelBalancez {
-    font-weight:100;
+    font-weight:bold;
 }
 
 /* 
