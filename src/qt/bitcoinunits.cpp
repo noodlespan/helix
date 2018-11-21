@@ -41,11 +41,11 @@ QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
     case HLIX:
-        return QString("helix");
+        return QString("tcash");
     case mHLIX:
-        return QString("mhelix");
+        return QString("mtcash");
     case uHLIX:
-        return QString::fromUtf8("uhelix");
+        return QString::fromUtf8("utcash");
     default:
         return QString("???");
     }

@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017 The Helix developers
+// Copyright (c) 2017 The Tcash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -265,10 +265,10 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Helix server.");
+            "\nStop Tcash server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Helix server stopping";
+    return "Tcash server stopping";
 }
 
 
@@ -352,38 +352,38 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Helix features */
-        {"helix", "masternode", &masternode, true, true, false},
-        {"helix", "listmasternodes", &listmasternodes, true, true, false},
-        {"helix", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"helix", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"helix", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"helix", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"helix", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"helix", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"helix", "masternodedebug", &masternodedebug, true, true, false},
-        {"helix", "startmasternode", &startmasternode, true, true, false},
-        {"helix", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"helix", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"helix", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"helix", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"helix", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"helix", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"helix", "mnbudget", &mnbudget, true, true, false},
-        {"helix", "preparebudget", &preparebudget, true, true, false},
-        {"helix", "submitbudget", &submitbudget, true, true, false},
-        {"helix", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"helix", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"helix", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"helix", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"helix", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"helix", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"helix", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"helix", "checkbudgets", &checkbudgets, true, true, false},
-        {"helix", "mnsync", &mnsync, true, true, false},
-        {"helix", "spork", &spork, true, true, false},
-        {"helix", "getpoolinfo", &getpoolinfo, true, true, false},
-        {"helix", "makekeypair", &makekeypair, true, true, false},
+        /* Tcash features */
+        {"tcash", "masternode", &masternode, true, true, false},
+        {"tcash", "listmasternodes", &listmasternodes, true, true, false},
+        {"tcash", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"tcash", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"tcash", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"tcash", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"tcash", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"tcash", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"tcash", "masternodedebug", &masternodedebug, true, true, false},
+        {"tcash", "startmasternode", &startmasternode, true, true, false},
+        {"tcash", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"tcash", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"tcash", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"tcash", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"tcash", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"tcash", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"tcash", "mnbudget", &mnbudget, true, true, false},
+        {"tcash", "preparebudget", &preparebudget, true, true, false},
+        {"tcash", "submitbudget", &submitbudget, true, true, false},
+        {"tcash", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"tcash", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"tcash", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"tcash", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"tcash", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"tcash", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"tcash", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"tcash", "checkbudgets", &checkbudgets, true, true, false},
+        {"tcash", "mnsync", &mnsync, true, true, false},
+        {"tcash", "spork", &spork, true, true, false},
+        {"tcash", "getpoolinfo", &getpoolinfo, true, true, false},
+        {"tcash", "makekeypair", &makekeypair, true, true, false},
 #ifdef ENABLE_WALLET
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -615,7 +615,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> helix-cli " + methodname + " " + args + "\n";
+    return "> tcash-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

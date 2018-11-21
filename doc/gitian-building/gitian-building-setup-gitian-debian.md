@@ -66,13 +66,13 @@ cd ..
 
 **Note**: When sudo asks for a password, enter the password for the user `gitianuser` not for `root`.
 
-Clone the git repositories for helix and Gitian.
+Clone the git repositories for tcash and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/helixproject/helix
-git clone https://github.com/helixproject/gitian.sigs.git
-git clone https://github.com/helixproject/helix-detached-sigs.git
+git clone https://github.com/tcashproject/tcash
+git clone https://github.com/tcashproject/gitian.sigs.git
+git clone https://github.com/tcashproject/tcash-detached-sigs.git
 ```
 
 Setting up the Gitian image

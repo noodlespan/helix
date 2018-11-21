@@ -17,7 +17,7 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/ProjectHelixCoin/helix
+url=https://github.com/ProjectTcashCoin/tcash
 proc=3
 mem=4000
 lxc=true
@@ -32,7 +32,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the helix, gitian-builder, gitian.sigs, and helix-detached-sigs.
+Run this script from the directory containing the tcash, gitian-builder, gitian.sigs, and tcash-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -40,7 +40,7 @@ version		Version number, commit, or branch to build. If building a commit or bra
 
 Options:
 -c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the repository. Default is https://github.com/ProjectHelixCoin/helix
+-u|--url	Specify the URL of the repository. Default is https://github.com/ProjectTcashCoin/tcash
 -v|--verify 	Verify the gitian build
 -b|--build	Do a gitian build
 -s|--sign	Make signed binaries for Windows and Mac OSX
@@ -249,8 +249,8 @@ echo ${COMMIT}
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-	git clone https://github.com/ProjectHelixCoin/gitian.sigs
-	git clone https://github.com/ProjectHelixCoin/helix-detached-sigs
+	git clone https://github.com/ProjectTcashCoin/gitian.sigs
+	git clone https://github.com/ProjectTcashCoin/tcash-detached-sigs
 	git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
@@ -268,7 +268,7 @@ then
 fi
 
 # Set up build
-pushd ./helix
+pushd ./tcash
 git fetch
 git checkout ${COMMIT}
 popd
@@ -277,7 +277,7 @@ popd
 if [[ $build = true ]]
 then
 	# Make output folder
-	mkdir -p ./helix-binaries/${VERSION}
+	mkdir -p ./tcash-binaries/${VERSION}
 	
 	# Build Dependencies
 	echo ""
@@ -287,7 +287,7 @@ then
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
-	make -C ../helix/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../tcash/depends download SOURCES_PATH=`pwd`/cache/common
 
 	# Linux
 	if [[ $linux = true ]]
@@ -295,9 +295,9 @@ then
             echo ""
 	    echo "Compiling ${VERSION} Linux"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit helix=${COMMIT} --url helix=${url} ../helix/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs/ ../helix/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/helix-*.tar.gz build/out/src/helix-*.tar.gz ../helix-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit tcash=${COMMIT} --url tcash=${url} ../tcash/contrib/gitian-descriptors/gitian-linux.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs/ ../tcash/contrib/gitian-descriptors/gitian-linux.yml
+	    mv build/out/tcash-*.tar.gz build/out/src/tcash-*.tar.gz ../tcash-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -305,10 +305,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit helix=${COMMIT} --url helix=${url} ../helix/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../helix/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/helix-*-win-unsigned.tar.gz inputs/helix-win-unsigned.tar.gz
-	    mv build/out/helix-*.zip build/out/helix-*.exe ../helix-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit tcash=${COMMIT} --url tcash=${url} ../tcash/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../tcash/contrib/gitian-descriptors/gitian-win.yml
+	    mv build/out/tcash-*-win-unsigned.tar.gz inputs/tcash-win-unsigned.tar.gz
+	    mv build/out/tcash-*.zip build/out/tcash-*.exe ../tcash-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -316,10 +316,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit helix=${COMMIT} --url helix=${url} ../helix/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../helix/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/helix-*-osx-unsigned.tar.gz inputs/helix-osx-unsigned.tar.gz
-	    mv build/out/helix-*.tar.gz build/out/helix-*.dmg ../helix-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit tcash=${COMMIT} --url tcash=${url} ../tcash/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../tcash/contrib/gitian-descriptors/gitian-osx.yml
+	    mv build/out/tcash-*-osx-unsigned.tar.gz inputs/tcash-osx-unsigned.tar.gz
+	    mv build/out/tcash-*.tar.gz build/out/tcash-*.dmg ../tcash-binaries/${VERSION}
 	fi
 	popd
 
@@ -346,27 +346,27 @@ then
 	echo ""
 	echo "Verifying v${VERSION} Linux"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../helix/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../tcash/contrib/gitian-descriptors/gitian-linux.yml
 	# Windows
 	echo ""
 	echo "Verifying v${VERSION} Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../helix/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../tcash/contrib/gitian-descriptors/gitian-win.yml
 	# Mac OSX	
 	echo ""
 	echo "Verifying v${VERSION} Mac OSX"
 	echo ""	
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../helix/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../tcash/contrib/gitian-descriptors/gitian-osx.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../helix/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../tcash/contrib/gitian-descriptors/gitian-osx-signer.yml
 	# Signed Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Signed Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../helix/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../tcash/contrib/gitian-descriptors/gitian-osx-signer.yml
 	popd
 fi
 
@@ -381,10 +381,10 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../helix/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../helix/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/helix-*win64-setup.exe ../helix-binaries/${VERSION}
-	    mv build/out/helix-*win32-setup.exe ../helix-binaries/${VERSION}
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../tcash/contrib/gitian-descriptors/gitian-win-signer.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../tcash/contrib/gitian-descriptors/gitian-win-signer.yml
+	    mv build/out/tcash-*win64-setup.exe ../tcash-binaries/${VERSION}
+	    mv build/out/tcash-*win32-setup.exe ../tcash-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -392,9 +392,9 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../helix/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../helix/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/helix-osx-signed.dmg ../helix-binaries/${VERSION}/helix-${VERSION}-osx.dmg
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../tcash/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../tcash/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    mv build/out/tcash-osx-signed.dmg ../tcash-binaries/${VERSION}/tcash-${VERSION}-osx.dmg
 	fi
 	popd
 

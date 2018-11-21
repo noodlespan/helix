@@ -150,14 +150,14 @@ def sync_mempools(rpc_connections, wait=1, timeout=60):
         timeout -= wait
     raise AssertionError("Mempool sync failed")
 
-helixd_processes = {}
+tcashd_processes = {}
 
 def initialize_datadir(dirname, n):
     datadir = os.path.join(dirname, "node"+str(n))
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
     rpc_u, rpc_p = rpc_auth_pair(n)
-    with open(os.path.join(datadir, "helix.conf"), 'w', encoding='utf8') as f:
+    with open(os.path.join(datadir, "tcash.conf"), 'w', encoding='utf8') as f:
         f.write("regtest=1\n")
         f.write("server=1\n")
         f.write("rpcuser=" + rpc_u + "\n")
@@ -182,14 +182,14 @@ def rpc_url(i, rpchost=None):
             host = rpchost
     return "http://%s:%s@%s:%d" % (rpc_u, rpc_p, host, int(port))
 
-def wait_for_helixd_start(process, url, i):
+def wait_for_tcashd_start(process, url, i):
     '''
-    Wait for helixd to start. This means that RPC is accessible and fully initialized.
-    Raise an exception if helixd exits during initialization.
+    Wait for tcashd to start. This means that RPC is accessible and fully initialized.
+    Raise an exception if tcashd exits during initialization.
     '''
     while True:
         if process.poll() is not None:
-            raise Exception('helixd exited with status %i during initialization' % process.returncode)
+            raise Exception('tcashd exited with status %i during initialization' % process.returncode)
         try:
             rpc = get_rpc_proxy(url, i)
             blocks = rpc.getblockcount()
@@ -223,16 +223,16 @@ def initialize_chain(test_dir, num_nodes):
             if os.path.isdir(os.path.join("cache","node"+str(i))):
                 shutil.rmtree(os.path.join("cache","node"+str(i)))
 
-        # Create cache directories, run helixds:
+        # Create cache directories, run tcashds:
         for i in range(MAX_NODES):
             datadir=initialize_datadir("cache", i)
-            args = [ os.getenv("HELIXD", "helixd"), "-server", "-keypool=1", "-datadir="+datadir, "-discover=0" ]
+            args = [ os.getenv("HELIXD", "tcashd"), "-server", "-keypool=1", "-datadir="+datadir, "-discover=0" ]
             if i > 0:
                 args.append("-connect=127.0.0.1:"+str(p2p_port(0)))
-            helixd_processes[i] = subprocess.Popen(args)
+            tcashd_processes[i] = subprocess.Popen(args)
             if os.getenv("PYTHON_DEBUG", ""):
-                print("initialize_chain: helixd started, waiting for RPC to come up")
-            wait_for_helixd_start(helixd_processes[i], rpc_url(i), i)
+                print("initialize_chain: tcashd started, waiting for RPC to come up")
+            wait_for_tcashd_start(tcashd_processes[i], rpc_url(i), i)
             if os.getenv("PYTHON_DEBUG", ""):
                 print("initialize_chain: RPC succesfully started")
 
@@ -275,7 +275,7 @@ def initialize_chain(test_dir, num_nodes):
         from_dir = os.path.join("cache", "node"+str(i))
         to_dir = os.path.join(test_dir,  "node"+str(i))
         shutil.copytree(from_dir, to_dir)
-        initialize_datadir(test_dir, i) # Overwrite port/rpcport in helix.conf
+        initialize_datadir(test_dir, i) # Overwrite port/rpcport in tcash.conf
 
 def initialize_chain_clean(test_dir, num_nodes):
     """
@@ -308,18 +308,18 @@ def _rpchost_to_args(rpchost):
 
 def start_node(i, dirname, extra_args=None, rpchost=None, timewait=None, binary=None):
     """
-    Start a helixd and return RPC connection to it
+    Start a tcashd and return RPC connection to it
     """
     datadir = os.path.join(dirname, "node"+str(i))
     if binary is None:
-        binary = os.getenv("HELIXD", "helixd")
+        binary = os.getenv("HELIXD", "tcashd")
     args = [ binary, "-datadir="+datadir, "-server", "-keypool=1", "-discover=0", "-rest", "-mocktime="+str(get_mocktime()), "-regtest", "-sporkkey=923EhWh2bJHynX6d4Tqt2Q75bhTDCT1b4kff3qzDKDZHZ6pkQs7"]
     if extra_args is not None: args.extend(extra_args)
-    helixd_processes[i] = subprocess.Popen(args)
+    tcashd_processes[i] = subprocess.Popen(args)
     if os.getenv("PYTHON_DEBUG", ""):
         print("start_node: hlixoed started, waiting for RPC to come up")
     url = rpc_url(i, rpchost)
-    wait_for_helixd_start(helixd_processes[i], url, i)
+    wait_for_tcashd_start(tcashd_processes[i], url, i)
     if os.getenv("PYTHON_DEBUG", ""):
         print("start_node: RPC succesfully started")
     proxy = get_rpc_proxy(url, i, timeout=timewait)
@@ -331,7 +331,7 @@ def start_node(i, dirname, extra_args=None, rpchost=None, timewait=None, binary=
 
 def start_nodes(num_nodes, dirname, extra_args=None, rpchost=None, timewait=None, binary=None):
     """
-    Start multiple helixds, return RPC connections to them
+    Start multiple tcashds, return RPC connections to them
     """
     if extra_args is None: extra_args = [ None for _ in range(num_nodes) ]
     if binary is None: binary = [ None for _ in range(num_nodes) ]
@@ -352,8 +352,8 @@ def stop_node(node, i):
         node.stop()
     except http.client.CannotSendRequest as e:
         print("WARN: Unable to stop node: " + repr(e))
-    helixd_processes[i].wait(timeout=HELIXD_PROC_WAIT_TIMEOUT)
-    del helixd_processes[i]
+    tcashd_processes[i].wait(timeout=HELIXD_PROC_WAIT_TIMEOUT)
+    del tcashd_processes[i]
 
 def stop_nodes(nodes):
     for node in nodes:
@@ -362,17 +362,17 @@ def stop_nodes(nodes):
         except http.client.CannotSendRequest as e:
             print("WARN: Unable to stop node: " + repr(e))
     del nodes[:] # Emptying array closes connections as a side effect
-    wait_helixds()
+    wait_tcashds()
 
 def set_node_times(nodes, t):
     for node in nodes:
         node.setmocktime(t)
 
-def wait_helixds():
-    # Wait for all helixds to cleanly exit
-    for helixd in helixd_processes.values():
-        helixd.wait(timeout=HELIXD_PROC_WAIT_TIMEOUT)
-    helixd_processes.clear()
+def wait_tcashds():
+    # Wait for all tcashds to cleanly exit
+    for tcashd in tcashd_processes.values():
+        tcashd.wait(timeout=HELIXD_PROC_WAIT_TIMEOUT)
+    tcashd_processes.clear()
 
 def connect_nodes(from_connection, node_num):
     ip_port = "127.0.0.1:"+str(p2p_port(node_num))

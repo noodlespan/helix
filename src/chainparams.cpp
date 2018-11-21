@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017 The Helix developers
+// Copyright (c) 2017 The Tcash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -138,8 +138,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Helix: 1 day
-        nTargetSpacing = 1 * 60;  // Helix: 1 minute
+        nTargetTimespan = 1 * 60; // Tcash: 1 day
+        nTargetSpacing = 1 * 60;  // Tcash: 1 minute
         nMaturity = 50;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 1000000000 * COIN;
@@ -159,7 +159,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "5 July 2018, the birth of Helix";
+        const char* pszTimestamp = "5 July 2018, the birth of Tcash";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -177,10 +177,10 @@ public:
         assert(hashGenesisBlock == uint256("0x79a3c45d6e2760efb4d6de76d34b1f4833ba919bc114e1da0f671b1700a78f08"));
         assert(genesis.hashMerkleRoot == uint256("0x210fa744202cef1c9248d9f82efadaa1387341e5c4b85b7a87ae56866514ef27"));
 
-//        vSeeds.push_back(CDNSSeedData("0", "dns0.helix.io")); // run by Moonshot
-//        vSeeds.push_back(CDNSSeedData("1", "helix.seed.rho.industries")); // run by Julian Meyer (meyer9)
+//        vSeeds.push_back(CDNSSeedData("0", "dns0.tcash.io")); // run by Moonshot
+//        vSeeds.push_back(CDNSSeedData("1", "tcash.seed.rho.industries")); // run by Julian Meyer (meyer9)
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 40); // Testnet helix addresses start with 'H'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 40); // Testnet tcash addresses start with 'H'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
@@ -250,8 +250,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Helix: 1 day
-        nTargetSpacing = 1 * 10;  // Helix: 1 minute
+        nTargetTimespan = 1 * 60; // Tcash: 1 day
+        nTargetSpacing = 1 * 10;  // Tcash: 1 minute
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
@@ -272,14 +272,14 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 127); // Testnet helix addresses start with 't'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet helix script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 127); // Testnet tcash addresses start with 't'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet tcash script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet helix BIP32 pubkeys start with 'DRKV'
+        // Testnet tcash BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
-        // Testnet helix BIP32 prvkeys start with 'DRKP'
+        // Testnet tcash BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
-        // Testnet helix BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet tcash BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x01)(0x00)(0x00)(0x80).convert_to_container<std::vector<unsigned char> >();
 
         bech32_hrp = "tp";
@@ -324,8 +324,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Helix: 1 day
-        nTargetSpacing = 1 * 60;        // Helix: 1 minutes
+        nTargetTimespan = 24 * 60 * 60; // Tcash: 1 day
+        nTargetSpacing = 1 * 60;        // Tcash: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1531496589;
         genesis.nBits = 0x207fffff;

@@ -5,7 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/helix-config.h"
+#include "config/tcash-config.h"
 #endif
 
 #include "optionsmodel.h"
@@ -87,10 +87,10 @@ void OptionsModel::Init()
         settings.setValue("nPreferredDenom", 0);
     nPreferredDenom = settings.value("nPreferredDenom", "0").toLongLong();
 
-    if (!settings.contains("nAnonymizeHelixAmount"))
-        settings.setValue("nAnonymizeHelixAmount", 1000);
+    if (!settings.contains("nAnonymizeTcashAmount"))
+        settings.setValue("nAnonymizeTcashAmount", 1000);
 
-    nAnonymizeHelixAmount = settings.value("nAnonymizeHelixAmount").toLongLong();
+    nAnonymizeTcashAmount = settings.value("nAnonymizeTcashAmount").toLongLong();
 
     if (!settings.contains("fShowMasternodesTab"))
         settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
@@ -164,8 +164,8 @@ void OptionsModel::Init()
         SoftSetArg("-zeromintpercentage", settings.value("nZeromintPercentage").toString().toStdString());
     if (settings.contains("nPreferredDenom"))
         SoftSetArg("-preferredDenom", settings.value("nPreferredDenom").toString().toStdString());
-    if (settings.contains("nAnonymizeHelixAmount"))
-        SoftSetArg("-anonymizehelixamount", settings.value("nAnonymizeHelixAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeTcashAmount"))
+        SoftSetArg("-anonymizetcashamount", settings.value("nAnonymizeTcashAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -176,7 +176,7 @@ void OptionsModel::Reset()
 
     // Remove all entries from our QSettings object
     settings.clear();
-    resetSettings = true; // Needed in helix.cpp during shotdown to also remove the window positions
+    resetSettings = true; // Needed in tcash.cpp during shotdown to also remove the window positions
 
     // default setting for OptionsModel::StartAtStartup - disabled
     if (GUIUtil::GetStartOnSystemStartup())
@@ -256,8 +256,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return QVariant(nZeromintPercentage);
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
-        case AnonymizeHelixAmount:
-            return QVariant(nAnonymizeHelixAmount);
+        case AnonymizeTcashAmount:
+            return QVariant(nAnonymizeTcashAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -386,10 +386,10 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             emit hideZeroBalancesChanged(fHideZeroBalances);
             break;
 
-        case AnonymizeHelixAmount:
-            nAnonymizeHelixAmount = value.toInt();
-            settings.setValue("nAnonymizeHelixAmount", nAnonymizeHelixAmount);
-            emit anonymizeHelixAmountChanged(nAnonymizeHelixAmount);
+        case AnonymizeTcashAmount:
+            nAnonymizeTcashAmount = value.toInt();
+            settings.setValue("nAnonymizeTcashAmount", nAnonymizeTcashAmount);
+            emit anonymizeTcashAmountChanged(nAnonymizeTcashAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();

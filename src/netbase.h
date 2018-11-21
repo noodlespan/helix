@@ -6,7 +6,7 @@
 #define BITCOIN_NETBASE_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/helix-config.h"
+#include "config/tcash-config.h"
 #endif
 
 #include "compat.h"

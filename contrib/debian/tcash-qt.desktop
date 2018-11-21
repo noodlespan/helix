@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tcash
+Comment=Tcash P2P Cryptocurrency
+Comment[fr]=Tcash, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Tcash, eşten eşe kriptografik sanal para birimi
+Exec=tcash-qt %u
+Terminal=false
+Type=Application
+Icon=tcash128
+MimeType=x-scheme-handler/tcash;
+Categories=Office;Finance;

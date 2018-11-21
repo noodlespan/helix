@@ -1,0 +1,30 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/tcash_bg.qm</file>
+        <file alias="ca">locale/tcash_ca.qm</file>
+        <file alias="cs">locale/tcash_cs.qm</file>
+        <file alias="da">locale/tcash_da.qm</file>
+        <file alias="de">locale/tcash_de.qm</file>
+        <file alias="en">locale/tcash_en.qm</file>
+        <file alias="en_US">locale/tcash_en_US.qm</file>
+        <file alias="es">locale/tcash_es.qm</file>
+        <file alias="fi">locale/tcash_fi.qm</file>
+        <file alias="fr_FR">locale/tcash_fr_FR.qm</file>
+        <file alias="hr">locale/tcash_hr.qm</file>
+        <file alias="it">locale/tcash_it.qm</file>
+        <file alias="ja">locale/tcash_ja.qm</file>
+        <file alias="ko_KR">locale/tcash_ko_KR.qm</file>
+        <file alias="nl">locale/tcash_nl.qm</file>
+        <file alias="pl">locale/tcash_pl.qm</file>
+        <file alias="pt">locale/tcash_pt.qm</file>
+        <file alias="pt_BR">locale/tcash_pt_BR.qm</file>
+        <file alias="ro_RO">locale/tcash_ro_RO.qm</file>
+        <file alias="ru">locale/tcash_ru.qm</file>
+        <file alias="sk">locale/tcash_sk.qm</file>
+        <file alias="sv">locale/tcash_sv.qm</file>
+        <file alias="tr">locale/tcash_tr.qm</file>
+        <file alias="uk">locale/tcash_uk.qm</file>
+        <file alias="zh_CN">locale/tcash_zh_CN.qm</file>
+        <file alias="zh_TW">locale/tcash_zh_TW.qm</file>
+    </qresource>
+</RCC>

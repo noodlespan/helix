@@ -7,12 +7,12 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/helix
-src/helixd
-src/helix-cli
-src/helix-tx
-src/test/test_helix
-src/qt/test/test_helix-qt
+src/tcash
+src/tcashd
+src/tcash-cli
+src/tcash-tx
+src/test/test_tcash
+src/qt/test/test_tcash-qt
 
 # autoreconf
 Makefile.in
@@ -38,8 +38,8 @@ confdefs.h
 conftest.cpp
 conftest.err
 libtool
-src/config/helix-config.h
-src/config/helix-config.h.in
+src/config/tcash-config.h
+src/config/tcash-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -64,7 +64,7 @@ src/leveldb/build_config.mk
 *.pyc
 *.o
 *.o-*
-.helix
+.tcash
 *.a
 *.pb.cc
 *.pb.h
@@ -84,12 +84,12 @@ src/leveldb/build_config.mk
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-helix-qt
-helix-Qt.app
+tcash-qt
+tcash-Qt.app
 
 # Unit-tests
 Makefile.test
-helix-qt_test
+tcash-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -105,7 +105,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_helix.coverage/
+test_tcash.coverage/
 total.coverage/
 coverage_percent.txt
 

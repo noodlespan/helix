@@ -126,7 +126,7 @@ public:
 };
 
 /**
- * Helix RPC command dispatcher.
+ * Tcash RPC command dispatcher.
  */
 class CRPCTable
 {

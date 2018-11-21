@@ -1,40 +1,40 @@
-Helix Core
+Tcash Core
 =====================
 
 Setup
 ---------------------
-[Helix Core](http://helix.org/wallet) is the original Helix client and it builds the backbone of the network. However, it downloads and stores the entire history of Helix transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Tcash Core](http://tcash.org/wallet) is the original Tcash client and it builds the backbone of the network. However, it downloads and stores the entire history of Tcash transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Helix on your native platform.
+The following are some helpful notes on how to run Tcash on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- bin/32/helix-qt (GUI, 32-bit) or bin/32/helixd (headless, 32-bit)
-- bin/64/helix-qt (GUI, 64-bit) or bin/64/helixd (headless, 64-bit)
+- bin/32/tcash-qt (GUI, 32-bit) or bin/32/tcashd (headless, 32-bit)
+- bin/64/tcash-qt (GUI, 64-bit) or bin/64/tcashd (headless, 64-bit)
 
 ### Windows
 
-Unpack the files into a directory, and then run helix-qt.exe.
+Unpack the files into a directory, and then run tcash-qt.exe.
 
 ### OSX
 
-Drag Helix-Qt to your applications folder, and then run Helix-Qt.
+Drag Tcash-Qt to your applications folder, and then run Tcash-Qt.
 
 ### Need Help?
 
-* See the documentation at the [Helix Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
+* See the documentation at the [Tcash Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Helix Forum](http://forum.helix.org/).
-* Join one of our Slack groups [Helix Slack Groups](https://helix.org/slack-logins/).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Tcash Forum](http://forum.tcash.org/).
+* Join one of our Slack groups [Tcash Slack Groups](https://tcash.org/slack-logins/).
 * Join our Discord server [Discord Server](https://discord.gg/dTRhamf)
 
 Building
 ---------------------
-The following are developer notes on how to build Helix on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Tcash on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -42,7 +42,7 @@ The following are developer notes on how to build Helix on your native platform.
 
 Development
 ---------------------
-The Helix repo's [root README](https://github.com/helixproject/Helix/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Tcash repo's [root README](https://github.com/tcashproject/Tcash/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -56,8 +56,8 @@ The Helix repo's [root README](https://github.com/helixproject/Helix/blob/master
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Helix](http://forum.helix.org/) forum.
-* Join the [Helix-Dev](https://helix-dev.slack.com/) Slack group ([Sign-Up](https://helix-dev.herokuapp.com/)).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Tcash](http://forum.tcash.org/) forum.
+* Join the [Tcash-Dev](https://tcash-dev.slack.com/) Slack group ([Sign-Up](https://tcash-dev.herokuapp.com/)).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

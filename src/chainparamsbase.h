@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between helix-cli and helixd)
- * of a given instance of the Helix system.
+ * CBaseChainParams defines the base parameters (shared between tcash-cli and tcashd)
+ * of a given instance of the Tcash system.
  */
 class CBaseChainParams
 {

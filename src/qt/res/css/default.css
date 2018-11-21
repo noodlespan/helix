@@ -850,12 +850,12 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About Helix Dialog */
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Helix Contents */
+/* About Tcash Dialog */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Tcash Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About Helix text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About Tcash text */
 margin-right:10px;
 }
 
@@ -882,7 +882,7 @@ background-color:#ffffff;
 
 QLabel#labelOverviewHeaderRight {
 qproperty-alignment: 'AlignTop | AlignRight';
-background-image: url(':/images/helix_logo_horizontal');
+background-image: url(':/images/tcash_logo_horizontal');
 background-repeat: no-repeat;
 }
 
@@ -1244,7 +1244,7 @@ min-height:100px;
 margin-right:20px;
 margin-left:0;
 margin-top:0;
-background-image: url(':/images/helix_logo_horizontal');
+background-image: url(':/images/tcash_logo_horizontal');
 background-repeat:none;
 }
 

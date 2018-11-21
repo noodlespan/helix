@@ -2,37 +2,37 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/helix-qt
+bin_PROGRAMS += qt/tcash-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# helix qt core #
+# tcash qt core #
 QT_TS = \
-  qt/locale/helix_bg.ts \
-  qt/locale/helix_ca.ts \
-  qt/locale/helix_cs.ts \
-  qt/locale/helix_da.ts \
-  qt/locale/helix_de.ts \
-  qt/locale/helix_en.ts \
-  qt/locale/helix_en_US.ts \
-  qt/locale/helix_es.ts \
-  qt/locale/helix_fi.ts \
-  qt/locale/helix_fr_FR.ts \
-  qt/locale/helix_hr.ts \
-  qt/locale/helix_it.ts \
-  qt/locale/helix_ja.ts \
-  qt/locale/helix_ko_KR.ts \
-  qt/locale/helix_nl.ts \
-  qt/locale/helix_pl.ts \
-  qt/locale/helix_pt.ts \
-  qt/locale/helix_pt_BR.ts \
-  qt/locale/helix_ro_RO.ts \
-  qt/locale/helix_ru.ts \
-  qt/locale/helix_sk.ts \
-  qt/locale/helix_sv.ts \
-  qt/locale/helix_tr.ts \
-  qt/locale/helix_uk.ts \
-  qt/locale/helix_zh_CN.ts \
-  qt/locale/helix_zh_TW.ts
+  qt/locale/tcash_bg.ts \
+  qt/locale/tcash_ca.ts \
+  qt/locale/tcash_cs.ts \
+  qt/locale/tcash_da.ts \
+  qt/locale/tcash_de.ts \
+  qt/locale/tcash_en.ts \
+  qt/locale/tcash_en_US.ts \
+  qt/locale/tcash_es.ts \
+  qt/locale/tcash_fi.ts \
+  qt/locale/tcash_fr_FR.ts \
+  qt/locale/tcash_hr.ts \
+  qt/locale/tcash_it.ts \
+  qt/locale/tcash_ja.ts \
+  qt/locale/tcash_ko_KR.ts \
+  qt/locale/tcash_nl.ts \
+  qt/locale/tcash_pl.ts \
+  qt/locale/tcash_pt.ts \
+  qt/locale/tcash_pt_BR.ts \
+  qt/locale/tcash_ro_RO.ts \
+  qt/locale/tcash_ru.ts \
+  qt/locale/tcash_sk.ts \
+  qt/locale/tcash_sv.ts \
+  qt/locale/tcash_tr.ts \
+  qt/locale/tcash_uk.ts \
+  qt/locale/tcash_zh_CN.ts \
+  qt/locale/tcash_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -119,16 +119,16 @@ BITCOIN_MM = \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/helix.moc \
+  qt/tcash.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_helix.cpp
-QT_QRC = qt/helix.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_helix_locale.cpp
-QT_QRC_LOCALE = qt/helix_locale.qrc
+QT_QRC_CPP = qt/qrc_tcash.cpp
+QT_QRC = qt/tcash.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_tcash_locale.cpp
+QT_QRC_LOCALE = qt/tcash_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -249,12 +249,12 @@ RES_ICONS = \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
   qt/res/icons/tx_mined.png \
-  qt/res/icons/unit_helix.png \
-  qt/res/icons/unit_mhelix.png \
-  qt/res/icons/unit_uhelix.png \
-  qt/res/icons/unit_thelix.png \
-  qt/res/icons/unit_tmhelix.png \
-  qt/res/icons/unit_tuhelix.png
+  qt/res/icons/unit_tcash.png \
+  qt/res/icons/unit_mtcash.png \
+  qt/res/icons/unit_utcash.png \
+  qt/res/icons/unit_ttcash.png \
+  qt/res/icons/unit_tmtcash.png \
+  qt/res/icons/unit_tutcash.png
 
 BITCOIN_QT_CPP = \
   qt/bantablemodel.cpp \
@@ -328,7 +328,7 @@ RES_IMAGES = \
   qt/res/images/about.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
-  qt/res/images/helix_logo_horizontal.png \
+  qt/res/images/tcash_logo_horizontal.png \
   qt/res/images/downArrow_dark.png \
   qt/res/images/downArrow_small_dark.png \
   qt/res/images/downArrow_small.png \
@@ -346,7 +346,7 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/helix-qt-res.rc
+BITCOIN_RC = qt/res/tcash-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms
@@ -368,72 +368,72 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_helix_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_tcash_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# helix-qt binary #
-qt_helix_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# tcash-qt binary #
+qt_tcash_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_helix_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_tcash_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 qt_bitcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_helix_qt_SOURCES = qt/helix.cpp
+qt_tcash_qt_SOURCES = qt/tcash.cpp
 if TARGET_DARWIN
-  qt_helix_qt_SOURCES += $(BITCOIN_MM)
+  qt_tcash_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_helix_qt_SOURCES += $(BITCOIN_RC)
+  qt_tcash_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_helix_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_tcash_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_helix_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_tcash_qt_LDADD += $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_helix_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_tcash_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_helix_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBMEMENV) \
+qt_tcash_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_helix_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_helix_qt_LIBTOOLFLAGS = --tag CXX
+qt_tcash_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_tcash_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/helixstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+$(srcdir)/qt/tcashstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/helixstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/tcashstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/helix_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/tcash_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name helix_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name tcash_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name helix $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name tcash $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_helix_locale.qrc
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_tcash_locale.qrc
 
 CLEANFILES += $(CLEAN_QT)
 
-helix_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_helix_qt_OBJECTS) qt/helix-qt$(EXEEXT) $(LIBBITCOINQT)
+tcash_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_tcash_qt_OBJECTS) qt/tcash-qt$(EXEEXT) $(LIBBITCOINQT)
 
-helix_qt : qt/helix-qt$(EXEEXT)
+tcash_qt : qt/tcash-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)
