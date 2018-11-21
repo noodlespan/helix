@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIX_SPENDTYPE_H
-#define HELIX_SPENDTYPE_H
+#ifndef TCASH_SPENDTYPE_H
+#define TCASH_SPENDTYPE_H
 
 #include <cstdint>
 

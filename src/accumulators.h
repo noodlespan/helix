@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIX_ACCUMULATORS_H
-#define HELIX_ACCUMULATORS_H
+#ifndef TCASH_ACCUMULATORS_H
+#define TCASH_ACCUMULATORS_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -29,4 +29,4 @@ uint32_t ParseChecksum(uint256 nChecksum, libzerocoin::CoinDenomination denomina
 uint32_t GetChecksum(const CBigNum &bnValue);
 int GetChecksumHeight(uint32_t nChecksum, libzerocoin::CoinDenomination denomination);
 
-#endif //HELIX_ACCUMULATORS_H
+#endif //TCASH_ACCUMULATORS_H

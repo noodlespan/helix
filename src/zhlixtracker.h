@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIX_ZTCASHTRACKER_H
-#define HELIX_ZTCASHTRACKER_H
+#ifndef TCASH_ZTCASHTRACKER_H
+#define TCASH_ZTCASHTRACKER_H
 
 #include "primitives/zerocoin.h"
 #include <list>
@@ -48,5 +48,5 @@ public:
     void Clear();
 };
 
-#endif //HELIX_ZTCASHTRACKER_H
+#endif //TCASH_ZTCASHTRACKER_H
 

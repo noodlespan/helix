@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIX_CSPORKDB_H
-#define HELIX_CSPORKDB_H
+#ifndef TCASH_CSPORKDB_H
+#define TCASH_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //HELIX_CSPORKDB_H
+#endif //TCASH_CSPORKDB_H

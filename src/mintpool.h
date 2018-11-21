@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIX_MINTPOOL_H
-#define HELIX_MINTPOOL_H
+#ifndef TCASH_MINTPOOL_H
+#define TCASH_MINTPOOL_H
 
 #include <map>
 #include <list>
@@ -50,5 +50,5 @@ public:
 };
 
 
-#endif //HELIX_MINTPOOL_H
+#endif //TCASH_MINTPOOL_H
 

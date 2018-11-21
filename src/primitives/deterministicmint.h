@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIX_DETERMINISTICMINT_H
-#define HELIX_DETERMINISTICMINT_H
+#ifndef TCASH_DETERMINISTICMINT_H
+#define TCASH_DETERMINISTICMINT_H
 
 #include "libzerocoin/Denominations.h"
 #include "uint256.h"
@@ -64,4 +64,4 @@ public:
     };
 };
 
-#endif //HELIX_DETERMINISTICMINT_H
+#endif //TCASH_DETERMINISTICMINT_H

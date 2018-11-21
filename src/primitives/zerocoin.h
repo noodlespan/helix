@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIX_ZEROCOIN_H
-#define HELIX_ZEROCOIN_H
+#ifndef TCASH_ZEROCOIN_H
+#define TCASH_ZEROCOIN_H
 
 #include "amount.h"
 #include "limits.h"
@@ -247,4 +247,4 @@ public:
     int GetNeededSpends();
 };
 
-#endif //HELIX_ZEROCOIN_H
+#endif //TCASH_ZEROCOIN_H

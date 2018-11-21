@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIX_ZTCASHWALLET_H
-#define HELIX_ZTCASHWALLET_H
+#ifndef TCASH_ZTCASHWALLET_H
+#define TCASH_ZTCASHWALLET_H
 
 #include <map>
 #include "libzerocoin/Coin.h"
@@ -45,5 +45,5 @@ private:
     uint512 GetZerocoinSeed(uint32_t n);
 };
 
-#endif //HELIX_ZTCASHWALLET_H
+#endif //TCASH_ZTCASHWALLET_H
 

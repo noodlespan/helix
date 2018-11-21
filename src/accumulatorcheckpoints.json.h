@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef HELIX_ACCUMULATORCHECKPOINTS_JSON_H
-#define HELIX_ACCUMULATORCHECKPOINTS_JSON_H
+#ifndef TCASH_ACCUMULATORCHECKPOINTS_JSON_H
+#define TCASH_ACCUMULATORCHECKPOINTS_JSON_H
 
 #include <string>
 std::string GetMainCheckpoints() {
@@ -310,4 +310,4 @@ std::string GetRegTestCheckpoints() {
     return strRegTestCheckpoints;
 }
 
-#endif //HELIX_ACCUMULATORCHECKPOINTS_JSON_H
+#endif //TCASH_ACCUMULATORCHECKPOINTS_JSON_H
