@@ -56,7 +56,7 @@ QT_TRANSLATE_NOOP("tcash-core", ""
 "Distributed under the MIT software license, see the accompanying file "
 "COPYING or <http://www.opensource.org/licenses/mit-license.php>."),
 QT_TRANSLATE_NOOP("tcash-core", ""
-"Enable automatic wallet backups triggered after each zT_cash minting (0-1, "
+"Enable automatic wallet backups triggered after each zTcash minting (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("tcash-core", ""
 "Enable spork administration functionality with the appropriate private key."),

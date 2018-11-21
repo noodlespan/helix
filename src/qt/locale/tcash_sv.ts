@@ -1416,7 +1416,7 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
     </message>
     </context>
 <context>
-    <name>ZT_cashControlDialog</name>
+    <name>ZTcashControlDialog</name>
     </context>
 <context>
     <name>tcash-core</name>

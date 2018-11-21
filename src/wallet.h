@@ -23,8 +23,8 @@
 #include "validationinterface.h"
 #include "wallet_ismine.h"
 #include "walletdb.h"
-#include "zt_cashtracker.h"
-#include "zt_cashwallet.h"
+#include "ztcashtracker.h"
+#include "ztcashwallet.h"
 
 #include <algorithm>
 #include <map>
@@ -226,7 +226,7 @@ public:
     std::string ResetMintZerocoin();
     std::string ResetSpentZerocoin();
     void ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored, std::list<CDeterministicMint>& listDMintsRestored);
-    void ZT_cashBackupWallet();
+    void ZTcashBackupWallet();
     bool GetZerocoinKey(const CBigNum& bnSerial, CKey& key);
     bool CreateZTCASHOutput(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint);
     bool GetMint(const uint256& hashSerial, CZerocoinMint& mint);
@@ -234,7 +234,7 @@ public:
     bool DatabaseMint(CDeterministicMint& dMint);
     bool SetMintUnspent(const CBigNum& bnSerial);
     bool UpdateMint(const CBigNum& bnValue, const int& nHeight, const uint256& txid, const libzerocoin::CoinDenomination& denom);
-    string GetUniqueWalletBackupName(bool fzt_cashAuto) const;
+    string GetUniqueWalletBackupName(bool fztcashAuto) const;
 
     /** Zerocin entry changed.
     * @note called with lock cs_wallet held.
@@ -255,7 +255,7 @@ public:
     bool fWalletUnlockAnonymizeOnly;
     std::string strWalletFile;
     bool fBackupMints;
-    std::unique_ptr<CzTCASHTracker> zt_cashTracker;
+    std::unique_ptr<CzTCASHTracker> ztcashTracker;
 
     std::set<int64_t> setKeyPool;
     std::map<CKeyID, CKeyMetadata> mapKeyMetadata;
@@ -343,7 +343,7 @@ public:
     void setZWallet(CzTCASHWallet* zwallet)
     {
         zwalletMain = zwallet;
-        zt_cashTracker = std::unique_ptr<CzTCASHTracker>(new CzTCASHTracker(strWalletFile));
+        ztcashTracker = std::unique_ptr<CzTCASHTracker>(new CzTCASHTracker(strWalletFile));
     }
 
     CzTCASHWallet* getZWallet() { return zwalletMain; }
@@ -354,7 +354,7 @@ public:
         return fEnableZeromint;
     }
 
-    void setZT_cashAutoBackups(bool fEnabled)
+    void setZTcashAutoBackups(bool fEnabled)
     {
         fBackupMints = fEnabled;
     }

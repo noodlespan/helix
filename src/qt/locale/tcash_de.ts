@@ -2071,8 +2071,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Die angezeigte Information ist möglicherweise nicht mehr aktuell. Ihre Wallet synchronisiert sich automatisch mit dem Tcash-Netzwerk, nachdem eine Verbindung hergestellt wurde. Aber dieser Vorgang ist noch nicht abgeschlossen.</translation>
     </message>
     <message>
-        <source>Enter an amount of T_cash to convert to zT_cash</source>
-        <translation>Eingabe des T_cash-Betrags, um in zT_cash umzuwandeln</translation>
+        <source>Enter an amount of Tcash to convert to zTcash</source>
+        <translation>Eingabe des Tcash-Betrags, um in zTcash umzuwandeln</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2127,12 +2127,12 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Status und/oder Mitteilungen aus der letzten Prägung</translation>
     </message>
     <message>
-        <source>zT_cash Control</source>
-        <translation>zT_cash Kontrolle</translation>
+        <source>zTcash Control</source>
+        <translation>zTcash Kontrolle</translation>
     </message>
     <message>
-        <source>zT_cash Selected:</source>
-        <translation>zT_cash Ausgewählt:</translation>
+        <source>zTcash Selected:</source>
+        <translation>zTcash Ausgewählt:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2469,7 +2469,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>Ausgeben Zerocoin fehlgeschlagen mit Status =</translation>
     </message>
     <message>
-        <source>zT_cash Spend #: </source>
+        <source>zTcash Spend #: </source>
         <translation>zTCASH Ausgeben #:</translation>
     </message>
     <message>
@@ -2493,8 +2493,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Adresse:</translation>
     </message>
     <message>
-        <source>zT_cash Mint</source>
-        <translation>zT_cash Prägen</translation>
+        <source>zTcash Mint</source>
+        <translation>zTcash Prägen</translation>
     </message>
     <message>
         <source>Sending successful, return code: </source>
@@ -3950,23 +3950,23 @@ Bitte haben Sie Geduld...</translation>
         <translation>Verschleiert</translation>
     </message>
     <message>
-        <source>Converted T_cash to zT_cash</source>
+        <source>Converted Tcash to zTcash</source>
         <translation>Umgewandeltes TCASH zu zTCASH</translation>
     </message>
     <message>
-        <source>Spent zT_cash</source>
+        <source>Spent zTcash</source>
         <translation>Ausgeben zTCASH</translation>
     </message>
     <message>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation>Empfangene TCASH von zTCASH</translation>
     </message>
     <message>
-        <source>Minted Change as zT_cash from zT_cash Spend</source>
+        <source>Minted Change as zTcash from zTcash Spend</source>
         <translation>Geprägtes Wechselgeld als zTCASH von zTCASH Ausgabe</translation>
     </message>
     <message>
-        <source>Converted zT_cash to T_cash</source>
+        <source>Converted zTcash to Tcash</source>
         <translation>Umgewandeltes zTCASH zu TCASH</translation>
     </message>
     <message>
@@ -3974,7 +3974,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>nur beobachtet</translation>
     </message>
     <message>
-        <source>zT_cash Accumulator</source>
+        <source>zTcash Accumulator</source>
         <translation>zTCASH Speicher</translation>
     </message>
     <message>
@@ -4085,7 +4085,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>Masternode Vergütung</translation>
     </message>
     <message>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation>Empfangene TCASH von zTCASH</translation>
     </message>
     <message>
@@ -4097,7 +4097,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>Zerocoin Ausgabe</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zT_cash</source>
+        <source>Zerocoin Spend, Change in zTcash</source>
         <translation>Zerocoin Ausgabe, Wechselgeld in zTCASH</translation>
     </message>
     <message>
@@ -4266,9 +4266,9 @@ Bitte haben Sie Geduld...</translation>
     </message>
 </context>
 <context>
-    <name>ZT_cashControlDialog</name>
+    <name>ZTcashControlDialog</name>
     <message>
-        <source>Select zT_cash to Spend</source>
+        <source>Select zTcash to Spend</source>
         <translation>Auswahl zTCASH als Ausgabe</translation>
     </message>
     <message>
@@ -4280,7 +4280,7 @@ Bitte haben Sie Geduld...</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zT_cash</source>
+        <source>zTcash</source>
         <translation>zTCASH</translation>
     </message>
     <message>

@@ -1969,7 +1969,7 @@
     </message>
     </context>
 <context>
-    <name>ZT_cashControlDialog</name>
+    <name>ZTcashControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Quantitat</translation>
@@ -1979,8 +1979,8 @@
         <translation>0</translation>
     </message>
     <message>
-        <source>zT_cash</source>
-        <translation>zT_cash</translation>
+        <source>zTcash</source>
+        <translation>zTcash</translation>
     </message>
     </context>
 <context>

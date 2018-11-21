@@ -261,8 +261,8 @@ extern UniValue importzerocoins(const UniValue& params, bool fHelp);
 extern UniValue exportzerocoins(const UniValue& params, bool fHelp);
 extern UniValue reconsiderzerocoins(const UniValue& params, bool fHelp);
 extern UniValue getspentzerocoinamount(const UniValue& params, bool fHelp);
-extern UniValue setzt_cashseed(const UniValue& params, bool fHelp);
-extern UniValue getzt_cashseed(const UniValue& params, bool fHelp);
+extern UniValue setztcashseed(const UniValue& params, bool fHelp);
+extern UniValue getztcashseed(const UniValue& params, bool fHelp);
 extern UniValue makekeypair(const UniValue& params, bool fHelp);
 
 extern UniValue getrawtransaction(const UniValue& params, bool fHelp); // in rcprawtransaction.cpp

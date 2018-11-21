@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "primitives/deterministicmint.h"
-#include "zt_cashtracker.h"
+#include "ztcashtracker.h"
 #include "util.h"
 #include "sync.h"
 #include "main.h"
@@ -133,7 +133,7 @@ CAmount CzTCASHTracker::GetBalance(bool fConfirmedOnly, bool fUnconfirmedOnly) c
     }
 
     {
-        //LOCK(cs_t_cashtracker);
+        //LOCK(cs_tcashtracker);
         // Get Unused coins
         for (auto& it : mapSerialHashes) {
             CMintMeta meta = it.second;
@@ -444,7 +444,7 @@ std::set<CMintMeta> CzTCASHTracker::ListMints(bool fUnusedOnly, bool fMatureOnly
         std::list<CDeterministicMint> listDeterministicDB = walletdb.ListDeterministicMints();
         for (auto& dMint : listDeterministicDB)
             Add(dMint);
-        LogPrint("zero", "%s: added %d dzt_cash from DB\n", __func__, listDeterministicDB.size());
+        LogPrint("zero", "%s: added %d dztcash from DB\n", __func__, listDeterministicDB.size());
     }
 
     std::vector<CMintMeta> vOverWrite;

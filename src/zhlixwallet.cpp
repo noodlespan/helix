@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zt_cashwallet.h"
+#include "ztcashwallet.h"
 #include "main.h"
 #include "txdb.h"
 #include "walletdb.h"
@@ -20,7 +20,7 @@ CzTCASHWallet::CzTCASHWallet(std::string strWalletFile)
     uint256 hashSeed;
     bool fFirstRun = !walletdb.ReadCurrentSeedHash(hashSeed);
 
-    //Check for old db version of storing zt_cash seed
+    //Check for old db version of storing ztcash seed
     if (fFirstRun) {
         uint256 seed;
         if (walletdb.ReadZTCASHSeed_deprecated(seed)) {
@@ -32,7 +32,7 @@ CzTCASHWallet::CzTCASHWallet(std::string strWalletFile)
                     LogPrintf("%s: Updated zTCASH seed databasing\n", __func__);
                     fFirstRun = false;
                 } else {
-                    LogPrintf("%s: failed to remove old zt_cash seed\n", __func__);
+                    LogPrintf("%s: failed to remove old ztcash seed\n", __func__);
                 }
             }
         }
@@ -54,7 +54,7 @@ CzTCASHWallet::CzTCASHWallet(std::string strWalletFile)
         key.MakeNewKey(true);
         seed = key.GetPrivKey_256();
         seedMaster = seed;
-        LogPrintf("%s: first run of zt_cash wallet detected, new seed generated. Seedhash=%s\n", __func__, Hash(seed.begin(), seed.end()).GetHex());
+        LogPrintf("%s: first run of ztcash wallet detected, new seed generated. Seedhash=%s\n", __func__, Hash(seed.begin(), seed.end()).GetHex());
     } else if (!pwalletMain->GetDeterministicSeed(hashSeed, seed)) {
         LogPrintf("%s: failed to get deterministic seed for hashseed %s\n", __func__, hashSeed.GetHex());
         return;
@@ -202,7 +202,7 @@ void CzTCASHWallet::SyncWithChain(bool fGenerateMintPool)
             if (ShutdownRequested())
                 return;
 
-            if (pwalletMain->zt_cashTracker->HasPubcoinHash(pMint.first)) {
+            if (pwalletMain->ztcashTracker->HasPubcoinHash(pMint.first)) {
                 mintPool.Remove(pMint.first);
                 continue;
             }
@@ -325,8 +325,8 @@ bool CzTCASHWallet::SetMintSeen(const CBigNum& bnValue, const int& nHeight, cons
         pwalletMain->AddToWallet(wtx);
     }
 
-    // Add to zt_cashTracker which also adds to database
-    pwalletMain->zt_cashTracker->Add(dMint, true);
+    // Add to ztcashTracker which also adds to database
+    pwalletMain->ztcashTracker->Add(dMint, true);
     
     //Update the count if it is less than the mint's count
     if (nCountLastUsed < pMint.second) {

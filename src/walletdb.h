@@ -16,7 +16,7 @@
 #include "primitives/zerocoin.h"
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Denominations.h"
-#include "zt_cashtracker.h"
+#include "ztcashtracker.h"
 
 #include <list>
 #include <stdint.h>

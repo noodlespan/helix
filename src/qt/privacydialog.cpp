@@ -14,7 +14,7 @@
 #include "sendcoinsentry.h"
 #include "walletmodel.h"
 #include "coincontrol.h"
-#include "zt_cashcontroldialog.h"
+#include "ztcashcontroldialog.h"
 #include "spork.h"
 
 #include <QClipboard>
@@ -288,16 +288,16 @@ void PrivacyDialog::on_pushButtonSpendzTCASH_clicked()
     sendzTCASH();
 }
 
-void PrivacyDialog::on_pushButtonZT_cashControl_clicked()
+void PrivacyDialog::on_pushButtonZTcashControl_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
-    ZT_cashControlDialog* zT_cashControl = new ZT_cashControlDialog(this);
-    zT_cashControl->setModel(walletModel);
-    zT_cashControl->exec();
+    ZTcashControlDialog* zTcashControl = new ZTcashControlDialog(this);
+    zTcashControl->setModel(walletModel);
+    zTcashControl->exec();
 }
 
-void PrivacyDialog::setZT_cashControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZTcashControlLabels(int64_t nAmount, int nQuantity)
 {
     ui->labelzTCASHSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
@@ -409,8 +409,8 @@ void PrivacyDialog::sendzTCASH()
     // use mints from zTCASH selector if applicable
     vector<CMintMeta> vMintsToFetch;
     vector<CZerocoinMint> vMintsSelected;
-    if (!ZT_cashControlDialog::setSelectedMints.empty()) {
-        vMintsToFetch = ZT_cashControlDialog::GetSelectedMints();
+    if (!ZTcashControlDialog::setSelectedMints.empty()) {
+        vMintsToFetch = ZTcashControlDialog::GetSelectedMints();
 
         for (auto& meta : vMintsToFetch) {
             if (meta.nVersion < libzerocoin::PrivateCoin::PUBKEY_VERSION) {
@@ -481,8 +481,8 @@ void PrivacyDialog::sendzTCASH()
             walletModel->updateAddressBookLabels(address, "(no label)", "send");
     }
 
-    // Clear zt_cash selector in case it was used
-    ZT_cashControlDialog::setSelectedMints.clear();
+    // Clear ztcash selector in case it was used
+    ZTcashControlDialog::setSelectedMints.clear();
     ui->labelzTCASHSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
@@ -501,7 +501,7 @@ void PrivacyDialog::sendzTCASH()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " T_cash, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Tcash, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");
@@ -615,7 +615,7 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
         mapImmature.insert(make_pair(denom, 0));
     }
 
-    std::vector<CMintMeta> vMints = pwalletMain->zt_cashTracker->GetMints(false);
+    std::vector<CMintMeta> vMints = pwalletMain->ztcashTracker->GetMints(false);
     map<libzerocoin::CoinDenomination, int> mapMaturityHeights = GetMintMaturityHeight();
     for (CMintMeta& meta : vMints){
         // All denominations

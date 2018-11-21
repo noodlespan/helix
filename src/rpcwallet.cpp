@@ -2555,7 +2555,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    set<CMintMeta> setMints = pwalletMain->zt_cashTracker->ListMints(true, true, true);
+    set<CMintMeta> setMints = pwalletMain->ztcashTracker->ListMints(true, true, true);
 
     UniValue jsonList(UniValue::VARR);
     for (const CMintMeta& meta : setMints) {
@@ -2578,7 +2578,7 @@ UniValue listzerocoinamounts(const UniValue& params, bool fHelp)
     EnsureWalletIsUnlocked();
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    set<CMintMeta> setMints = pwalletMain->zt_cashTracker->ListMints(true, true, true);
+    set<CMintMeta> setMints = pwalletMain->ztcashTracker->ListMints(true, true, true);
 
     std::map<libzerocoin::CoinDenomination, CAmount> spread;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
@@ -2625,7 +2625,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "mintzerocoin <amount>\n"
-            "Usage: Enter an amount of T_cash to convert to zT_cash"
+            "Usage: Enter an amount of Tcash to convert to zTcash"
             + HelpRequiringPassphrase());
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
@@ -2769,8 +2769,8 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
-    CzTCASHTracker* zt_cashTracker = pwalletMain->zt_cashTracker.get();
-    set<CMintMeta> setMints = zt_cashTracker->ListMints(false, false, true);
+    CzTCASHTracker* ztcashTracker = pwalletMain->ztcashTracker.get();
+    set<CMintMeta> setMints = ztcashTracker->ListMints(false, false, true);
     vector<CMintMeta> vMintsToFind(setMints.begin(), setMints.end());
     vector<CMintMeta> vMintsMissing;
     vector<CMintMeta> vMintsToUpdate;
@@ -2781,14 +2781,14 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     // update the meta data of mints that were marked for updating
     UniValue arrUpdated(UniValue::VARR);
     for (CMintMeta meta : vMintsToUpdate) {
-        zt_cashTracker->UpdateState(meta);
+        ztcashTracker->UpdateState(meta);
         arrUpdated.push_back(meta.hashPubcoin.GetHex());
     }
 
     // delete any mints that were unable to be located on the blockchain
     UniValue arrDeleted(UniValue::VARR);
     for (CMintMeta meta : vMintsMissing) {
-        zt_cashTracker->Archive(meta);
+        ztcashTracker->Archive(meta);
         arrDeleted.push_back(meta.hashPubcoin.GetHex()); 
     }
 
@@ -2809,8 +2809,8 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzTCASHTracker* zt_cashTracker = pwalletMain->zt_cashTracker.get();
-    set<CMintMeta> setMints = zt_cashTracker->ListMints(false, false, false);
+    CzTCASHTracker* ztcashTracker = pwalletMain->ztcashTracker.get();
+    set<CMintMeta> setMints = ztcashTracker->ListMints(false, false, false);
     list<CZerocoinSpend> listSpends = walletdb.ListSpentCoins();
     list<CZerocoinSpend> listUnconfirmedSpends;
 
@@ -2832,7 +2832,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     for (CZerocoinSpend spend : listUnconfirmedSpends) {
         for (auto& meta : setMints) {
             if (meta.hashSerial == GetSerialHash(spend.GetSerial())) {
-                zt_cashTracker->SetPubcoinNotUsed(meta.hashPubcoin);
+                ztcashTracker->SetPubcoinNotUsed(meta.hashPubcoin);
                 walletdb.EraseZerocoinSpendSerialEntry(spend.GetSerial());
                 RemoveSerialFromDB(spend.GetSerial());
                 UniValue obj(UniValue::VOBJ);
@@ -2899,7 +2899,7 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
 
                 "\nArguments:\n"
                 "1. \"include_spent\"        (bool, required) Include mints that have already been spent\n"
-                "2. \"denomination\"         (integer, optional) Export a specific denomination of zT_cash\n"
+                "2. \"denomination\"         (integer, optional) Export a specific denomination of zTcash\n"
 
                 "\nResult\n"
                 "[                   (array of json object)\n"
@@ -2929,8 +2929,8 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
     if (params.size() == 2)
         denomination = libzerocoin::IntToZerocoinDenomination(params[1].get_int());
 
-    CzTCASHTracker* zt_cashTracker = pwalletMain->zt_cashTracker.get();
-    set<CMintMeta> setMints = zt_cashTracker->ListMints(!fIncludeSpent, false, false);
+    CzTCASHTracker* ztcashTracker = pwalletMain->ztcashTracker.get();
+    set<CMintMeta> setMints = ztcashTracker->ListMints(!fIncludeSpent, false, false);
 
     UniValue jsonList(UniValue::VARR);
     for (const CMintMeta& meta : setMints) {
@@ -2974,7 +2974,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
 
                 "\nResult:\n"
                 "\"added\"            (int) the quantity of zerocoin mints that were added\n"
-                "\"value\"            (string) the total zT_cash value of zerocoin mints that were added\n"
+                "\"value\"            (string) the total zTcash value of zerocoin mints that were added\n"
 
                 "\nExamples\n" +
             HelpExampleCli("importzerocoins", "\'[{\"d\":100,\"p\":\"mypubcoin\",\"s\":\"myserial\",\"r\":\"randomness_hex\",\"t\":\"mytxid\",\"h\":104923, \"u\":false},{\"d\":5,...}]\'") +
@@ -3038,7 +3038,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
         CZerocoinMint mint(denom, bnValue, bnRandom, bnSerial, fUsed, nVersion, &privkey);
         mint.SetTxHash(txid);
         mint.SetHeight(nHeight);
-        pwalletMain->zt_cashTracker->Add(mint, true);
+        pwalletMain->ztcashTracker->Add(mint, true);
         count++;
         nValue += libzerocoin::ZerocoinDenominationToAmount(denom);
     }
@@ -3054,7 +3054,7 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
     if(fHelp || !params.empty())
         throw runtime_error(
             "reconsiderzerocoins\n"
-                "\nCheck archived zT_cash list to see if any mints were added to the blockchain.\n"
+                "\nCheck archived zTcash list to see if any mints were added to the blockchain.\n"
 
                 "\nResult\n"
                 "[                                 (array of json objects)\n"
@@ -3122,23 +3122,23 @@ UniValue makekeypair(const UniValue& params, bool fHelp)
     return result;
 }
 
-UniValue setzt_cashseed(const UniValue& params, bool fHelp)
+UniValue setztcashseed(const UniValue& params, bool fHelp)
 {
     if(fHelp || params.size() != 1)
         throw runtime_error(
-            "setzt_cashseed \"seed\"\n"
-            "\nSet the wallet's deterministic zt_cash seed to a specific value.\n" +
+            "setztcashseed \"seed\"\n"
+            "\nSet the wallet's deterministic ztcash seed to a specific value.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
-            "1. \"seed\"        (string, required) The deterministic zt_cash seed.\n"
+            "1. \"seed\"        (string, required) The deterministic ztcash seed.\n"
 
             "\nResult\n"
             "\"success\" : b,  (boolean) Whether the seed was successfully set.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("setzt_cashseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5") +
-            HelpExampleRpc("setzt_cashseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5"));
+            HelpExampleCli("setztcashseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5") +
+            HelpExampleRpc("setztcashseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5"));
 
     EnsureWalletIsUnlocked();
 
@@ -3156,11 +3156,11 @@ UniValue setzt_cashseed(const UniValue& params, bool fHelp)
     return ret;
 }
 
-UniValue getzt_cashseed(const UniValue& params, bool fHelp)
+UniValue getztcashseed(const UniValue& params, bool fHelp)
 {
     if(fHelp || !params.empty())
         throw runtime_error(
-            "getzt_cashseed\n"
+            "getztcashseed\n"
             "\nCheck archived zTCASH list to see if any mints were added to the blockchain.\n" +
             HelpRequiringPassphrase() + "\n"
 
@@ -3168,7 +3168,7 @@ UniValue getzt_cashseed(const UniValue& params, bool fHelp)
             "\"seed\" : s,  (string) The deterministic zTCASH seed.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("getzt_cashseed", "") + HelpExampleRpc("getzt_cashseed", ""));
+            HelpExampleCli("getztcashseed", "") + HelpExampleRpc("getztcashseed", ""));
 
     EnsureWalletIsUnlocked();
 
@@ -3230,10 +3230,10 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
     return arrRet;
 }
 
-UniValue dzt_cashstate(const UniValue& params, bool fHelp) {
+UniValue dztcashstate(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
-                "dzt_cashstate\n"
+                "dztcashstate\n"
                         "\nThe current state of the mintpool of the deterministic zTCASH wallet.\n" +
                 HelpRequiringPassphrase() + "\n"
 
@@ -3244,7 +3244,7 @@ UniValue dzt_cashstate(const UniValue& params, bool fHelp) {
     UniValue obj(UniValue::VOBJ);
     int nCount, nCountLastUsed;
     zwallet->GetState(nCount, nCountLastUsed);
-    obj.push_back(Pair("dzt_cash_count", nCount));
+    obj.push_back(Pair("dztcash_count", nCount));
     obj.push_back(Pair("mintpool_count", nCountLastUsed));
 
     return obj;
@@ -3281,11 +3281,11 @@ void static SearchThread(CzTCASHWallet* zwallet, int nCountStart, int nCountEnd)
     }
 }
 
-UniValue searchdzt_cash(const UniValue& params, bool fHelp)
+UniValue searchdztcash(const UniValue& params, bool fHelp)
 {
     if(fHelp || params.size() != 3)
         throw runtime_error(
-            "searchdzt_cash\n"
+            "searchdztcash\n"
             "\nMake an extended search for deterministically generated zTCASH that have not yet been recognized by the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
@@ -3295,7 +3295,7 @@ UniValue searchdzt_cash(const UniValue& params, bool fHelp)
             "3. \"threads\"     (numeric) How many threads should this operation consume.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("searchdzt_cash", "1, 100, 2") + HelpExampleRpc("searchdzt_cash", "1, 100, 2"));
+            HelpExampleCli("searchdztcash", "1, 100, 2") + HelpExampleRpc("searchdztcash", "1, 100, 2"));
 
     EnsureWalletIsUnlocked();
 
@@ -3311,7 +3311,7 @@ UniValue searchdzt_cash(const UniValue& params, bool fHelp)
 
     CzTCASHWallet* zwallet = pwalletMain->zwalletMain;
 
-    boost::thread_group* dzt_cashThreads = new boost::thread_group();
+    boost::thread_group* dztcashThreads = new boost::thread_group();
     int nRangePerThread = nRange / nThreads;
 
     int nPrevThreadEnd = nCount - 1;
@@ -3319,12 +3319,12 @@ UniValue searchdzt_cash(const UniValue& params, bool fHelp)
         int nStart = nPrevThreadEnd + 1;;
         int nEnd = nStart + nRangePerThread;
         nPrevThreadEnd = nEnd;
-        dzt_cashThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
+        dztcashThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
     }
 
-    dzt_cashThreads->join_all();
+    dztcashThreads->join_all();
 
-    zwallet->RemoveMintsFromPool(pwalletMain->zt_cashTracker->GetSerialHashes());
+    zwallet->RemoveMintsFromPool(pwalletMain->ztcashTracker->GetSerialHashes());
     zwallet->SyncWithChain(false);
 
     //todo: better response

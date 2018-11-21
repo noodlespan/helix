@@ -15,7 +15,7 @@
 #include <iostream>
 #include <accumulators.h>
 #include "wallet.h"
-#include "zt_cashwallet.h"
+#include "ztcashwallet.h"
 
 using namespace libzerocoin;
 

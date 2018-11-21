@@ -3761,7 +3761,7 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
     </message>
 </context>
 <context>
-    <name>ZT_cashControlDialog</name>
+    <name>ZTcashControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

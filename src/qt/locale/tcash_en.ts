@@ -2994,7 +2994,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="+52"/>
         <location line="+46"/>
-        <source>Enter an amount of T_cash to convert to zT_cash</source>
+        <source>Enter an amount of Tcash to convert to zTcash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3073,12 +3073,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+45"/>
-        <source>zT_cash Control</source>
+        <source>zTcash Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>zT_cash Selected:</source>
+        <source>zTcash Selected:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3590,7 +3590,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>zT_cash Mint</source>
+        <source>zTcash Mint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5546,27 +5546,27 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted T_cash to zT_cash</source>
+        <source>Converted Tcash to zTcash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Spent zT_cash</source>
+        <source>Spent zTcash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Minted Change as zT_cash from zT_cash Spend</source>
+        <source>Minted Change as zTcash from zTcash Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zT_cash to T_cash</source>
+        <source>Converted zTcash to Tcash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5576,7 +5576,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+22"/>
-        <source>zT_cash Accumulator</source>
+        <source>zTcash Accumulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5715,7 +5715,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5730,7 +5730,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Zerocoin Spend, Change in zT_cash</source>
+        <source>Zerocoin Spend, Change in zTcash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5940,10 +5940,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZT_cashControlDialog</name>
+    <name>ZTcashControlDialog</name>
     <message>
-        <location filename="../forms/zt_cashcontroldialog.ui" line="+20"/>
-        <source>Select zT_cash to Spend</source>
+        <location filename="../forms/ztcashcontroldialog.ui" line="+20"/>
+        <source>Select zTcash to Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5959,7 +5959,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-7"/>
-        <source>zT_cash</source>
+        <source>zTcash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

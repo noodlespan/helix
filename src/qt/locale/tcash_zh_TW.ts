@@ -971,7 +971,7 @@
     </message>
     </context>
 <context>
-    <name>ZT_cashControlDialog</name>
+    <name>ZTcashControlDialog</name>
     </context>
 <context>
     <name>tcash-core</name>

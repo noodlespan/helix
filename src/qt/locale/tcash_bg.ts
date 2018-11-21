@@ -2076,7 +2076,7 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с Tcash мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
     </message>
     <message>
-        <source>Enter an amount of T_cash to convert to zT_cash</source>
+        <source>Enter an amount of Tcash to convert to zTcash</source>
         <translation>Въведете колко TCASH  да се конвертират в zTCASH</translation>
     </message>
     <message>
@@ -2132,11 +2132,11 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Състояния и/или Съобщения от последните действия по сечене на монети.</translation>
     </message>
     <message>
-        <source>zT_cash Control</source>
+        <source>zTcash Control</source>
         <translation>zTCASH Контрол</translation>
     </message>
     <message>
-        <source>zT_cash Selected:</source>
+        <source>zTcash Selected:</source>
         <translation>Избрани zTCASH:</translation>
     </message>
     <message>
@@ -2474,7 +2474,7 @@ Please be patient...</source>
         <translation>Харченето на Zerocoin се провали със статус =</translation>
     </message>
     <message>
-        <source>zT_cash Spend #: </source>
+        <source>zTcash Spend #: </source>
         <translation>zTCASH Похарчени #:</translation>
     </message>
     <message>
@@ -2498,7 +2498,7 @@ Please be patient...</source>
         <translation>адрес:</translation>
     </message>
     <message>
-        <source>zT_cash Mint</source>
+        <source>zTcash Mint</source>
         <translation>Сечене на zTCASH</translation>
     </message>
     <message>
@@ -3955,23 +3955,23 @@ Please be patient...</source>
         <translation>Обфускирани</translation>
     </message>
     <message>
-        <source>Converted T_cash to zT_cash</source>
+        <source>Converted Tcash to zTcash</source>
         <translation>Конвертиран TCASH във zTCASH</translation>
     </message>
     <message>
-        <source>Spent zT_cash</source>
+        <source>Spent zTcash</source>
         <translation>Похарчени zTCASH</translation>
     </message>
     <message>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation>Получен TCASH от zTCASH</translation>
     </message>
     <message>
-        <source>Minted Change as zT_cash from zT_cash Spend</source>
+        <source>Minted Change as zTcash from zTcash Spend</source>
         <translation>Исечено ресто като zTCASH от похарчените zTCASH</translation>
     </message>
     <message>
-        <source>Converted zT_cash to T_cash</source>
+        <source>Converted zTcash to Tcash</source>
         <translation>Конвертирани zTCASH в TCASH</translation>
     </message>
     <message>
@@ -3979,7 +3979,7 @@ Please be patient...</source>
         <translation>наблюдение само</translation>
     </message>
     <message>
-        <source>zT_cash Accumulator</source>
+        <source>zTcash Accumulator</source>
         <translation>zTCASH Акумулатор</translation>
     </message>
     <message>
@@ -4086,7 +4086,7 @@ Please be patient...</source>
         <translation>Мастърноуд възнаграждение</translation>
     </message>
     <message>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation>Получен TCASH от zTCASH</translation>
     </message>
     <message>
@@ -4098,7 +4098,7 @@ Please be patient...</source>
         <translation>Харчене на Zerocoin</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zT_cash</source>
+        <source>Zerocoin Spend, Change in zTcash</source>
         <translation>Харчене на Zerocoin, Ресто в zTCASH</translation>
     </message>
     <message>
@@ -4259,9 +4259,9 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZT_cashControlDialog</name>
+    <name>ZTcashControlDialog</name>
     <message>
-        <source>Select zT_cash to Spend</source>
+        <source>Select zTcash to Spend</source>
         <translation>Изберете zTCASH за Изпращане</translation>
     </message>
     <message>
@@ -4273,7 +4273,7 @@ Please be patient...</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zT_cash</source>
+        <source>zTcash</source>
         <translation>zTCASH</translation>
     </message>
     <message>

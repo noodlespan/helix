@@ -2080,7 +2080,7 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>표시된 정보가 오래되었을 수 있습니다. 연결이 완료되면 지갑이 Tcash 네트워크와 자동으로 동기화될 예정이지만, 아직 해당 프로세스가 완료되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Enter an amount of T_cash to convert to zT_cash</source>
+        <source>Enter an amount of Tcash to convert to zTcash</source>
         <translation>zTCASH로 변환할 TCASH 수량을 입력하세요.</translation>
     </message>
     <message>
@@ -2136,11 +2136,11 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>마지막 발행 이후 상태나 메세지</translation>
     </message>
     <message>
-        <source>zT_cash Control</source>
+        <source>zTcash Control</source>
         <translation>zTCASH 설정</translation>
     </message>
     <message>
-        <source>zT_cash Selected:</source>
+        <source>zTcash Selected:</source>
         <translation>선택한 zTCASH : </translation>
     </message>
     <message>
@@ -2478,8 +2478,8 @@ Please be patient...</source>
         <translation>제로코인 송금 실패 상태 =</translation>
     </message>
     <message>
-        <source>zT_cash Spend #: </source>
-        <translation>zT_cash 송금 #: </translation>
+        <source>zTcash Spend #: </source>
+        <translation>zTcash 송금 #: </translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -2502,7 +2502,7 @@ Please be patient...</source>
         <translation>주소:</translation>
     </message>
     <message>
-        <source>zT_cash Mint</source>
+        <source>zTcash Mint</source>
         <translation>zTCASH 생성</translation>
     </message>
     <message>
@@ -3961,32 +3961,32 @@ Please be patient...</source>
         <translation>난독화</translation>
     </message>
     <message>
-        <source>Converted T_cash to zT_cash</source>
+        <source>Converted Tcash to zTcash</source>
         <translation>zTCASH로 변환된 TCASH</translation>
     </message>
     <message>
-        <source>Spent zT_cash</source>
+        <source>Spent zTcash</source>
         <translation>전송된 zTCASH</translation>
     </message>
     <message>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation>zTCASH로 전송받은 TCASH</translation>
     </message>
     <message>
-        <source>Minted Change as zT_cash from zT_cash Spend</source>
+        <source>Minted Change as zTcash from zTcash Spend</source>
         <translation>zTCASH 전송후 남은 잔돈 zTCASH 생성됨</translation>
     </message>
     <message>
-        <source>Converted zT_cash to T_cash</source>
-        <translation>zT_cash에서 T_cash로 변환됨</translation>
+        <source>Converted zTcash to Tcash</source>
+        <translation>zTcash에서 Tcash로 변환됨</translation>
     </message>
     <message>
         <source>watch-only</source>
         <translation>읽기 전용</translation>
     </message>
     <message>
-        <source>zT_cash Accumulator</source>
-        <translation>zT_cash 누산기</translation>
+        <source>zTcash Accumulator</source>
+        <translation>zTcash 누산기</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -4096,7 +4096,7 @@ Please be patient...</source>
         <translation>마스터노드 보상 </translation>
     </message>
     <message>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation>zTCASH로 전송받은 TCASH</translation>
     </message>
     <message>
@@ -4108,7 +4108,7 @@ Please be patient...</source>
         <translation>제로코인 전송</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zT_cash</source>
+        <source>Zerocoin Spend, Change in zTcash</source>
         <translation>제로코인 전송, 잔돈은 zTCASH</translation>
     </message>
     <message>
@@ -4277,9 +4277,9 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZT_cashControlDialog</name>
+    <name>ZTcashControlDialog</name>
     <message>
-        <source>Select zT_cash to Spend</source>
+        <source>Select zTcash to Spend</source>
         <translation>전송할 zTCASH 선택</translation>
     </message>
     <message>
@@ -4291,8 +4291,8 @@ Please be patient...</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zT_cash</source>
-        <translation>zT_cash</translation>
+        <source>zTcash</source>
+        <translation>zTcash</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>

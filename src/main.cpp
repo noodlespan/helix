@@ -91,7 +91,7 @@ bool fAlerts = DEFAULT_ALERTS;
 unsigned int nStakeMinAge = 4 * 60 * 60;
 int64_t nReserveBalance = 0;
 
-/** Fees smaller than this (in ut_cash) are considered zero fee (for relaying and mining)
+/** Fees smaller than this (in utcash) are considered zero fee (for relaying and mining)
  * We are ~100 times smaller then bitcoin now (2015-06-23), set minRelayTxFee only 10 times higher
  * so it's still 10 times lower comparing to bitcoin.
  */
@@ -1585,7 +1585,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 CoinSpend spend = TxInToZerocoinSpend(txIn);
                 if (!ContextualCheckZerocoinSpend(tx, spend, chainActive.Tip(), 0))
                     return state.Invalid(error("%s: ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                               tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zt_cash");
+                                               tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-ztcash");
             }
         } else {
             LOCK(pool.cs);

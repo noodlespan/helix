@@ -3974,27 +3974,27 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>枚数は残高から増減されます。</translation>
     </message>
     <message>
-        <source>Converted T_cash to zT_cash</source>
+        <source>Converted Tcash to zTcash</source>
         <translation>TCASHをzTCASHへ変換</translation>
     </message>
     <message>
-        <source>Spent zT_cash</source>
+        <source>Spent zTcash</source>
         <translation>zTCASHを送金</translation>
     </message>
     <message>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation>zTCASHによる受け取り</translation>
     </message>
     <message>
-        <source>Minted Change as zT_cash from zT_cash Spend</source>
+        <source>Minted Change as zTcash from zTcash Spend</source>
         <translation>zTCASHの送金のお釣りをzTCASHに変換</translation>
     </message>
     <message>
-        <source>Converted zT_cash to T_cash</source>
+        <source>Converted zTcash to Tcash</source>
         <translation>zTCASHからTCASHへ変換</translation>
     </message>
     <message>
-        <source>zT_cash Accumulator</source>
+        <source>zTcash Accumulator</source>
         <translation>zTCASHアキュムレータ</translation>
     </message>
 </context>
@@ -4173,7 +4173,7 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>から</translation>
     </message>
     <message>
-        <source>Received T_cash from zT_cash</source>
+        <source>Received Tcash from zTcash</source>
         <translation>zTCASHからTCASHへの受け取り</translation>
     </message>
     <message>
@@ -4185,7 +4185,7 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>ゼロコインの送金</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zT_cash</source>
+        <source>Zerocoin Spend, Change in zTcash</source>
         <translation>ゼロコインの送金,お釣りをzTCASHで受け取り</translation>
     </message>
     <message>
@@ -5550,7 +5550,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>Tcashの全特徴を無効化する(マスターノード/匿名化/SwiftX/Budget) (0-1, デフォルト: %u)</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zT_cash minting (0-1, default: %u)</source>
+        <source>Enable automatic wallet backups triggered after each zTcash minting (0-1, default: %u)</source>
         <translation>zTCASHへの変換後自動でウォレットをバックアップする( 0-1, デフォルト: %u)</translation>
     </message>
     <message>
@@ -5731,9 +5731,9 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
     </message>
 </context>
 <context>
-    <name>zt_cashcontroldialog</name>
+    <name>ztcashcontroldialog</name>
     <message>
-        <source>Select zT_cash to Spend</source>
+        <source>Select zTcash to Spend</source>
         <translation>送金したいzTCASHを選択</translation>
     </message>
     <message>
@@ -5768,7 +5768,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>表示されている情報は古いものかもしれません。Tcashネットワークに接続後自動的に同期が行われますが、まだ同期は完了していません。</translation>
     </message>
     <message>
-        <source>Enter an amount of T_cash to convert to zT_cash</source>
+        <source>Enter an amount of Tcash to convert to zTcash</source>
         <translation>zTCASHへ変換したいTCASHの枚数を入力</translation>
     </message>
     <message>
@@ -5816,11 +5816,11 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>ステータス・直前の変換アクションでのメッセージログ。</translation>
     </message>
     <message>
-        <source>zT_cash Control</source>
+        <source>zTcash Control</source>
         <translation>zTCASH コントロール</translation>
     </message>
     <message>
-        <source>zT_cash Selected:</source>
+        <source>zTcash Selected:</source>
         <translation>選択された zTCASH:</translation>
     </message>
     <message>

@@ -403,7 +403,7 @@ bool CCryptoKeyStore::AddDeterministicSeed(const uint256& seed)
         if (db.WriteZTCASHSeed(hashSeed, ToByteVector(seed))) {
             return true;
         }
-        strErr = "save zt_cashseed to wallet";
+        strErr = "save ztcashseed to wallet";
     }
                 //the use case for this is no password set seed, mint dzTCASH,
 

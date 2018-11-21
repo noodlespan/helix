@@ -2032,8 +2032,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Возможно отображаемая информация устарела. Ваш кошелек автоматически синхронизируется с сетью Tcash после установки соединения, но этот процесс еще не завершен. </translation>
     </message>
     <message>
-        <source>Enter an amount of T_cash to convert to zT_cash</source>
-        <translation>Введите сумму в T_cash для  конвертации в zT_cash</translation>
+        <source>Enter an amount of Tcash to convert to zTcash</source>
+        <translation>Введите сумму в Tcash для  конвертации в zTcash</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -3198,7 +3198,7 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
     </message>
     </context>
 <context>
-    <name>ZT_cashControlDialog</name>
+    <name>ZTcashControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
