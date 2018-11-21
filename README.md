@@ -1,16 +1,16 @@
-Helix Core integration/staging repository
+Tcash Core integration/staging repository
 =====================================
 
-[![Build Status](https://travis-ci.org/ProjectHelixCoin/helix.svg?branch=master)](https://travis-ci.org/ProjectHelixCoin/helix) [![GitHub version](https://badge.fury.io/gh/projecthelixcoin%2Fhelix.svg)](https://badge.fury.io/gh/projecthelixcoin%2Fhelix)
+[![Build Status](https://travis-ci.org/ProjectTcashCoin/Tcash.svg?branch=master)](https://travis-ci.org/ProjectTcashCoin/Tcash) [![GitHub version](https://badge.fury.io/gh/projectTcashcoin%2FTcash.svg)](https://badge.fury.io/gh/projectTcashcoin%2FTcash)
 
-Helix is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
+Tcash is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
 - Anonymized transactions using zerocoin technology
 - 100% Proof of Stake 3.0 Consensus protocol, allowing very low transaction fees and energy expenditure, and staking rewards to all participants in the network
 - Masternode technology used to secure the network and provide the above features, each Masternode is secured
   with collateral of 10K HLIX
 - Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
 
-Since then, the Helix repository has been rebaselined to show the fork relationship properly.
+Since then, the Tcash repository has been rebaselined to show the fork relationship properly.
 
 ## BCT Thread ##
 
@@ -40,4 +40,4 @@ https://bitcointalk.org/index.php?topic=4956675.0
 <tr><td>> 58,545,902</td><td>0 HLIX</td><td>0 HLIX</td><td>0 HLIX</td></tr>
 </table>
 
-The Helix development budget is up to a maximum of 10% HLIX per block, paid out based on approved proposals as voted on by the Helix masternode owners through the community governance process.
+The Tcash development budget is up to a maximum of 10% HLIX per block, paid out based on approved proposals as voted on by the Tcash masternode owners through the community governance process.
