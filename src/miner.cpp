@@ -248,8 +248,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                     nTotalIn = tx.GetZerocoinSpent();
 
                     //Give a high priority to zerocoinspends to get into the next block
-                    //Priority = (age^6+100000)*amount - gives higher priority to zhlixs that have been in mempool long
-                    //and higher priority to zhlixs that are large in value
+                    //Priority = (age^6+100000)*amount - gives higher priority to zt_cashs that have been in mempool long
+                    //and higher priority to zt_cashs that are large in value
                     int64_t nTimeSeen = GetAdjustedTime();
                     double nConfs = 100000;
 
@@ -263,7 +263,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                     double nTimePriority = std::pow(GetAdjustedTime() - nTimeSeen, 6);
 
-                    // zHLIX spends can have very large priority, use non-overflowing safe functions
+                    // zTCASH spends can have very large priority, use non-overflowing safe functions
                     dPriority = double_safe_addition(dPriority, (nTimePriority * nConfs));
                     dPriority = double_safe_multiplication(dPriority, nTotalIn);
 
@@ -304,7 +304,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
                 int nConf = nHeight - coins->nHeight;
 
-                // zHLIX spends can have very large priority, use non-overflowing safe functions
+                // zTCASH spends can have very large priority, use non-overflowing safe functions
                 dPriority = double_safe_addition(dPriority, ((double)nValueIn * nConf));
 
             }
@@ -377,7 +377,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             if (!view.HaveInputs(tx))
                 continue;
 
-            // double check that there are no double spent zHlix spends in this block or tx
+            // double check that there are no double spent zT_cash spends in this block or tx
             if (tx.IsZerocoinSpend()) {
                 int nHeightTx = 0;
                 if (IsTransactionInChain(tx.GetHash(), nHeightTx))
@@ -399,7 +399,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
                         vTxSerials.emplace_back(spend.getCoinSerialNumber());
                     }
                 }
-                //This zHLIX serial has already been included in the block, do not add this tx.
+                //This zTCASH serial has already been included in the block, do not add this tx.
                 if (fDoubleSerial)
                     continue;
             }
@@ -479,7 +479,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             uint256 nCheckpoint;
             uint256 hashBlockLastAccumulated = chainActive[nHeight - (nHeight % 10) - 10]->GetBlockHash();
             if (nHeight >= pCheckpointCache.first || pCheckpointCache.second.first != hashBlockLastAccumulated) {
-                //For the period before v2 activation, zHLIX will be disabled and previous block's checkpoint is all that will be needed
+                //For the period before v2 activation, zTCASH will be disabled and previous block's checkpoint is all that will be needed
                 pCheckpointCache.second.second = pindexPrev->nAccumulatorCheckpoint;
                 if (pindexPrev->nHeight + 2 >= Params().Zerocoin_LastOldParams()) {
                     AccumulatorMap mapAccumulators(Params().Zerocoin_Params());

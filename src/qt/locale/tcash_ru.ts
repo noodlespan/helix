@@ -172,7 +172,7 @@
         <translation>Подтверждение шифрования кошелька</translation>
     </message>
     <message>
-        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLIXs from being stolen by malware infecting your computer.</source>
+        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your TCASHs from being stolen by malware infecting your computer.</source>
         <translation>Tcash сейчас закроется, чтобы завершить процесс шифрования. Помните, что шифрование вашего кошелька не может полностью защитить ваши Tcash от кражи с использованием вредоносного ПО.</translation>
     </message>
     <message>
@@ -180,8 +180,8 @@
         <translation>Вы действительно хотите зашифровать свой кошелек?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLIX&lt;/b&gt;!</source>
-        <translation>Внимание: если вы зашифруете свой кошелёк и потеряете от него пароль, то вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ СВОИ HLIX&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR TCASH&lt;/b&gt;!</source>
+        <translation>Внимание: если вы зашифруете свой кошелёк и потеряете от него пароль, то вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ СВОИ TCASH&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -610,7 +610,7 @@
         <translation>&amp;Конфиденциальность</translation>
     </message>
     <message>
-        <source>Privacy Action for zHLIX and Obfuscation</source>
+        <source>Privacy Action for zTCASH and Obfuscation</source>
         <translation>Конфиденциальное действие и обфускация</translation>
     </message>
     <message>
@@ -1516,32 +1516,32 @@ Please check the address and try again.</source>
         <translation>Выберите уровень конфиденциальности.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Используйте 2 разные мастерноды для смешивания средств до 10000 HLIX</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Используйте 2 разные мастерноды для смешивания средств до 10000 TCASH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Используйте 8 разных мастернод для смешивания средств до 10000 HLIX</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Используйте 8 разных мастернод для смешивания средств до 10000 TCASH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Используйте 16 разных мастернод</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 HLIX to anonymize 10000 HLIX</source>
-        <translation>Этот вариант является самым быстрым и будет стоить порядка ~0.025 HLIX для анонимизации 10000 HLIX</translation>
+        <source>This option is the quickest and will cost about ~0.025 TCASH to anonymize 10000 TCASH</source>
+        <translation>Этот вариант является самым быстрым и будет стоить порядка ~0.025 TCASH для анонимизации 10000 TCASH</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 HLIX to anonymize 10000 HLIX</source>
-        <translation>Это средний по скорости вариант и он будет стоить около 0.05 HLIX для анонимизации 10000 HLIX</translation>
+        <source>This option is moderately fast and will cost about 0.05 TCASH to anonymize 10000 TCASH</source>
+        <translation>Это средний по скорости вариант и он будет стоить около 0.05 TCASH для анонимизации 10000 TCASH</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Это самый медленный и безопасный вариант. Максимальная анонимность стоит</translation>
     </message>
     <message>
-        <source>0.1 HLIX per 10000 HLIX you anonymize.</source>
-        <translation>0.1 HLIX за 10000 HLIX которые вы собираетесь анонимизировать.</translation>
+        <source>0.1 TCASH per 10000 TCASH you anonymize.</source>
+        <translation>0.1 TCASH за 10000 TCASH которые вы собираетесь анонимизировать.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1684,16 +1684,16 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Карта порта, использующего &amp;UPnP</translation>
     </message>
     <message>
-        <source>Percentage of incoming HLIX which get automatically converted to zHLIX via Zerocoin Protocol (min: 10%)</source>
-        <translation>Процент приходящих HLIX, которые автоматически конвертируются в zHLIX благодаря Zerocoin протоколу (min: 10%)</translation>
+        <source>Percentage of incoming TCASH which get automatically converted to zTCASH via Zerocoin Protocol (min: 10%)</source>
+        <translation>Процент приходящих TCASH, которые автоматически конвертируются в zTCASH благодаря Zerocoin протоколу (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zHLIX</source>
-        <translation>Процент  авточеканненых zHLIX</translation>
+        <source>Percentage of autominted zTCASH</source>
+        <translation>Процент  авточеканненых zTCASH</translation>
     </message>
     <message>
-        <source>Preferred Automint zHLIX Denomination</source>
-        <translation>Предпочитаемый номинал авточеканной  монеты  zHLIX</translation>
+        <source>Preferred Automint zTCASH Denomination</source>
+        <translation>Предпочитаемый номинал авточеканной  монеты  zTCASH</translation>
     </message>
     <message>
         <source>Connect to the Tcash network through a SOCKS5 proxy.</source>
@@ -1827,8 +1827,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>HLIX Balances</source>
-        <translation>Баланс HLIX</translation>
+        <source>TCASH Balances</source>
+        <translation>Баланс TCASH</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1891,12 +1891,12 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Расходуемый:</translation>
     </message>
     <message>
-        <source>HLIX:</source>
-        <translation>HLIX:</translation>
+        <source>TCASH:</source>
+        <translation>TCASH:</translation>
     </message>
     <message>
-        <source>zHLIX:</source>
-        <translation>zHLIX:</translation>
+        <source>zTCASH:</source>
+        <translation>zTCASH:</translation>
     </message>
     <message>
         <source>0 %</source>
@@ -2020,8 +2020,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>HLIX which were anonymized via Zerocin Protocol</source>
-        <translation>HLIX, который был анонимно использован через Zerocoin протокол</translation>
+        <source>TCASH which were anonymized via Zerocin Protocol</source>
+        <translation>TCASH, который был анонимно использован через Zerocoin протокол</translation>
     </message>
     <message>
         <source>Zerocoin Actions:</source>
@@ -2032,8 +2032,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Возможно отображаемая информация устарела. Ваш кошелек автоматически синхронизируется с сетью Tcash после установки соединения, но этот процесс еще не завершен. </translation>
     </message>
     <message>
-        <source>Enter an amount of Hlix to convert to zHlix</source>
-        <translation>Введите сумму в Hlix для  конвертации в zHlix</translation>
+        <source>Enter an amount of T_cash to convert to zT_cash</source>
+        <translation>Введите сумму в T_cash для  конвертации в zT_cash</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2706,8 +2706,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Изменить:</translation>
     </message>
     <message>
-        <source>0 HLIX</source>
-        <translation>0 HLIX</translation>
+        <source>0 TCASH</source>
+        <translation>0 TCASH</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3198,7 +3198,7 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
     </message>
     </context>
 <context>
-    <name>ZHlixControlDialog</name>
+    <name>ZT_cashControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

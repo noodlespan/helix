@@ -19,18 +19,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(HLIX);
-    unitlist.append(mHLIX);
-    unitlist.append(uHLIX);
+    unitlist.append(TCASH);
+    unitlist.append(mTCASH);
+    unitlist.append(uTCASH);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case HLIX:
-    case mHLIX:
-    case uHLIX:
+    case TCASH:
+    case mTCASH:
+    case uTCASH:
         return true;
     default:
         return false;
@@ -40,11 +40,11 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case HLIX:
+    case TCASH:
         return QString("tcash");
-    case mHLIX:
+    case mTCASH:
         return QString("mtcash");
-    case uHLIX:
+    case uTCASH:
         return QString::fromUtf8("utcash");
     default:
         return QString("???");
@@ -55,23 +55,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case HLIX:
-            return QString("HLIX");
-        case mHLIX:
-            return QString("mHLIX");
-        case uHLIX:
-            return QString::fromUtf8("μHLIX");
+        case TCASH:
+            return QString("TCASH");
+        case mTCASH:
+            return QString("mTCASH");
+        case uTCASH:
+            return QString::fromUtf8("μTCASH");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case HLIX:
-            return QString("tHLIX");
-        case mHLIX:
-            return QString("mtHLIX");
-        case uHLIX:
-            return QString::fromUtf8("μtHLIX");
+        case TCASH:
+            return QString("tTCASH");
+        case mTCASH:
+            return QString("mtTCASH");
+        case uTCASH:
+            return QString::fromUtf8("μtTCASH");
         default:
             return QString("???");
         }
@@ -82,23 +82,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case HLIX:
-            return QString("HLIX");
-        case mHLIX:
-            return QString("Milli-HLIX (1 / 1" THIN_SP_UTF8 "000)");
-        case uHLIX:
-            return QString("Micro-HLIX (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case TCASH:
+            return QString("TCASH");
+        case mTCASH:
+            return QString("Milli-TCASH (1 / 1" THIN_SP_UTF8 "000)");
+        case uTCASH:
+            return QString("Micro-TCASH (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case HLIX:
-            return QString("TestHLIXs");
-        case mHLIX:
-            return QString("Milli-TestHLIX (1 / 1" THIN_SP_UTF8 "000)");
-        case uHLIX:
-            return QString("Micro-TestHLIX (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case TCASH:
+            return QString("TestTCASHs");
+        case mTCASH:
+            return QString("Milli-TestTCASH (1 / 1" THIN_SP_UTF8 "000)");
+        case uTCASH:
+            return QString("Micro-TestTCASH (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -108,11 +108,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case HLIX:
+    case TCASH:
         return 100000000;
-    case mHLIX:
+    case mTCASH:
         return 100000;
-    case uHLIX:
+    case uTCASH:
         return 100;
     default:
         return 100000000;
@@ -122,11 +122,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case HLIX:
+    case TCASH:
         return 8;
-    case mHLIX:
+    case mTCASH:
         return 5;
-    case uHLIX:
+    case uTCASH:
         return 2;
     default:
         return 0;

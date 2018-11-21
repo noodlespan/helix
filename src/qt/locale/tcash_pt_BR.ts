@@ -172,16 +172,16 @@
         <translation>Confirmar criptografia de carteira</translation>
     </message>
     <message>
-        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLIXs from being stolen by malware infecting your computer.</source>
-        <translation>Tcash vai fechar agora para finalizar o processo de criptografia. Lembre-se que encriptar sua carteira não pode proteger totalmente suas HLIXs de serem roubadas por malwares infectando seu computador.</translation>
+        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your TCASHs from being stolen by malware infecting your computer.</source>
+        <translation>Tcash vai fechar agora para finalizar o processo de criptografia. Lembre-se que encriptar sua carteira não pode proteger totalmente suas TCASHs de serem roubadas por malwares infectando seu computador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Você tem certeza que deseja criptografar sua carteira?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLIX&lt;/b&gt;!</source>
-        <translation>Aviso: se você criptografar sua carteira e perder sua senha você &lt;b&gt;PERDERÁ TODAS AS SUAS HLIX&lt;b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR TCASH&lt;/b&gt;!</source>
+        <translation>Aviso: se você criptografar sua carteira e perder sua senha você &lt;b&gt;PERDERÁ TODAS AS SUAS TCASH&lt;b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1448,32 +1448,32 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Favor selecionar o nível de privacidade.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Use 2 masternodes separados para embaralhar fundos até 10000 HLIX</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Use 2 masternodes separados para embaralhar fundos até 10000 TCASH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Use 8 masternodes separados para embaralhar fundos até 10000 HLIX</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Use 8 masternodes separados para embaralhar fundos até 10000 TCASH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Use 16 masternodes separados</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 HLIX to anonymize 10000 HLIX</source>
-        <translation>Está opção é a mais rápida e vai custar em torno de ~0.025 HLIX para anonimizar 10000 HLIX</translation>
+        <source>This option is the quickest and will cost about ~0.025 TCASH to anonymize 10000 TCASH</source>
+        <translation>Está opção é a mais rápida e vai custar em torno de ~0.025 TCASH para anonimizar 10000 TCASH</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 HLIX to anonymize 10000 HLIX</source>
-        <translation>Está opção moderamente rápida e vai custar em torno de ~0.05 HLIX para anonimizar 10000 HLIX</translation>
+        <source>This option is moderately fast and will cost about 0.05 TCASH to anonymize 10000 TCASH</source>
+        <translation>Está opção moderamente rápida e vai custar em torno de ~0.05 TCASH para anonimizar 10000 TCASH</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Esta é a opção mais lenta e mais segura. Usando a anonimização máxima vai custar</translation>
     </message>
     <message>
-        <source>0.1 HLIX per 10000 HLIX you anonymize.</source>
-        <translation>0.1 HLIX por 10000 HLIX que deixar anônima.</translation>
+        <source>0.1 TCASH per 10000 TCASH you anonymize.</source>
+        <translation>0.1 TCASH por 10000 TCASH que deixar anônima.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -2425,8 +2425,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Tamanho UTXO:</translation>
     </message>
     <message>
-        <source>0 HLIX</source>
-        <translation>0 HLIX</translation>
+        <source>0 TCASH</source>
+        <translation>0 TCASH</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -2465,8 +2465,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Tempo de confirmação:</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLIXs in fee,&lt;br /&gt;while "at least" pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Se a taxa padrão estiver definida para 1000 uHLIXs e a transação for somente de 250 bytes, então "por kilobyte" pagará somente 250 uHLIXs em taxa,&lt;br /&gt; pagará pelo menos 1000 uHLIXs. Para transações maiores que um kilobyte ambas pagam por kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uTCASHs in fee,&lt;br /&gt;while "at least" pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Se a taxa padrão estiver definida para 1000 uTCASHs e a transação for somente de 250 bytes, então "por kilobyte" pagará somente 250 uTCASHs em taxa,&lt;br /&gt; pagará pelo menos 1000 uTCASHs. Para transações maiores que um kilobyte ambas pagam por kilobyte.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Tcash transactions than the network can process.</source>
@@ -3357,8 +3357,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Enviar Moedas</translation>
     </message>
     <message>
-        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 HLIX.</source>
-        <translation>SwiftTX ainda não suporta o envio de valores altos assim. As transações atualmente são limitadas a %1 HLIX.</translation>
+        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 TCASH.</source>
+        <translation>SwiftTX ainda não suporta o envio de valores altos assim. As transações atualmente são limitadas a %1 TCASH.</translation>
     </message>
 </context>
 <context>
@@ -3401,7 +3401,7 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
     </message>
 </context>
 <context>
-    <name>ZHlixControlDialog</name>
+    <name>ZT_cashControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
@@ -3430,12 +3430,12 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Executar o comando quando uma transação da carteira mudar (%s no cmd será substituído pela TxID)</translation>
     </message>
     <message>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Taxas (em HLIX/Kb) menores que isso serão consideradas taxa zero para propagação (padrão: %s)</translation>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Taxas (em TCASH/Kb) menores que isso serão consideradas taxa zero para propagação (padrão: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Taxas (em HLIX/Kb) menores que isso serão consideradas taxa zero para a criação da transação (padrão: %s)</translation>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Taxas (em TCASH/Kb) menores que isso serão consideradas taxa zero para a criação da transação (padrão: %s)</translation>
     </message>
     <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
@@ -3458,8 +3458,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>SwiftTX requer inputs com pelo menos 6 confirmações, você precisar aguardar alguns minutos e tentar novamente.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLIX.</source>
-        <translation>Incapaz de localizar fundos para esta transação que não são iguais a 10000 HLIX.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 TCASH.</source>
+        <translation>Incapaz de localizar fundos para esta transação que não são iguais a 10000 TCASH.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -3646,8 +3646,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Falhou em ler o bloco</translation>
     </message>
     <message>
-        <source>Fee (in HLIX/kB) to add to transactions you send (default: %s)</source>
-        <translation>Taxa (em HLIX/kB) a adicionar em transações que você enviar (padrão: %s)</translation>
+        <source>Fee (in TCASH/kB) to add to transactions you send (default: %s)</source>
+        <translation>Taxa (em TCASH/kB) a adicionar em transações que você enviar (padrão: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>

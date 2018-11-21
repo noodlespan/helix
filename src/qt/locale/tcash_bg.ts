@@ -176,7 +176,7 @@
         <translation>Потвърдете шифрирането на портфейла</translation>
     </message>
     <message>
-        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLIXs from being stolen by malware infecting your computer.</source>
+        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your TCASHs from being stolen by malware infecting your computer.</source>
         <translation>Tcash сега ще се затвори, за да довърши процеса по шифриране. Запомнете, че шифрирането на вашия портфейл не може напълно да защити вашия Tcash от това, да бъде откраднат чрез злонамерен софутуер, инфектирал вашия компютър.</translation>
     </message>
     <message>
@@ -184,8 +184,8 @@
         <translation>Сигурни ли сте, че искате да шифрирате вашия портфейл?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLIX&lt;/b&gt;!</source>
-        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ HLIX&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR TCASH&lt;/b&gt;!</source>
+        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ TCASH&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -618,8 +618,8 @@
         <translation>&amp;Поверителност</translation>
     </message>
     <message>
-        <source>Privacy Action for zHLIX and Obfuscation</source>
-        <translation>Поверителни действия за zHLIX и Обфускация</translation>
+        <source>Privacy Action for zTCASH and Obfuscation</source>
+        <translation>Поверителни действия за zTCASH и Обфускация</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -1548,32 +1548,32 @@ Please check the address and try again.</source>
         <translation>Изберете ниво на поверителност.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Използвай 2 различни мастърноуда за смесване на средства над 10000 HLIX</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Използвай 2 различни мастърноуда за смесване на средства над 10000 TCASH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Използвай 8 различни мастърноуда за да смесите средства до 10000 HLIX</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Използвай 8 различни мастърноуда за да смесите средства до 10000 TCASH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Използвай 16 различни мастърноуда</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 HLIX to anonymize 10000 HLIX</source>
-        <translation>Това е най-бързия метод и ще струва около 0.025 HLIX за да скриете 10000 HLIX</translation>
+        <source>This option is the quickest and will cost about ~0.025 TCASH to anonymize 10000 TCASH</source>
+        <translation>Това е най-бързия метод и ще струва около 0.025 TCASH за да скриете 10000 TCASH</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 HLIX to anonymize 10000 HLIX</source>
-        <translation>Тази опция е сравнително бърза и ще струва около 0.05 HLIX за да скриете 10000 HLIX</translation>
+        <source>This option is moderately fast and will cost about 0.05 TCASH to anonymize 10000 TCASH</source>
+        <translation>Тази опция е сравнително бърза и ще струва около 0.05 TCASH за да скриете 10000 TCASH</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Това е най-бавния и най-сигурен вариант за скриване на HLIX. Използването й ще струва</translation>
+        <translation>Това е най-бавния и най-сигурен вариант за скриване на TCASH. Използването й ще струва</translation>
     </message>
     <message>
-        <source>0.1 HLIX per 10000 HLIX you anonymize.</source>
-        <translation>0.1 HLIX за 10000 скрити HLIX</translation>
+        <source>0.1 TCASH per 10000 TCASH you anonymize.</source>
+        <translation>0.1 TCASH за 10000 скрити TCASH</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1712,20 +1712,20 @@ https://www.transifex.com/tcash-project/tcash-project-translations</source>
 https://www.transifex.com/tcash-project/tcash-project-translations</translation>
     </message>
     <message>
-        <source>Percentage of incoming HLIX which get automatically converted to zHLIX via Zerocoin Protocol (min: 10%)</source>
-        <translation>Процент от входящите HLIX, който автоматично да се конвертира в zHLIX посредтвом Zerocoin Протокола (мин: 10%)</translation>
+        <source>Percentage of incoming TCASH which get automatically converted to zTCASH via Zerocoin Protocol (min: 10%)</source>
+        <translation>Процент от входящите TCASH, който автоматично да се конвертира в zTCASH посредтвом Zerocoin Протокола (мин: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zHLIX</source>
-        <translation>Процент автоматично сечени zHLIX</translation>
+        <source>Percentage of autominted zTCASH</source>
+        <translation>Процент автоматично сечени zTCASH</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLIX for this denomination is available</source>
-        <translation>Не бързай с автоматичното конвертиране в zHLIX докато не се съберат достатъчно HLIX за тази деноминация</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough TCASH for this denomination is available</source>
+        <translation>Не бързай с автоматичното конвертиране в zTCASH докато не се съберат достатъчно TCASH за тази деноминация</translation>
     </message>
     <message>
-        <source>Preferred Automint zHLIX Denomination</source>
-        <translation>Предпочитани деноминации, в които да се сече автоматичен zHLIX</translation>
+        <source>Preferred Automint zTCASH Denomination</source>
+        <translation>Предпочитани деноминации, в които да се сече автоматичен zTCASH</translation>
     </message>
     <message>
         <source>Connect to the Tcash network through a SOCKS5 proxy.</source>
@@ -1859,8 +1859,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>От</translation>
     </message>
     <message>
-        <source>HLIX Balances</source>
-        <translation>HLIX Баланс</translation>
+        <source>TCASH Balances</source>
+        <translation>TCASH Баланс</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1927,12 +1927,12 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Комбиниран общ баланс (само озрелите монети)</translation>
     </message>
     <message>
-        <source>HLIX:</source>
-        <translation>HLIX:</translation>
+        <source>TCASH:</source>
+        <translation>TCASH:</translation>
     </message>
     <message>
-        <source>zHLIX:</source>
-        <translation>zHLIX:</translation>
+        <source>zTCASH:</source>
+        <translation>zTCASH:</translation>
     </message>
     <message>
         <source>0 %</source>
@@ -2060,12 +2060,12 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>HLIX which were anonymized via Zerocin Protocol</source>
-        <translation>HLIX скрити посредством Зерокойн протокола</translation>
+        <source>TCASH which were anonymized via Zerocin Protocol</source>
+        <translation>TCASH скрити посредством Зерокойн протокола</translation>
     </message>
     <message>
-        <source>Zerocoin HLIX (zHLIX)</source>
-        <translation>Zerocoin HLIX (zHLIX)</translation>
+        <source>Zerocoin TCASH (zTCASH)</source>
+        <translation>Zerocoin TCASH (zTCASH)</translation>
     </message>
     <message>
         <source>Zerocoin Actions:</source>
@@ -2076,8 +2076,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Информацията на вашия екран може би е стара. Вашия портфейла синхронизира автоматично с Tcash мрежата след като има успешна свръзка, но процеса отнема време и не е завършил все още.</translation>
     </message>
     <message>
-        <source>Enter an amount of Hlix to convert to zHlix</source>
-        <translation>Въведете колко HLIX  да се конвертират в zHLIX</translation>
+        <source>Enter an amount of T_cash to convert to zT_cash</source>
+        <translation>Въведете колко TCASH  да се конвертират в zTCASH</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2088,16 +2088,16 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLIX</source>
-        <translation>zHLIX</translation>
+        <source>zTCASH</source>
+        <translation>zTCASH</translation>
     </message>
     <message>
         <source>Available for Minting:</source>
         <translation>Налични за сечене:</translation>
     </message>
     <message>
-        <source>0.000 000 00 HLIX</source>
-        <translation>0.000 000 00 HLIX</translation>
+        <source>0.000 000 00 TCASH</source>
+        <translation>0.000 000 00 TCASH</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2132,12 +2132,12 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Състояния и/или Съобщения от последните действия по сечене на монети.</translation>
     </message>
     <message>
-        <source>zHlix Control</source>
-        <translation>zHLIX Контрол</translation>
+        <source>zT_cash Control</source>
+        <translation>zTCASH Контрол</translation>
     </message>
     <message>
-        <source>zHlix Selected:</source>
-        <translation>Избрани zHLIX:</translation>
+        <source>zT_cash Selected:</source>
+        <translation>Избрани zTCASH:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2156,8 +2156,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Налични:</translation>
     </message>
     <message>
-        <source>0 zHLIX</source>
-        <translation>0 zHLIX</translation>
+        <source>0 zTCASH</source>
+        <translation>0 zTCASH</translation>
     </message>
     <message>
         <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
@@ -2209,7 +2209,7 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
-        <translation>Изсечи zHLIX от рестото (ще струва допълнително заради таксите)</translation>
+        <translation>Изсечи zTCASH от рестото (ще струва допълнително заради таксите)</translation>
     </message>
     <message>
         <source>If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.</source>
@@ -2396,8 +2396,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Успешно изсечени</translation>
     </message>
     <message>
-        <source> zHLIX in </source>
-        <translation>zHLIX в</translation>
+        <source> zTCASH in </source>
+        <translation>zTCASH в</translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2474,8 +2474,8 @@ Please be patient...</source>
         <translation>Харченето на Zerocoin се провали със статус =</translation>
     </message>
     <message>
-        <source>zHlix Spend #: </source>
-        <translation>zHLIX Похарчени #:</translation>
+        <source>zT_cash Spend #: </source>
+        <translation>zTCASH Похарчени #:</translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -2498,8 +2498,8 @@ Please be patient...</source>
         <translation>адрес:</translation>
     </message>
     <message>
-        <source>zHlix Mint</source>
-        <translation>Сечене на zHLIX</translation>
+        <source>zT_cash Mint</source>
+        <translation>Сечене на zTCASH</translation>
     </message>
     <message>
         <source>Sending successful, return code: </source>
@@ -3127,8 +3127,8 @@ Please be patient...</source>
         <translation>Размер на UTXO:</translation>
     </message>
     <message>
-        <source>0 HLIX</source>
-        <translation>0 HLIX</translation>
+        <source>0 TCASH</source>
+        <translation>0 TCASH</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3179,12 +3179,12 @@ Please be patient...</source>
         <translation>Автоматично избрани монети</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLIXs in fee,&lt;br /&gt;while "at least" pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ако собствената такса е настроена на 1000 uHLIX и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uHLIX входяща такса, &lt;br /&gt;докато "минимална сума" плаща 1000 uHLIX. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uTCASHs in fee,&lt;br /&gt;while "at least" pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ако собствената такса е настроена на 1000 uTCASH и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uTCASH входяща такса, &lt;br /&gt;докато "минимална сума" плаща 1000 uTCASH. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLIXs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Ако собствената такса е настроена на 1000 uHLIX и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uHLIX входяща такса,&lt;br /&gt; докато "минимална сума" плаща 1000 uHLIX. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
+        <source>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uTCASHs in fee,&lt;br /&gt;while "total at least" pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Ако собствената такса е настроена на 1000 uTCASH и превода е само 250 байта, то тогава "за килобайт" само плаща 250 uTCASH входяща такса,&lt;br /&gt; докато "минимална сума" плаща 1000 uTCASH. За транзакции по-големи от килобайт, и двете плащат за килобайт.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Tcash transactions than the network can process.</source>
@@ -3235,8 +3235,8 @@ Please be patient...</source>
         <translation>Добави Получател</translation>
     </message>
     <message>
-        <source>Anonymized HLIX</source>
-        <translation>Анонимизиран HLIX</translation>
+        <source>Anonymized TCASH</source>
+        <translation>Анонимизиран TCASH</translation>
     </message>
     <message>
         <source>SwiftTX</source>
@@ -3296,7 +3296,7 @@ Please be patient...</source>
     </message>
     <message>
         <source>Warning: Invalid Tcash address</source>
-        <translation>Предупреждение: Невалиден HLIX адрес</translation>
+        <translation>Предупреждение: Невалиден TCASH адрес</translation>
     </message>
     <message>
         <source>any available funds (not recommended)</source>
@@ -3955,32 +3955,32 @@ Please be patient...</source>
         <translation>Обфускирани</translation>
     </message>
     <message>
-        <source>Converted Hlix to zHlix</source>
-        <translation>Конвертиран HLIX във zHLIX</translation>
+        <source>Converted T_cash to zT_cash</source>
+        <translation>Конвертиран TCASH във zTCASH</translation>
     </message>
     <message>
-        <source>Spent zHlix</source>
-        <translation>Похарчени zHLIX</translation>
+        <source>Spent zT_cash</source>
+        <translation>Похарчени zTCASH</translation>
     </message>
     <message>
-        <source>Received Hlix from zHlix</source>
-        <translation>Получен HLIX от zHLIX</translation>
+        <source>Received T_cash from zT_cash</source>
+        <translation>Получен TCASH от zTCASH</translation>
     </message>
     <message>
-        <source>Minted Change as zHlix from zHlix Spend</source>
-        <translation>Исечено ресто като zHLIX от похарчените zHLIX</translation>
+        <source>Minted Change as zT_cash from zT_cash Spend</source>
+        <translation>Исечено ресто като zTCASH от похарчените zTCASH</translation>
     </message>
     <message>
-        <source>Converted zHlix to Hlix</source>
-        <translation>Конвертирани zHLIX в HLIX</translation>
+        <source>Converted zT_cash to T_cash</source>
+        <translation>Конвертирани zTCASH в TCASH</translation>
     </message>
     <message>
         <source>watch-only</source>
         <translation>наблюдение само</translation>
     </message>
     <message>
-        <source>zHlix Accumulator</source>
-        <translation>zHLIX Акумулатор</translation>
+        <source>zT_cash Accumulator</source>
+        <translation>zTCASH Акумулатор</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -4086,8 +4086,8 @@ Please be patient...</source>
         <translation>Мастърноуд възнаграждение</translation>
     </message>
     <message>
-        <source>Received Hlix from zHlix</source>
-        <translation>Получен HLIX от zHLIX</translation>
+        <source>Received T_cash from zT_cash</source>
+        <translation>Получен TCASH от zTCASH</translation>
     </message>
     <message>
         <source>Zerocoin Mint</source>
@@ -4098,8 +4098,8 @@ Please be patient...</source>
         <translation>Харчене на Zerocoin</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zHlix</source>
-        <translation>Харчене на Zerocoin, Ресто в zHLIX</translation>
+        <source>Zerocoin Spend, Change in zT_cash</source>
+        <translation>Харчене на Zerocoin, Ресто в zTCASH</translation>
     </message>
     <message>
         <source>Zerocoin Spend to Self</source>
@@ -4215,8 +4215,8 @@ Please be patient...</source>
         <translation>Изпрати Монети</translation>
     </message>
     <message>
-        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 HLIX.</source>
-        <translation>SwiftTX не подържа изпращането на толкова големи суми. Превода е ограничен до %1 HLIX.</translation>
+        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 TCASH.</source>
+        <translation>SwiftTX не подържа изпращането на толкова големи суми. Превода е ограничен до %1 TCASH.</translation>
     </message>
 </context>
 <context>
@@ -4259,10 +4259,10 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZHlixControlDialog</name>
+    <name>ZT_cashControlDialog</name>
     <message>
-        <source>Select zHlix to Spend</source>
-        <translation>Изберете zHLIX за Изпращане</translation>
+        <source>Select zT_cash to Spend</source>
+        <translation>Изберете zTCASH за Изпращане</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4273,8 +4273,8 @@ Please be patient...</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHlix</source>
-        <translation>zHLIX</translation>
+        <source>zT_cash</source>
+        <translation>zTCASH</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4344,12 +4344,12 @@ Please be patient...</source>
         <translation>Командата влиза в сила, когато най-добрия блок се промени (%s в cmd се замества от хаш на блока)</translation>
     </message>
     <message>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Такси (в HLIX/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Такси (в TCASH/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Такси (в HLIX/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Такси (в TCASH/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>

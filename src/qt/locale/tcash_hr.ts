@@ -535,8 +535,8 @@
         <translation>ne</translation>
     </message>
     <message>
-        <source>0 HLIX</source>
-        <translation>0 HLIX</translation>
+        <source>0 TCASH</source>
+        <translation>0 TCASH</translation>
     </message>
     <message>
         <source>Confirmation time:</source>
@@ -783,7 +783,7 @@
     </message>
     </context>
 <context>
-    <name>ZHlixControlDialog</name>
+    <name>ZT_cashControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

@@ -168,16 +168,16 @@
         <translation>Confirma l'encriptació del moneder</translation>
     </message>
     <message>
-        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLIXs from being stolen by malware infecting your computer.</source>
-        <translation>Tcash es tancarà per finalitzar el procés d'encriptació. Recorda que encriptant el teu moneder no protegeix els teus HLIX de ser robats si el teu ordinador està infectat amb programari maliciós.</translation>
+        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your TCASHs from being stolen by malware infecting your computer.</source>
+        <translation>Tcash es tancarà per finalitzar el procés d'encriptació. Recorda que encriptant el teu moneder no protegeix els teus TCASH de ser robats si el teu ordinador està infectat amb programari maliciós.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Estàs segur que vols encriptar el moneder?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLIX&lt;/b&gt;!</source>
-        <translation>Avís: Si encripteu el vostre moneder i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS VOSTRES HLIXS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR TCASH&lt;/b&gt;!</source>
+        <translation>Avís: Si encripteu el vostre moneder i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS VOSTRES TCASHS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1142,24 +1142,24 @@
         <translation>Si us plau, selecciona un nivell de privacitat.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Utilitza 2 masternodes diferents per mesclar fons de fins a 10000 HLIX</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Utilitza 2 masternodes diferents per mesclar fons de fins a 10000 TCASH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Utilitza 8 masternodes diferents per mesclar fons de fins a 10000 HLIX</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Utilitza 8 masternodes diferents per mesclar fons de fins a 10000 TCASH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Utilitza 16 masternodes diferents</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 HLIX to anonymize 10000 HLIX</source>
-        <translation>Aquesta opció és la més ràpida i té un cost d'uns ~0.025 HLIX per anonimitzar 10000 HLIX</translation>
+        <source>This option is the quickest and will cost about ~0.025 TCASH to anonymize 10000 TCASH</source>
+        <translation>Aquesta opció és la més ràpida i té un cost d'uns ~0.025 TCASH per anonimitzar 10000 TCASH</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 HLIX to anonymize 10000 HLIX</source>
-        <translation>Aquesta opció és moderadament ràpida i té un cost d'uns 0.05 HLIX per anonimitzar 10000 HLIX</translation>
+        <source>This option is moderately fast and will cost about 0.05 TCASH to anonymize 10000 TCASH</source>
+        <translation>Aquesta opció és moderadament ràpida i té un cost d'uns 0.05 TCASH per anonimitzar 10000 TCASH</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -1271,12 +1271,12 @@
         <translation>Total:</translation>
     </message>
     <message>
-        <source>HLIX:</source>
-        <translation>HLIX:</translation>
+        <source>TCASH:</source>
+        <translation>TCASH:</translation>
     </message>
     <message>
-        <source>zHLIX:</source>
-        <translation>zHLIX:</translation>
+        <source>zTCASH:</source>
+        <translation>zTCASH:</translation>
     </message>
     <message>
         <source>0 %</source>
@@ -1304,20 +1304,20 @@
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>Zerocoin HLIX (zHLIX)</source>
-        <translation>Zerocoin HLIX (zHLIX)</translation>
+        <source>Zerocoin TCASH (zTCASH)</source>
+        <translation>Zerocoin TCASH (zTCASH)</translation>
     </message>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLIX</source>
-        <translation>zHLIX</translation>
+        <source>zTCASH</source>
+        <translation>zTCASH</translation>
     </message>
     <message>
-        <source>0.000 000 00 HLIX</source>
-        <translation>0.000 000 00 HLIX</translation>
+        <source>0.000 000 00 TCASH</source>
+        <translation>0.000 000 00 TCASH</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -1332,8 +1332,8 @@
         <translation>Import:</translation>
     </message>
     <message>
-        <source>0 zHLIX</source>
-        <translation>0 zHLIX</translation>
+        <source>0 zTCASH</source>
+        <translation>0 zTCASH</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1969,7 +1969,7 @@
     </message>
     </context>
 <context>
-    <name>ZHlixControlDialog</name>
+    <name>ZT_cashControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Quantitat</translation>
@@ -1979,8 +1979,8 @@
         <translation>0</translation>
     </message>
     <message>
-        <source>zHlix</source>
-        <translation>zHlix</translation>
+        <source>zT_cash</source>
+        <translation>zT_cash</translation>
     </message>
     </context>
 <context>

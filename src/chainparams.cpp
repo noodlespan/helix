@@ -340,7 +340,7 @@ public:
 
         assert(hashGenesisBlock == uint256("0x5f1f4acffb2b1f38dc3484ea642607e588f540d27ece5582c8c4991c67337b3b"));
 
-        bech32_hrp = "hlixt";
+        bech32_hrp = "t_casht";
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.

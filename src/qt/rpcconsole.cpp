@@ -293,7 +293,7 @@ RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent),
     ui->openSSLVersion->setText(SSLeay_version(SSLEAY_VERSION));
 #ifdef ENABLE_WALLET
     std::string strPathCustom = GetArg("-backuppath", "");
-    std::string strzhlixPathCustom = GetArg("-zhlixbackuppath", "");
+    std::string strzt_cashPathCustom = GetArg("-zt_cashbackuppath", "");
     int nCustomBackupThreshold = GetArg("-custombackupthreshold", DEFAULT_CUSTOMBACKUPTHRESHOLD);
 
     if(!strPathCustom.empty()) {
@@ -302,13 +302,13 @@ RPCConsole::RPCConsole(QWidget* parent) : QDialog(parent),
         ui->wallet_custombackuppath->show();
     }
 
-    if(!strzhlixPathCustom.empty()) {
-        ui->wallet_customzhlixbackuppath->setText(QString::fromStdString(strzhlixPathCustom));
-        ui->wallet_customzhlixbackuppath_label->setVisible(true);
-        ui->wallet_customzhlixbackuppath->setVisible(true);
+    if(!strzt_cashPathCustom.empty()) {
+        ui->wallet_customzt_cashbackuppath->setText(QString::fromStdString(strzt_cashPathCustom));
+        ui->wallet_customzt_cashbackuppath_label->setVisible(true);
+        ui->wallet_customzt_cashbackuppath->setVisible(true);
     }
 
-    if((!strPathCustom.empty() || !strzhlixPathCustom.empty()) && nCustomBackupThreshold > 0) {
+    if((!strPathCustom.empty() || !strzt_cashPathCustom.empty()) && nCustomBackupThreshold > 0) {
         ui->wallet_custombackupthreshold->setText(QString::fromStdString(std::to_string(nCustomBackupThreshold)));
         ui->wallet_custombackupthreshold_label->setVisible(true);
         ui->wallet_custombackupthreshold->setVisible(true);

@@ -25,9 +25,9 @@ fi
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef HLIX_CONFIG_H])
-AH_TOP([#define HLIX_CONFIG_H])
-AH_BOTTOM([#endif //HLIX_CONFIG_H])
+AH_TOP([#ifndef TCASH_CONFIG_H])
+AH_TOP([#define TCASH_CONFIG_H])
+AH_BOTTOM([#endif //TCASH_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME

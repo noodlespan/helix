@@ -1804,7 +1804,7 @@ UniValue walletpassphrase(const UniValue& params, bool fHelp)
         throw runtime_error(
             "walletpassphrase \"passphrase\" timeout ( anonymizeonly )\n"
             "\nStores the wallet decryption key in memory for 'timeout' seconds.\n"
-            "This is needed prior to performing transactions related to private keys such as sending HLIXs\n"
+            "This is needed prior to performing transactions related to private keys such as sending TCASHs\n"
             "\nArguments:\n"
             "1. \"passphrase\"     (string, required) The wallet passphrase\n"
             "2. timeout            (numeric, required) The time to keep the decryption key in seconds.\n"
@@ -1947,7 +1947,7 @@ UniValue encryptwallet(const UniValue& params, bool fHelp)
             "\nExamples:\n"
             "\nEncrypt you wallet\n" +
             HelpExampleCli("encryptwallet", "\"my pass phrase\"") +
-            "\nNow set the passphrase to use the wallet, such as for signing or sending HLIXs\n" + HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
+            "\nNow set the passphrase to use the wallet, such as for signing or sending TCASHs\n" + HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
             "\nNow we can so something like sign\n" + HelpExampleCli("signmessage", "\"tcashaddress\" \"test message\"") +
             "\nNow lock the wallet again by removing the passphrase\n" + HelpExampleCli("walletlock", "") +
             "\nAs a json rpc call\n" + HelpExampleRpc("encryptwallet", "\"my pass phrase\""));
@@ -1987,7 +1987,7 @@ UniValue lockunspent(const UniValue& params, bool fHelp)
             "lockunspent unlock [{\"txid\":\"txid\",\"vout\":n},...]\n"
             "\nUpdates list of temporarily unspendable outputs.\n"
             "Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.\n"
-            "A locked transaction output will not be chosen by automatic coin selection, when spending HLIXs.\n"
+            "A locked transaction output will not be chosen by automatic coin selection, when spending TCASHs.\n"
             "Locks are stored in memory only. Nodes start with zero locked outputs, and the locked output list\n"
             "is always cleared (by virtue of process exit) when a node stops or fails.\n"
             "Also see the listunspent call\n"
@@ -2104,7 +2104,7 @@ UniValue settxfee(const UniValue& params, bool fHelp)
             "settxfee amount\n"
             "\nSet the transaction fee per kB.\n"
             "\nArguments:\n"
-            "1. amount         (numeric, required) The transaction fee in HLIX/kB rounded to the nearest 0.00000001\n"
+            "1. amount         (numeric, required) The transaction fee in TCASH/kB rounded to the nearest 0.00000001\n"
             "\nResult\n"
             "true|false        (boolean) Returns true if successful\n"
             "\nExamples:\n" +
@@ -2130,7 +2130,7 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
-            "  \"balance\": xxxxxxx,         (numeric) the total HLIX balance of the wallet\n"
+            "  \"balance\": xxxxxxx,         (numeric) the total TCASH balance of the wallet\n"
             "  \"txcount\": xxxxxxx,         (numeric) the total number of transactions in the wallet\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
@@ -2487,7 +2487,7 @@ UniValue multisend(const UniValue& params, bool fHelp)
     //if the user is entering a new MultiSend item
     string strAddress = params[0].get_str();
     if (!IsValidDestinationString(strAddress))
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid HLIX address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid TCASH address");
     if (boost::lexical_cast<int>(params[1].get_str()) < 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, expected valid percentage");
     if (pwalletMain->IsLocked())
@@ -2555,7 +2555,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    set<CMintMeta> setMints = pwalletMain->zhlixTracker->ListMints(true, true, true);
+    set<CMintMeta> setMints = pwalletMain->zt_cashTracker->ListMints(true, true, true);
 
     UniValue jsonList(UniValue::VARR);
     for (const CMintMeta& meta : setMints) {
@@ -2578,7 +2578,7 @@ UniValue listzerocoinamounts(const UniValue& params, bool fHelp)
     EnsureWalletIsUnlocked();
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    set<CMintMeta> setMints = pwalletMain->zhlixTracker->ListMints(true, true, true);
+    set<CMintMeta> setMints = pwalletMain->zt_cashTracker->ListMints(true, true, true);
 
     std::map<libzerocoin::CoinDenomination, CAmount> spread;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
@@ -2625,7 +2625,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "mintzerocoin <amount>\n"
-            "Usage: Enter an amount of Hlix to convert to zHlix"
+            "Usage: Enter an amount of T_cash to convert to zT_cash"
             + HelpRequiringPassphrase());
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
@@ -2633,7 +2633,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     int64_t nTime = GetTimeMillis();
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLIX is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zTCASH is currently disabled due to maintenance.");
 
     EnsureWalletIsUnlocked(true);
 
@@ -2667,9 +2667,9 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 5 || params.size() < 4)
         throw runtime_error(
             "spendzerocoin <amount> <mintchange [true|false]> <minimizechange [true|false]>  <securitylevel [1-100]> <address>\n"
-            "Overview: Convert zHLIX (zerocoins) into HLIX. \n"
+            "Overview: Convert zTCASH (zerocoins) into TCASH. \n"
             "amount: amount to spend\n"
-            "mintchange: if there is left over HLIX (change), the wallet can convert it automatically back to zerocoins [true]\n"
+            "mintchange: if there is left over TCASH (change), the wallet can convert it automatically back to zerocoins [true]\n"
             "minimizechange: try to minimize the returning change  [false]\n"
             "security level: the amount of checkpoints to add to the accumulator. A checkpoint contains 10 blocks worth of zerocoinmints."
                     "The more checkpoints that are added, the more untraceable the transaction will be. Use [100] to add the maximum amount"
@@ -2681,14 +2681,14 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
     
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zHLIX is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zTCASH is currently disabled due to maintenance.");
 
     int64_t nTimeStart = GetTimeMillis();
 
     EnsureWalletIsUnlocked();
 
     CAmount nAmount = AmountFromValue(params[0]);   // Spending amount
-    bool fMintChange = params[1].get_bool();        // Mint change to zHLIX
+    bool fMintChange = params[1].get_bool();        // Mint change to zTCASH
     bool fMinimizeChange = params[2].get_bool();    // Minimize change
     int nSecurityLevel = params[3].get_int();       // Security level
 
@@ -2769,8 +2769,8 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
-    CzHLIXTracker* zhlixTracker = pwalletMain->zhlixTracker.get();
-    set<CMintMeta> setMints = zhlixTracker->ListMints(false, false, true);
+    CzTCASHTracker* zt_cashTracker = pwalletMain->zt_cashTracker.get();
+    set<CMintMeta> setMints = zt_cashTracker->ListMints(false, false, true);
     vector<CMintMeta> vMintsToFind(setMints.begin(), setMints.end());
     vector<CMintMeta> vMintsMissing;
     vector<CMintMeta> vMintsToUpdate;
@@ -2781,14 +2781,14 @@ UniValue resetmintzerocoin(const UniValue& params, bool fHelp)
     // update the meta data of mints that were marked for updating
     UniValue arrUpdated(UniValue::VARR);
     for (CMintMeta meta : vMintsToUpdate) {
-        zhlixTracker->UpdateState(meta);
+        zt_cashTracker->UpdateState(meta);
         arrUpdated.push_back(meta.hashPubcoin.GetHex());
     }
 
     // delete any mints that were unable to be located on the blockchain
     UniValue arrDeleted(UniValue::VARR);
     for (CMintMeta meta : vMintsMissing) {
-        zhlixTracker->Archive(meta);
+        zt_cashTracker->Archive(meta);
         arrDeleted.push_back(meta.hashPubcoin.GetHex()); 
     }
 
@@ -2809,8 +2809,8 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
-    CzHLIXTracker* zhlixTracker = pwalletMain->zhlixTracker.get();
-    set<CMintMeta> setMints = zhlixTracker->ListMints(false, false, false);
+    CzTCASHTracker* zt_cashTracker = pwalletMain->zt_cashTracker.get();
+    set<CMintMeta> setMints = zt_cashTracker->ListMints(false, false, false);
     list<CZerocoinSpend> listSpends = walletdb.ListSpentCoins();
     list<CZerocoinSpend> listUnconfirmedSpends;
 
@@ -2832,7 +2832,7 @@ UniValue resetspentzerocoin(const UniValue& params, bool fHelp)
     for (CZerocoinSpend spend : listUnconfirmedSpends) {
         for (auto& meta : setMints) {
             if (meta.hashSerial == GetSerialHash(spend.GetSerial())) {
-                zhlixTracker->SetPubcoinNotUsed(meta.hashPubcoin);
+                zt_cashTracker->SetPubcoinNotUsed(meta.hashPubcoin);
                 walletdb.EraseZerocoinSpendSerialEntry(spend.GetSerial());
                 RemoveSerialFromDB(spend.GetSerial());
                 UniValue obj(UniValue::VOBJ);
@@ -2899,7 +2899,7 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
 
                 "\nArguments:\n"
                 "1. \"include_spent\"        (bool, required) Include mints that have already been spent\n"
-                "2. \"denomination\"         (integer, optional) Export a specific denomination of zHlix\n"
+                "2. \"denomination\"         (integer, optional) Export a specific denomination of zT_cash\n"
 
                 "\nResult\n"
                 "[                   (array of json object)\n"
@@ -2929,8 +2929,8 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
     if (params.size() == 2)
         denomination = libzerocoin::IntToZerocoinDenomination(params[1].get_int());
 
-    CzHLIXTracker* zhlixTracker = pwalletMain->zhlixTracker.get();
-    set<CMintMeta> setMints = zhlixTracker->ListMints(!fIncludeSpent, false, false);
+    CzTCASHTracker* zt_cashTracker = pwalletMain->zt_cashTracker.get();
+    set<CMintMeta> setMints = zt_cashTracker->ListMints(!fIncludeSpent, false, false);
 
     UniValue jsonList(UniValue::VARR);
     for (const CMintMeta& meta : setMints) {
@@ -2974,7 +2974,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
 
                 "\nResult:\n"
                 "\"added\"            (int) the quantity of zerocoin mints that were added\n"
-                "\"value\"            (string) the total zHlix value of zerocoin mints that were added\n"
+                "\"value\"            (string) the total zT_cash value of zerocoin mints that were added\n"
 
                 "\nExamples\n" +
             HelpExampleCli("importzerocoins", "\'[{\"d\":100,\"p\":\"mypubcoin\",\"s\":\"myserial\",\"r\":\"randomness_hex\",\"t\":\"mytxid\",\"h\":104923, \"u\":false},{\"d\":5,...}]\'") +
@@ -3038,7 +3038,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
         CZerocoinMint mint(denom, bnValue, bnRandom, bnSerial, fUsed, nVersion, &privkey);
         mint.SetTxHash(txid);
         mint.SetHeight(nHeight);
-        pwalletMain->zhlixTracker->Add(mint, true);
+        pwalletMain->zt_cashTracker->Add(mint, true);
         count++;
         nValue += libzerocoin::ZerocoinDenominationToAmount(denom);
     }
@@ -3054,7 +3054,7 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
     if(fHelp || !params.empty())
         throw runtime_error(
             "reconsiderzerocoins\n"
-                "\nCheck archived zHlix list to see if any mints were added to the blockchain.\n"
+                "\nCheck archived zT_cash list to see if any mints were added to the blockchain.\n"
 
                 "\nResult\n"
                 "[                                 (array of json objects)\n"
@@ -3122,30 +3122,30 @@ UniValue makekeypair(const UniValue& params, bool fHelp)
     return result;
 }
 
-UniValue setzhlixseed(const UniValue& params, bool fHelp)
+UniValue setzt_cashseed(const UniValue& params, bool fHelp)
 {
     if(fHelp || params.size() != 1)
         throw runtime_error(
-            "setzhlixseed \"seed\"\n"
-            "\nSet the wallet's deterministic zhlix seed to a specific value.\n" +
+            "setzt_cashseed \"seed\"\n"
+            "\nSet the wallet's deterministic zt_cash seed to a specific value.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
-            "1. \"seed\"        (string, required) The deterministic zhlix seed.\n"
+            "1. \"seed\"        (string, required) The deterministic zt_cash seed.\n"
 
             "\nResult\n"
             "\"success\" : b,  (boolean) Whether the seed was successfully set.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("setzhlixseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5") +
-            HelpExampleRpc("setzhlixseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5"));
+            HelpExampleCli("setzt_cashseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5") +
+            HelpExampleRpc("setzt_cashseed", "63f793e7895dd30d99187b35fbfb314a5f91af0add9e0a4e5877036d1e392dd5"));
 
     EnsureWalletIsUnlocked();
 
     uint256 seed;
     seed.SetHex(params[0].get_str());
 
-    CzHLIXWallet* zwallet = pwalletMain->getZWallet();
+    CzTCASHWallet* zwallet = pwalletMain->getZWallet();
     bool fSuccess = zwallet->SetMasterSeed(seed, true);
     if (fSuccess)
         zwallet->SyncWithChain();
@@ -3156,23 +3156,23 @@ UniValue setzhlixseed(const UniValue& params, bool fHelp)
     return ret;
 }
 
-UniValue getzhlixseed(const UniValue& params, bool fHelp)
+UniValue getzt_cashseed(const UniValue& params, bool fHelp)
 {
     if(fHelp || !params.empty())
         throw runtime_error(
-            "getzhlixseed\n"
-            "\nCheck archived zHLIX list to see if any mints were added to the blockchain.\n" +
+            "getzt_cashseed\n"
+            "\nCheck archived zTCASH list to see if any mints were added to the blockchain.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nResult\n"
-            "\"seed\" : s,  (string) The deterministic zHLIX seed.\n"
+            "\"seed\" : s,  (string) The deterministic zTCASH seed.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("getzhlixseed", "") + HelpExampleRpc("getzhlixseed", ""));
+            HelpExampleCli("getzt_cashseed", "") + HelpExampleRpc("getzt_cashseed", ""));
 
     EnsureWalletIsUnlocked();
 
-    CzHLIXWallet* zwallet = pwalletMain->getZWallet();
+    CzTCASHWallet* zwallet = pwalletMain->getZWallet();
     uint256 seed = zwallet->GetMasterSeed();
 
     UniValue ret(UniValue::VOBJ);
@@ -3186,12 +3186,12 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
     if(fHelp || params.size() != 2)
         throw runtime_error(
             "generatemintlist\n"
-            "\nShow mints that are derived from the deterministic zHLIX seed.\n" +
+            "\nShow mints that are derived from the deterministic zTCASH seed.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments\n"
-            "1. \"count\"  : n,  (numeric) Which sequential zHLIX to start with.\n"
-            "2. \"range\"  : n,  (numeric) How many zHLIX to generate.\n"
+            "1. \"count\"  : n,  (numeric) Which sequential zTCASH to start with.\n"
+            "2. \"range\"  : n,  (numeric) How many zTCASH to generate.\n"
 
             "\nResult:\n"
             "[\n"
@@ -3211,7 +3211,7 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
 
     int nCount = params[0].get_int();
     int nRange = params[1].get_int();
-    CzHLIXWallet* zwallet = pwalletMain->zwalletMain;
+    CzTCASHWallet* zwallet = pwalletMain->zwalletMain;
 
     UniValue arrRet(UniValue::VARR);
     for (int i = nCount; i < nCount + nRange; i++) {
@@ -3230,28 +3230,28 @@ UniValue generatemintlist(const UniValue& params, bool fHelp)
     return arrRet;
 }
 
-UniValue dzhlixstate(const UniValue& params, bool fHelp) {
+UniValue dzt_cashstate(const UniValue& params, bool fHelp) {
     if (fHelp || params.size() != 0)
         throw runtime_error(
-                "dzhlixstate\n"
-                        "\nThe current state of the mintpool of the deterministic zHLIX wallet.\n" +
+                "dzt_cashstate\n"
+                        "\nThe current state of the mintpool of the deterministic zTCASH wallet.\n" +
                 HelpRequiringPassphrase() + "\n"
 
                         "\nExamples\n" +
                 HelpExampleCli("mintpoolstatus", "") + HelpExampleRpc("mintpoolstatus", ""));
 
-    CzHLIXWallet* zwallet = pwalletMain->zwalletMain;
+    CzTCASHWallet* zwallet = pwalletMain->zwalletMain;
     UniValue obj(UniValue::VOBJ);
     int nCount, nCountLastUsed;
     zwallet->GetState(nCount, nCountLastUsed);
-    obj.push_back(Pair("dzhlix_count", nCount));
+    obj.push_back(Pair("dzt_cash_count", nCount));
     obj.push_back(Pair("mintpool_count", nCountLastUsed));
 
     return obj;
 }
 
 
-void static SearchThread(CzHLIXWallet* zwallet, int nCountStart, int nCountEnd)
+void static SearchThread(CzTCASHWallet* zwallet, int nCountStart, int nCountEnd)
 {
     LogPrintf("%s: start=%d end=%d\n", __func__, nCountStart, nCountEnd);
     CWalletDB walletDB(pwalletMain->strWalletFile);
@@ -3268,7 +3268,7 @@ void static SearchThread(CzHLIXWallet* zwallet, int nCountStart, int nCountEnd)
             CBigNum bnSerial;
             CBigNum bnRandomness;
             CKey key;
-            zwallet->SeedToZHLIX(zerocoinSeed, bnValue, bnSerial, bnRandomness, key);
+            zwallet->SeedToZTCASH(zerocoinSeed, bnValue, bnSerial, bnRandomness, key);
 
             uint256 hashPubcoin = GetPubCoinHash(bnValue);
             zwallet->AddToMintPool(make_pair(hashPubcoin, i), true);
@@ -3281,21 +3281,21 @@ void static SearchThread(CzHLIXWallet* zwallet, int nCountStart, int nCountEnd)
     }
 }
 
-UniValue searchdzhlix(const UniValue& params, bool fHelp)
+UniValue searchdzt_cash(const UniValue& params, bool fHelp)
 {
     if(fHelp || params.size() != 3)
         throw runtime_error(
-            "searchdzhlix\n"
-            "\nMake an extended search for deterministically generated zHLIX that have not yet been recognized by the wallet.\n" +
+            "searchdzt_cash\n"
+            "\nMake an extended search for deterministically generated zTCASH that have not yet been recognized by the wallet.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments\n"
-            "1. \"count\"       (numeric) Which sequential zHLIX to start with.\n"
-            "2. \"range\"       (numeric) How many zHLIX to generate.\n"
+            "1. \"count\"       (numeric) Which sequential zTCASH to start with.\n"
+            "2. \"range\"       (numeric) How many zTCASH to generate.\n"
             "3. \"threads\"     (numeric) How many threads should this operation consume.\n"
 
             "\nExamples\n" +
-            HelpExampleCli("searchdzhlix", "1, 100, 2") + HelpExampleRpc("searchdzhlix", "1, 100, 2"));
+            HelpExampleCli("searchdzt_cash", "1, 100, 2") + HelpExampleRpc("searchdzt_cash", "1, 100, 2"));
 
     EnsureWalletIsUnlocked();
 
@@ -3309,9 +3309,9 @@ UniValue searchdzhlix(const UniValue& params, bool fHelp)
 
     int nThreads = params[2].get_int();
 
-    CzHLIXWallet* zwallet = pwalletMain->zwalletMain;
+    CzTCASHWallet* zwallet = pwalletMain->zwalletMain;
 
-    boost::thread_group* dzhlixThreads = new boost::thread_group();
+    boost::thread_group* dzt_cashThreads = new boost::thread_group();
     int nRangePerThread = nRange / nThreads;
 
     int nPrevThreadEnd = nCount - 1;
@@ -3319,12 +3319,12 @@ UniValue searchdzhlix(const UniValue& params, bool fHelp)
         int nStart = nPrevThreadEnd + 1;;
         int nEnd = nStart + nRangePerThread;
         nPrevThreadEnd = nEnd;
-        dzhlixThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
+        dzt_cashThreads->create_thread(boost::bind(&SearchThread, zwallet, nStart, nEnd));
     }
 
-    dzhlixThreads->join_all();
+    dzt_cashThreads->join_all();
 
-    zwallet->RemoveMintsFromPool(pwalletMain->zhlixTracker->GetSerialHashes());
+    zwallet->RemoveMintsFromPool(pwalletMain->zt_cashTracker->GetSerialHashes());
     zwallet->SyncWithChain(false);
 
     //todo: better response

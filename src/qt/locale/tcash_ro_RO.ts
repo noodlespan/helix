@@ -183,7 +183,7 @@
     </message>
     </context>
 <context>
-    <name>ZHlixControlDialog</name>
+    <name>ZT_cashControlDialog</name>
     </context>
 <context>
     <name>tcash-core</name>

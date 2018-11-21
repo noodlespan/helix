@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zhlixcontroldialog.h"
-#include "ui_zhlixcontroldialog.h"
+#include "zt_cashcontroldialog.h"
+#include "ui_zt_cashcontroldialog.h"
 
 #include "accumulators.h"
 #include "main.h"
@@ -12,12 +12,12 @@
 using namespace std;
 using namespace libzerocoin;
 
-std::set<std::string> ZHlixControlDialog::setSelectedMints;
-std::set<CMintMeta> ZHlixControlDialog::setMints;
+std::set<std::string> ZT_cashControlDialog::setSelectedMints;
+std::set<CMintMeta> ZT_cashControlDialog::setMints;
 
-ZHlixControlDialog::ZHlixControlDialog(QWidget *parent) :
+ZT_cashControlDialog::ZT_cashControlDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ZHlixControlDialog),
+    ui(new Ui::ZT_cashControlDialog),
     model(0)
 {
     ui->setupUi(this);
@@ -31,19 +31,19 @@ ZHlixControlDialog::ZHlixControlDialog(QWidget *parent) :
     connect(ui->pushButtonAll, SIGNAL(clicked()), this, SLOT(ButtonAllClicked()));
 }
 
-ZHlixControlDialog::~ZHlixControlDialog()
+ZT_cashControlDialog::~ZT_cashControlDialog()
 {
     delete ui;
 }
 
-void ZHlixControlDialog::setModel(WalletModel *model)
+void ZT_cashControlDialog::setModel(WalletModel *model)
 {
     this->model = model;
     updateList();
 }
 
 //Update the tree widget
-void ZHlixControlDialog::updateList()
+void ZT_cashControlDialog::updateList()
 {
     // need to prevent the slot from being called each time something is changed
     ui->treeWidget->blockSignals(true);
@@ -127,7 +127,7 @@ void ZHlixControlDialog::updateList()
 }
 
 // Update the list when a checkbox is clicked
-void ZHlixControlDialog::updateSelection(QTreeWidgetItem* item, int column)
+void ZT_cashControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 {
     // only want updates from non top level items that are available to spend
     if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()){
@@ -149,7 +149,7 @@ void ZHlixControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 }
 
 // Update the Quantity and Amount display
-void ZHlixControlDialog::updateLabels()
+void ZT_cashControlDialog::updateLabels()
 {
     int64_t nAmount = 0;
     for (const CMintMeta& mint : setMints) {
@@ -158,14 +158,14 @@ void ZHlixControlDialog::updateLabels()
     }
 
     //update this dialog's labels
-    ui->labelZHlix_int->setText(QString::number(nAmount));
+    ui->labelZT_cash_int->setText(QString::number(nAmount));
     ui->labelQuantity_int->setText(QString::number(setSelectedMints.size()));
 
     //update PrivacyDialog labels
-    privacyDialog->setZHlixControlLabels(nAmount, setSelectedMints.size());
+    privacyDialog->setZT_cashControlLabels(nAmount, setSelectedMints.size());
 }
 
-std::vector<CMintMeta> ZHlixControlDialog::GetSelectedMints()
+std::vector<CMintMeta> ZT_cashControlDialog::GetSelectedMints()
 {
     std::vector<CMintMeta> listReturn;
     for (const CMintMeta& mint : setMints) {
@@ -177,7 +177,7 @@ std::vector<CMintMeta> ZHlixControlDialog::GetSelectedMints()
 }
 
 // select or deselect all of the mints
-void ZHlixControlDialog::ButtonAllClicked()
+void ZT_cashControlDialog::ButtonAllClicked()
 {
     ui->treeWidget->blockSignals(true);
     Qt::CheckState state = Qt::Checked;

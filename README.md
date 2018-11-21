@@ -7,7 +7,7 @@ Tcash is a cutting edge cryptocurrency, with many features not available in most
 - Anonymized transactions using zerocoin technology
 - 100% Proof of Stake 3.0 Consensus protocol, allowing very low transaction fees and energy expenditure, and staking rewards to all participants in the network
 - Masternode technology used to secure the network and provide the above features, each Masternode is secured
-  with collateral of 10K HLIX
+  with collateral of 10K TCASH
 - Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
 
 Since then, the Tcash repository has been rebaselined to show the fork relationship properly.
@@ -30,14 +30,14 @@ https://bitcointalk.org/index.php?topic=4956675.0
 
 <table>
 <th>Block Height</th><th>Reward</th><th>Masternodes</th><th>Proof of Work</th>
-<tr><td>201-90.200</td><td>111.0 HLIX</td><td>0.0 HLIX</td><td>111.0 HLIX</td></tr>
+<tr><td>201-90.200</td><td>111.0 TCASH</td><td>0.0 TCASH</td><td>111.0 TCASH</td></tr>
 <th>Block Height</th><th>Reward</th><th>Masternodes</th><th>Stakers</th>
-<tr><td>90.201-525,600</td><td>15.0 HLIX</td><td>8.1 HLIX</td><td>5.4 HLIX</td></tr>
-<tr><td>525,601-1,576,800</td><td>13.5 HLIX</td><td>7.29 HLIX</td><td>4.86 HLIX</td></tr>
-<tr><td>1,576,801-2,628,000</td><td>10.8 HLIX</td><td>5.83 HLIX</td><td>3.89 HLIX</td></tr>
-<tr><td>2,628,001-58,545,900</td><td>8.1 HLIX</td><td>4.37 HLIX</td><td>2.92 HLIX</td></tr>
-<tr><td>58,545,901-58,545,902</td><td>4.2 HLIX</td><td>2.27 HLIX</td><td>1.51 HLIX</td></tr>
-<tr><td>> 58,545,902</td><td>0 HLIX</td><td>0 HLIX</td><td>0 HLIX</td></tr>
+<tr><td>90.201-525,600</td><td>15.0 TCASH</td><td>8.1 TCASH</td><td>5.4 TCASH</td></tr>
+<tr><td>525,601-1,576,800</td><td>13.5 TCASH</td><td>7.29 TCASH</td><td>4.86 TCASH</td></tr>
+<tr><td>1,576,801-2,628,000</td><td>10.8 TCASH</td><td>5.83 TCASH</td><td>3.89 TCASH</td></tr>
+<tr><td>2,628,001-58,545,900</td><td>8.1 TCASH</td><td>4.37 TCASH</td><td>2.92 TCASH</td></tr>
+<tr><td>58,545,901-58,545,902</td><td>4.2 TCASH</td><td>2.27 TCASH</td><td>1.51 TCASH</td></tr>
+<tr><td>> 58,545,902</td><td>0 TCASH</td><td>0 TCASH</td><td>0 TCASH</td></tr>
 </table>
 
-The Tcash development budget is up to a maximum of 10% HLIX per block, paid out based on approved proposals as voted on by the Tcash masternode owners through the community governance process.
+The Tcash development budget is up to a maximum of 10% TCASH per block, paid out based on approved proposals as voted on by the Tcash masternode owners through the community governance process.

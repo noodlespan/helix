@@ -119,12 +119,12 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
 
     result.push_back(Pair("moneysupply",ValueFromAmount(blockindex->nMoneySupply)));
 
-    UniValue zhlixObj(UniValue::VOBJ);
+    UniValue zt_cashObj(UniValue::VOBJ);
     for (auto denom : libzerocoin::zerocoinDenomList) {
-        zhlixObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
+        zt_cashObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
-    zhlixObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
-    result.push_back(Pair("zHLIXsupply", zhlixObj));
+    zt_cashObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
+    result.push_back(Pair("zTCASHsupply", zt_cashObj));
 
     return result;
 }
@@ -309,17 +309,17 @@ UniValue getblock(const UniValue& params, bool fHelp)
             "  \"previousblockhash\" : \"hash\",  (string) The hash of the previous block\n"
             "  \"nextblockhash\" : \"hash\"       (string) The hash of the next block\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"zHLIXsupply\" :\n"
+            "  \"zTCASHsupply\" :\n"
             "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 zHLIX denomination\n"
-            "     \"5\" : n,            (numeric) supply of 5 zHLIX denomination\n"
-            "     \"10\" : n,           (numeric) supply of 10 zHLIX denomination\n"
-            "     \"50\" : n,           (numeric) supply of 50 zHLIX denomination\n"
-            "     \"100\" : n,          (numeric) supply of 100 zHLIX denomination\n"
-            "     \"500\" : n,          (numeric) supply of 500 zHLIX denomination\n"
-            "     \"1000\" : n,         (numeric) supply of 1000 zHLIX denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 zHLIX denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all zHLIX denominations\n"
+            "     \"1\" : n,            (numeric) supply of 1 zTCASH denomination\n"
+            "     \"5\" : n,            (numeric) supply of 5 zTCASH denomination\n"
+            "     \"10\" : n,           (numeric) supply of 10 zTCASH denomination\n"
+            "     \"50\" : n,           (numeric) supply of 50 zTCASH denomination\n"
+            "     \"100\" : n,          (numeric) supply of 100 zTCASH denomination\n"
+            "     \"500\" : n,          (numeric) supply of 500 zTCASH denomination\n"
+            "     \"1000\" : n,         (numeric) supply of 1000 zTCASH denomination\n"
+            "     \"5000\" : n,         (numeric) supply of 5000 zTCASH denomination\n"
+            "     \"total\" : n,        (numeric) The total supply of all zTCASH denominations\n"
             "  }\n"
             "}\n"
             "\nResult (for verbose=false):\n"

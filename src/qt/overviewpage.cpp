@@ -38,7 +38,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::HLIX)
+    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::TCASH)
     {
     }
 
@@ -167,7 +167,7 @@ OverviewPage::~OverviewPage()
     delete ui;
 }
 
-void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sHLIXPercentage, QString& szHLIXPercentage)
+void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sTCASHPercentage, QString& szTCASHPercentage)
 {
     int nPrecision = 2;
     double dzPercentage = 0.0;
@@ -186,8 +186,8 @@ void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBala
 
     double dPercentage = 100.0 - dzPercentage;
     
-    szHLIXPercentage = "(" + QLocale(QLocale::system()).toString(dzPercentage, 'f', nPrecision) + " %)";
-    sHLIXPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
+    szTCASHPercentage = "(" + QLocale(QLocale::system()).toString(dzPercentage, 'f', nPrecision) + " %)";
+    sTCASHPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
     
 }
 
@@ -211,23 +211,23 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         nLockedBalance = pwalletMain->GetLockedCoins();
         nWatchOnlyLockedBalance = pwalletMain->GetLockedWatchOnlyBalance();
     }
-    // HLIX Balance
+    // TCASH Balance
     CAmount nTotalBalance = balance + unconfirmedBalance;
-    CAmount hlixAvailableBalance = balance - immatureBalance - nLockedBalance;
+    CAmount t_cashAvailableBalance = balance - immatureBalance - nLockedBalance;
     CAmount nTotalWatchBalance = watchOnlyBalance + watchUnconfBalance + watchImmatureBalance;    
     CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
-    // zHLIX Balance
+    // zTCASH Balance
     CAmount matureZerocoinBalance = zerocoinBalance - unconfirmedZerocoinBalance - immatureZerocoinBalance;
     // Percentages
     QString szPercentage = "";
     QString sPercentage = "";
     getPercentage(nUnlockedBalance, zerocoinBalance, sPercentage, szPercentage);
     // Combined balances
-    CAmount availableTotalBalance = hlixAvailableBalance + matureZerocoinBalance;
+    CAmount availableTotalBalance = t_cashAvailableBalance + matureZerocoinBalance;
     CAmount sumTotalBalance = nTotalBalance + zerocoinBalance;
 
-    // HLIX labels
-    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, hlixAvailableBalance, false, BitcoinUnits::separatorAlways));
+    // TCASH labels
+    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, t_cashAvailableBalance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
     ui->labelLockedBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nLockedBalance, false, BitcoinUnits::separatorAlways));
@@ -240,7 +240,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelWatchLocked->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nWatchOnlyLockedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelWatchTotal->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nTotalWatchBalance, false, BitcoinUnits::separatorAlways));
 
-    // zHLIX labels
+    // zTCASH labels
     ui->labelzBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, zerocoinBalance, false, BitcoinUnits::separatorAlways));
     ui->labelzBalanceUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedZerocoinBalance, false, BitcoinUnits::separatorAlways));
     ui->labelzBalanceMature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, matureZerocoinBalance, false, BitcoinUnits::separatorAlways));
@@ -251,11 +251,11 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelTotalz->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, sumTotalBalance, false, BitcoinUnits::separatorAlways));
 
     // Percentage labels
-    ui->labelHLIXPercent->setText(sPercentage);
-    ui->labelzHLIXPercent->setText(szPercentage);
+    ui->labelTCASHPercent->setText(sPercentage);
+    ui->labelzTCASHPercent->setText(szPercentage);
 
     // Adjust bubble-help according to AutoMint settings
-    QString automintHelp = tr("Current percentage of zHLIX.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).\n");
+    QString automintHelp = tr("Current percentage of zTCASH.\nIf AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).\n");
     bool fEnableZeromint = GetBoolArg("-enablezeromint", false);
     int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
     if (fEnableZeromint) {
@@ -272,39 +272,39 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     bool showSumAvailable = settingShowAllBalances || sumTotalBalance != availableTotalBalance;
     ui->labelBalanceTextz->setVisible(showSumAvailable);
     ui->labelBalancez->setVisible(showSumAvailable);
-    bool showHLIXAvailable = settingShowAllBalances || hlixAvailableBalance != nTotalBalance;
-    bool showWatchOnlyHLIXAvailable = watchOnlyBalance != nTotalWatchBalance;
-    bool showHLIXPending = settingShowAllBalances || unconfirmedBalance != 0;
-    bool showWatchOnlyHLIXPending = watchUnconfBalance != 0;
-    bool showHLIXLocked = settingShowAllBalances || nLockedBalance != 0;
-    bool showWatchOnlyHLIXLocked = nWatchOnlyLockedBalance != 0;
+    bool showTCASHAvailable = settingShowAllBalances || t_cashAvailableBalance != nTotalBalance;
+    bool showWatchOnlyTCASHAvailable = watchOnlyBalance != nTotalWatchBalance;
+    bool showTCASHPending = settingShowAllBalances || unconfirmedBalance != 0;
+    bool showWatchOnlyTCASHPending = watchUnconfBalance != 0;
+    bool showTCASHLocked = settingShowAllBalances || nLockedBalance != 0;
+    bool showWatchOnlyTCASHLocked = nWatchOnlyLockedBalance != 0;
     bool showImmature = settingShowAllBalances || immatureBalance != 0;
     bool showWatchOnlyImmature = watchImmatureBalance != 0;
     bool showWatchOnly = nTotalWatchBalance != 0;
-    ui->labelBalance->setVisible(showHLIXAvailable || showWatchOnlyHLIXAvailable);
-    ui->labelBalanceText->setVisible(showHLIXAvailable || showWatchOnlyHLIXAvailable);
-    ui->labelWatchAvailable->setVisible(showHLIXAvailable && showWatchOnly);
-    ui->labelUnconfirmed->setVisible(showHLIXPending || showWatchOnlyHLIXPending);
-    ui->labelPendingText->setVisible(showHLIXPending || showWatchOnlyHLIXPending);
-    ui->labelWatchPending->setVisible(showHLIXPending && showWatchOnly);
-    ui->labelLockedBalance->setVisible(showHLIXLocked || showWatchOnlyHLIXLocked);
-    ui->labelLockedBalanceText->setVisible(showHLIXLocked || showWatchOnlyHLIXLocked);
-    ui->labelWatchLocked->setVisible(showHLIXLocked && showWatchOnly);
+    ui->labelBalance->setVisible(showTCASHAvailable || showWatchOnlyTCASHAvailable);
+    ui->labelBalanceText->setVisible(showTCASHAvailable || showWatchOnlyTCASHAvailable);
+    ui->labelWatchAvailable->setVisible(showTCASHAvailable && showWatchOnly);
+    ui->labelUnconfirmed->setVisible(showTCASHPending || showWatchOnlyTCASHPending);
+    ui->labelPendingText->setVisible(showTCASHPending || showWatchOnlyTCASHPending);
+    ui->labelWatchPending->setVisible(showTCASHPending && showWatchOnly);
+    ui->labelLockedBalance->setVisible(showTCASHLocked || showWatchOnlyTCASHLocked);
+    ui->labelLockedBalanceText->setVisible(showTCASHLocked || showWatchOnlyTCASHLocked);
+    ui->labelWatchLocked->setVisible(showTCASHLocked && showWatchOnly);
     ui->labelImmature->setVisible(showImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
     ui->labelImmatureText->setVisible(showImmature || showWatchOnlyImmature);
     ui->labelWatchImmature->setVisible(showImmature && showWatchOnly); // show watch-only immature balance
-    bool showzHLIXAvailable = settingShowAllBalances || zerocoinBalance != matureZerocoinBalance;
-    bool showzHLIXUnconfirmed = settingShowAllBalances || unconfirmedZerocoinBalance != 0;
-    bool showzHLIXImmature = settingShowAllBalances || immatureZerocoinBalance != 0;
-    ui->labelzBalanceMature->setVisible(showzHLIXAvailable);
-    ui->labelzBalanceMatureText->setVisible(showzHLIXAvailable);
-    ui->labelzBalanceUnconfirmed->setVisible(showzHLIXUnconfirmed);
-    ui->labelzBalanceUnconfirmedText->setVisible(showzHLIXUnconfirmed);
-    ui->labelzBalanceImmature->setVisible(showzHLIXImmature);
-    ui->labelzBalanceImmatureText->setVisible(showzHLIXImmature);
+    bool showzTCASHAvailable = settingShowAllBalances || zerocoinBalance != matureZerocoinBalance;
+    bool showzTCASHUnconfirmed = settingShowAllBalances || unconfirmedZerocoinBalance != 0;
+    bool showzTCASHImmature = settingShowAllBalances || immatureZerocoinBalance != 0;
+    ui->labelzBalanceMature->setVisible(showzTCASHAvailable);
+    ui->labelzBalanceMatureText->setVisible(showzTCASHAvailable);
+    ui->labelzBalanceUnconfirmed->setVisible(showzTCASHUnconfirmed);
+    ui->labelzBalanceUnconfirmedText->setVisible(showzTCASHUnconfirmed);
+    ui->labelzBalanceImmature->setVisible(showzTCASHImmature);
+    ui->labelzBalanceImmatureText->setVisible(showzTCASHImmature);
     bool showPercentages = ! (zerocoinBalance == 0 && nTotalBalance == 0);
-    ui->labelHLIXPercent->setVisible(showPercentages);
-    ui->labelzHLIXPercent->setVisible(showPercentages);
+    ui->labelTCASHPercent->setVisible(showPercentages);
+    ui->labelzTCASHPercent->setVisible(showPercentages);
 
     static int cachedTxLocks = 0;
 
@@ -375,7 +375,7 @@ void OverviewPage::setWalletModel(WalletModel* model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    // update the display unit, to not use the default ("HLIX")
+    // update the display unit, to not use the default ("TCASH")
     updateDisplayUnit();
 }
 

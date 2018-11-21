@@ -221,7 +221,7 @@
     </message>
     <message>
         <location line="+9"/>
-        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLIXs from being stolen by malware infecting your computer.</source>
+        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your TCASHs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -231,7 +231,7 @@
     </message>
     <message>
         <location line="+0"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLIX&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR TCASH&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -546,7 +546,7 @@
     </message>
     <message>
         <location line="+11"/>
-        <source>Privacy Actions for zHLIX</source>
+        <source>Privacy Actions for zTCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2078,7 +2078,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+13"/>
-        <source>Add destinations to send HLIX to</source>
+        <source>Add destinations to send TCASH to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2210,12 +2210,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLIX</source>
+        <source>Use 2 separate masternodes to mix funds up to 10000 TCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLIX</source>
+        <source>Use 8 separate masternodes to mix funds up to 10000 TCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2225,12 +2225,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is the quickest and will cost about ~0.025 HLIX to anonymize 10000 HLIX</source>
+        <source>This option is the quickest and will cost about ~0.025 TCASH to anonymize 10000 TCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 HLIX to anonymize 10000 HLIX</source>
+        <source>This option is moderately fast and will cost about 0.05 TCASH to anonymize 10000 TCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2240,7 +2240,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+13"/>
-        <source>0.1 HLIX per 10000 HLIX you anonymize.</source>
+        <source>0.1 TCASH per 10000 TCASH you anonymize.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2419,23 +2419,23 @@ https://www.transifex.com/tcash-project/tcash-project-translations</source>
     </message>
     <message>
         <location line="-133"/>
-        <source>Percentage of incoming HLIX which get automatically converted to zHLIX via Zerocoin Protocol (min: 10%)</source>
+        <source>Percentage of incoming TCASH which get automatically converted to zTCASH via Zerocoin Protocol (min: 10%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Percentage of autominted zHLIX</source>
+        <source>Percentage of autominted zTCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+30"/>
         <location line="+16"/>
-        <source>Wait with automatic conversion to Zerocoin until enough HLIX for this denomination is available</source>
+        <source>Wait with automatic conversion to Zerocoin until enough TCASH for this denomination is available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="-13"/>
-        <source>Preferred Automint zHLIX Denomination</source>
+        <source>Preferred Automint zTCASH Denomination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2605,7 +2605,7 @@ https://www.transifex.com/tcash-project/tcash-project-translations</source>
     </message>
     <message>
         <location line="+43"/>
-        <source>HLIX Balances</source>
+        <source>TCASH Balances</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2706,17 +2706,17 @@ https://www.transifex.com/tcash-project/tcash-project-translations</source>
     </message>
     <message>
         <location line="+36"/>
-        <source>HLIX:</source>
+        <source>TCASH:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+35"/>
-        <source>zHLIX:</source>
+        <source>zTCASH:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Current percentage of zHLIX.
+        <source>Current percentage of zTCASH.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2729,7 +2729,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
     <message>
         <location line="-46"/>
         <location line="+13"/>
-        <source>Locked HLIX or Masternode collaterals. These are excluded from zHLIX minting.</source>
+        <source>Locked TCASH or Masternode collaterals. These are excluded from zTCASH minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2738,7 +2738,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
         <location line="+189"/>
         <location line="+31"/>
         <location line="+44"/>
-        <source>0.000 000 00 HLIX</source>
+        <source>0.000 000 00 TCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2749,7 +2749,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
     <message>
         <location line="+7"/>
         <location line="+10"/>
-        <source>Unlocked HLIXs. These can be used for zHLIX minting.</source>
+        <source>Unlocked TCASHs. These can be used for zTCASH minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2766,7 +2766,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
         <location line="+14"/>
         <location line="+104"/>
         <source>Mature: more than 20 confirmation and more than 3 mints of the same denomination after it was minted.
-These zHLIX are spendable.</source>
+These zTCASH are spendable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2777,7 +2777,7 @@ These zHLIX are spendable.</source>
     <message>
         <location line="+23"/>
         <location line="+35"/>
-        <source>All available zHLIX, unconfirmed and immature zHLIX included.</source>
+        <source>All available zTCASH, unconfirmed and immature zTCASH included.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2807,7 +2807,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
     </message>
     <message>
         <location line="+93"/>
-        <source>Current percentage of zHLIX.
+        <source>Current percentage of zTCASH.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
         <translation type="unfinished"></translation>
@@ -2973,12 +2973,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <name>PrivacyDialog</name>
     <message>
         <location filename="../forms/privacydialog.ui" line="+55"/>
-        <source>HLIX which were anonymized via Zerocin Protocol</source>
+        <source>TCASH which were anonymized via Zerocin Protocol</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Zerocoin HLIX (zHLIX)</source>
+        <source>Zerocoin TCASH (zTCASH)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2994,7 +2994,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="+52"/>
         <location line="+46"/>
-        <source>Enter an amount of Hlix to convert to zHlix</source>
+        <source>Enter an amount of T_cash to convert to zT_cash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3013,7 +3013,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="-349"/>
         <location line="+629"/>
-        <source>zHLIX</source>
+        <source>zTCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3028,7 +3028,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+13"/>
-        <source>0.000 000 00 HLIX</source>
+        <source>0.000 000 00 TCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3073,12 +3073,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+45"/>
-        <source>zHlix Control</source>
+        <source>zT_cash Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>zHlix Selected:</source>
+        <source>zT_cash Selected:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3106,7 +3106,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+7"/>
-        <source>Available (mature and spendable) zHLIX for spending</source>
+        <source>Available (mature and spendable) zTCASH for spending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3116,15 +3116,15 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+16"/>
-        <source>Available (mature and spendable) zHLIX for spending
+        <source>Available (mature and spendable) zTCASH for spending
 
-zHLIX are mature when they have more than 20 confirmations AND more than 3 mints of the same denomination after them were minted</source>
+zTCASH are mature when they have more than 20 confirmations AND more than 3 mints of the same denomination after them were minted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
         <location line="+417"/>
-        <source>0 zHLIX</source>
+        <source>0 zTCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3215,7 +3215,7 @@ zHLIX are mature when they have more than 20 confirmations AND more than 3 mints
     <message>
         <location line="+62"/>
         <location line="+38"/>
-        <source>Total Balance including unconfirmed and immature zHLIX</source>
+        <source>Total Balance including unconfirmed and immature zTCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3432,7 +3432,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
     <message>
         <location line="+50"/>
         <location line="+113"/>
-        <source>zHLIX is currently undergoing maintenance.</source>
+        <source>zTCASH is currently undergoing maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3457,7 +3457,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
     </message>
     <message>
         <location line="+0"/>
-        <source> zHLIX in </source>
+        <source> zTCASH in </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3560,7 +3560,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+15"/>
-        <source>zHLIX Spend #: </source>
+        <source>zTCASH Spend #: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3590,7 +3590,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>zHlix Mint</source>
+        <source>zT_cash Mint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4464,7 +4464,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+7"/>
-        <source>0 HLIX</source>
+        <source>0 TCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4534,12 +4534,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+772"/>
-        <source>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uHLIXs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uTCASHs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uHLIXs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uTCASHs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4605,7 +4605,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+35"/>
-        <source>Anonymized HLIX</source>
+        <source>Anonymized TCASH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5546,27 +5546,27 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted Hlix to zHlix</source>
+        <source>Converted T_cash to zT_cash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Spent zHlix</source>
+        <source>Spent zT_cash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received Hlix from zHlix</source>
+        <source>Received T_cash from zT_cash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Minted Change as zHlix from zHlix Spend</source>
+        <source>Minted Change as zT_cash from zT_cash Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zHlix to Hlix</source>
+        <source>Converted zT_cash to T_cash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5576,7 +5576,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+22"/>
-        <source>zHlix Accumulator</source>
+        <source>zT_cash Accumulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5715,7 +5715,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Received Hlix from zHlix</source>
+        <source>Received T_cash from zT_cash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5730,7 +5730,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Zerocoin Spend, Change in zHlix</source>
+        <source>Zerocoin Spend, Change in zT_cash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5887,7 +5887,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="-18"/>
         <location line="+9"/>
-        <source>SwiftTX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 HLIX.</source>
+        <source>SwiftTX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 TCASH.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5940,10 +5940,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZHlixControlDialog</name>
+    <name>ZT_cashControlDialog</name>
     <message>
-        <location filename="../forms/zhlixcontroldialog.ui" line="+20"/>
-        <source>Select zHlix to Spend</source>
+        <location filename="../forms/zt_cashcontroldialog.ui" line="+20"/>
+        <source>Select zT_cash to Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5959,7 +5959,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-7"/>
-        <source>zHlix</source>
+        <source>zT_cash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6082,12 +6082,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6232,12 +6232,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLIX.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 TCASH.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLIX.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 TCASH.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6637,7 +6637,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+2"/>
-        <source>Fee (in HLIX/kB) to add to transactions you send (default: %s)</source>
+        <source>Fee (in TCASH/kB) to add to transactions you send (default: %s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6839,7 +6839,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable automatic wallet backups triggered after each zHLIX minting (0-1, default: %u)</source>
+        <source>Enable automatic wallet backups triggered after each zTCASH minting (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

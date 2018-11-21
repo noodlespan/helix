@@ -13,7 +13,7 @@ Please report bugs using the issue tracker at github:
 Mandatory Update
 ==============
 
-Tcash Core v3.0.4 is a mandatory update for all users. This release contains various updates/fixes pertaining to the zHLIX protocol, supply tracking, block transmission and relaying, as well as usability and quality-of-life updates to the GUI.
+Tcash Core v3.0.4 is a mandatory update for all users. This release contains various updates/fixes pertaining to the zTCASH protocol, supply tracking, block transmission and relaying, as well as usability and quality-of-life updates to the GUI.
 
 Users will have a grace period to update their clients before versions prior to this release are no longer allowed to connect to this (and future) version(s).
 
@@ -46,19 +46,19 @@ frequently tested on them.
 Notable Changes
 ===============
 
-Refactoring of zHlix Spend Validation Code
+Refactoring of zT_cash Spend Validation Code
 ---------------------
-zHlix spend validation was too rigid and did not give enough slack for reorganizations. Many staking wallets were unable to reorganize back to the correct blockchain when they had an orphan stake which contained a zHlix spend. zHlix double spending validation has been refactored to properly account for reorganization.
+zT_cash spend validation was too rigid and did not give enough slack for reorganizations. Many staking wallets were unable to reorganize back to the correct blockchain when they had an orphan stake which contained a zT_cash spend. zT_cash double spending validation has been refactored to properly account for reorganization.
 
 Money Supply Calculation Fix
 ---------------------
-Coin supply incorrectly was counting spent zHlix as newly minted coins that are added to the coin supply, thus resulting in innacurate coin supply data.
+Coin supply incorrectly was counting spent zT_cash as newly minted coins that are added to the coin supply, thus resulting in innacurate coin supply data.
 
 The coin supply is now correctly calculated and if a new wallet client is synced from scratch or if `-reindex=1` is used then the correct money supply will be calculated. If neither of these two options are used, the wallet client will automatically reindex the money supply calculations upon the first time opening the software after updating to v3.0.4. The reindex takes approximately 10-60 minutes depending on the hardware used. If the reindex is exited mid-process, it will continue where it left off upon restart.
 
 Better Filtering of Transactions in Stake Miner
 ---------------------
-The stake miner code now filters out zHlix double spends that were rarely being slipped into blocks (and being rejected by peers when sent broadcast).
+The stake miner code now filters out zT_cash double spends that were rarely being slipped into blocks (and being rejected by peers when sent broadcast).
 
 More Responsive Shutdown Requests
 ---------------------
@@ -74,21 +74,21 @@ the code changes and accompanying discussion, both the pull request and
 git merge commit are mentioned.
 
 ### P2P Protocol and Network Code
-- #294 `27c0943` Add additional checks for txid for zhlix spend. (presstab)
-- #301 `b8392cd` Refactor zHlix tx counting code. Add a final check in ConnectBlock() (presstab)
+- #294 `27c0943` Add additional checks for txid for zt_cash spend. (presstab)
+- #301 `b8392cd` Refactor zT_cash tx counting code. Add a final check in ConnectBlock() (presstab)
 - #306 `77dd55c` [Core] Don't send not-validated blocks (Mrs-X)
 - #312 `5d79bea` [Main] Update last checkpoint data (Fuzzbawls)
-- #325 `7d98ebe` Reindex zHlix blocks and correct stats. (presstab)
-- #327 `aa1235a` [Main] Don't limit zHLIX spends from getting into the mempool (Fuzzbawls)
+- #325 `7d98ebe` Reindex zT_cash blocks and correct stats. (presstab)
+- #327 `aa1235a` [Main] Don't limit zTCASH spends from getting into the mempool (Fuzzbawls)
 - #329 `19b38b2` Update checkpoints. (presstab)
 - #331 `b1fb710` [Consensus] Bump protocol. Activate via Spork 15. (rejectedpromise)
 
 ### Wallet
 - #308 `bd8a982` [Minting] Clear mempool after invalid block from miner (presstab)
-- #316 `ed192cf` [Minting] Better filtering of zHlix serials in miner. (presstab)
+- #316 `ed192cf` [Minting] Better filtering of zT_cash serials in miner. (presstab)
 
 ### GUI
-- #309 `f560ffc` [UI] Better error message when too much inputs are used for spending zHLIX (Mrs-X)
+- #309 `f560ffc` [UI] Better error message when too much inputs are used for spending zTCASH (Mrs-X)
 - #317 `b27cb72` [UI] Wallet repair option to resync from scratch (Mrs-X)
 - #323 `2b648be` [UI] Balance fix + bubble-help + usability improvements (Mrs-X)
 - #324 `8cdbb5d` disable negative confirmation numbers. (Mrs-X)

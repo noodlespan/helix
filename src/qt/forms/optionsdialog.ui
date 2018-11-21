@@ -133,13 +133,13 @@
        <item>
         <widget class="QCheckBox" name="checkBoxZeromintEnable">
          <property name="toolTip">
-          <string>Enable automatic minting of Tcash units to zHLIX</string>
+          <string>Enable automatic minting of Tcash units to zTCASH</string>
          </property>
          <property name="layoutDirection">
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="text">
-          <string>Enable zHLIX Automint</string>
+          <string>Enable zTCASH Automint</string>
          </property>
         </widget>
        </item>
@@ -148,10 +148,10 @@
          <item>
           <widget class="QLabel" name="percentage_label">
            <property name="toolTip">
-            <string>Percentage of incoming HLIX which get automatically converted to zHLIX via Zerocoin Protocol (min: 10%)</string>
+            <string>Percentage of incoming TCASH which get automatically converted to zTCASH via Zerocoin Protocol (min: 10%)</string>
            </property>
            <property name="text">
-            <string>Percentage of autominted zHLIX</string>
+            <string>Percentage of autominted zTCASH</string>
            </property>
           </widget>
          </item>
@@ -181,10 +181,10 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>Wait with automatic conversion to Zerocoin until enough HLIX for this denomination is available</string>
+            <string>Wait with automatic conversion to Zerocoin until enough TCASH for this denomination is available</string>
            </property>
            <property name="text">
-            <string>Preferred Automint zHLIX Denomination</string>
+            <string>Preferred Automint zTCASH Denomination</string>
            </property>
           </widget>
          </item>
@@ -197,7 +197,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>Wait with automatic conversion to Zerocoin until enough HLIX for this denomination is available</string>
+            <string>Wait with automatic conversion to Zerocoin until enough TCASH for this denomination is available</string>
            </property>
            <property name="maxVisibleItems">
             <number>9</number>

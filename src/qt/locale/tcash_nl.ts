@@ -176,16 +176,16 @@
         <translation>Bevestig versleuteling van de portemonnee</translation>
     </message>
     <message>
-        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLIXs from being stolen by malware infecting your computer.</source>
-        <translation>Tcash zal nu afsluiten om het versleutelingsproces te voltooien. Onthoud dat het versleutelen van uw portemonnee u niet volledig kan beschermen: Malware kan uw computer infecteren en uw HLIXs stelen.</translation>
+        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your TCASHs from being stolen by malware infecting your computer.</source>
+        <translation>Tcash zal nu afsluiten om het versleutelingsproces te voltooien. Onthoud dat het versleutelen van uw portemonnee u niet volledig kan beschermen: Malware kan uw computer infecteren en uw TCASHs stelen.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Weet u zeker dat u uw portemonnee wilt versleutelen?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLIX&lt;/b&gt;!</source>
-        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW HLIX VERLIEZEN&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR TCASH&lt;/b&gt;!</source>
+        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW TCASH VERLIEZEN&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -618,8 +618,8 @@
         <translation>&amp;Privacy</translation>
     </message>
     <message>
-        <source>Privacy Action for zHLIX and Obfuscation</source>
-        <translation>Privacy Actie voor zHLIX en verduistering</translation>
+        <source>Privacy Action for zTCASH and Obfuscation</source>
+        <translation>Privacy Actie voor zTCASH en verduistering</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -1531,32 +1531,32 @@ Controleer het adres alsjeblieft en probeer het opnieuw.</translation>
         <translation>Selecteer de privacy level.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Gebruik 2 aparte masternodes om fondsen te mixen tot 10000 HLIX</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Gebruik 2 aparte masternodes om fondsen te mixen tot 10000 TCASH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Gebruik 8 aparte masternodes om fondsen te mixen tot 10000 HLIX</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Gebruik 8 aparte masternodes om fondsen te mixen tot 10000 TCASH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Gebruik 16 aparte masternodes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 HLIX to anonymize 10000 HLIX</source>
-        <translation>Deze optie is het snelst en kost ongeveer ~0,025 HLIX om 10000 HLIX te anonimiseren</translation>
+        <source>This option is the quickest and will cost about ~0.025 TCASH to anonymize 10000 TCASH</source>
+        <translation>Deze optie is het snelst en kost ongeveer ~0,025 TCASH om 10000 TCASH te anonimiseren</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 HLIX to anonymize 10000 HLIX</source>
-        <translation>Deze optie is gematigd snel en kost ongeveer 0,05 HLIX om 10000 HLIX te anonimiseren</translation>
+        <source>This option is moderately fast and will cost about 0.05 TCASH to anonymize 10000 TCASH</source>
+        <translation>Deze optie is gematigd snel en kost ongeveer 0,05 TCASH om 10000 TCASH te anonimiseren</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Dit is de langzaamste en veiligste optie. Het gebruik van maximale anonimiteit kost</translation>
     </message>
     <message>
-        <source>0.1 HLIX per 10000 HLIX you anonymize.</source>
-        <translation>je anonimiseert 0,1 HLIX per 10000 HLIX.</translation>
+        <source>0.1 TCASH per 10000 TCASH you anonymize.</source>
+        <translation>je anonimiseert 0,1 TCASH per 10000 TCASH.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1699,20 +1699,20 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Map poort gebruikt &amp;UPnP</translation>
     </message>
     <message>
-        <source>Percentage of incoming HLIX which get automatically converted to zHLIX via Zerocoin Protocol (min: 10%)</source>
-        <translation>Percentage inkomende HLIX die automatisch wordt omgezet naar zHLIX via Zerocoin Protocol (min: 10%)</translation>
+        <source>Percentage of incoming TCASH which get automatically converted to zTCASH via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentage inkomende TCASH die automatisch wordt omgezet naar zTCASH via Zerocoin Protocol (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zHLIX</source>
-        <translation>Percentage autominted zHLIX</translation>
+        <source>Percentage of autominted zTCASH</source>
+        <translation>Percentage autominted zTCASH</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLIX for this denomination is available</source>
-        <translation>Wacht met automatische omzetting naar Zerocoin totdat er genoeg HLIX voor deze denominatie beschikbaar is</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough TCASH for this denomination is available</source>
+        <translation>Wacht met automatische omzetting naar Zerocoin totdat er genoeg TCASH voor deze denominatie beschikbaar is</translation>
     </message>
     <message>
-        <source>Preferred Automint zHLIX Denomination</source>
-        <translation>Gewenste Automint zHLIX denominatie</translation>
+        <source>Preferred Automint zTCASH Denomination</source>
+        <translation>Gewenste Automint zTCASH denominatie</translation>
     </message>
     <message>
         <source>Connect to the Tcash network through a SOCKS5 proxy.</source>
@@ -1846,8 +1846,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>HLIX Balances</source>
-        <translation>HLIX Saldi</translation>
+        <source>TCASH Balances</source>
+        <translation>TCASH Saldi</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1914,12 +1914,12 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Gecombineerde Saldi (inclusief onvolwassen munten)</translation>
     </message>
     <message>
-        <source>HLIX:</source>
-        <translation>HLIX:</translation>
+        <source>TCASH:</source>
+        <translation>TCASH:</translation>
     </message>
     <message>
-        <source>zHLIX:</source>
-        <translation>zHLIX:</translation>
+        <source>zTCASH:</source>
+        <translation>zTCASH:</translation>
     </message>
     <message>
         <source>0 %</source>
@@ -2047,12 +2047,12 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>HLIX which were anonymized via Zerocin Protocol</source>
-        <translation>HLIX die via het Zerocin Protocol geanonimiseerd werden</translation>
+        <source>TCASH which were anonymized via Zerocin Protocol</source>
+        <translation>TCASH die via het Zerocin Protocol geanonimiseerd werden</translation>
     </message>
     <message>
-        <source>Zerocoin HLIX (zHLIX)</source>
-        <translation>Zerocoin HLIX (zHLIX)</translation>
+        <source>Zerocoin TCASH (zTCASH)</source>
+        <translation>Zerocoin TCASH (zTCASH)</translation>
     </message>
     <message>
         <source>Zerocoin Actions:</source>
@@ -2063,8 +2063,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het Tcash netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
     </message>
     <message>
-        <source>Enter an amount of Hlix to convert to zHlix</source>
-        <translation>Vul de hoeveleheid in om Hlix te converteren naar zHlix</translation>
+        <source>Enter an amount of T_cash to convert to zT_cash</source>
+        <translation>Vul de hoeveleheid in om T_cash te converteren naar zT_cash</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2075,16 +2075,16 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHLIX</source>
-        <translation>zHLIX</translation>
+        <source>zTCASH</source>
+        <translation>zTCASH</translation>
     </message>
     <message>
         <source>Available for Minting:</source>
         <translation>Beschikbaar voor minting:</translation>
     </message>
     <message>
-        <source>0.000 000 00 HLIX</source>
-        <translation>0.000 000 00 HLIX</translation>
+        <source>0.000 000 00 TCASH</source>
+        <translation>0.000 000 00 TCASH</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2119,12 +2119,12 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Status en/of Berichten van de laatste mint actie.</translation>
     </message>
     <message>
-        <source>zHlix Control</source>
-        <translation>zHlix controle</translation>
+        <source>zT_cash Control</source>
+        <translation>zT_cash controle</translation>
     </message>
     <message>
-        <source>zHlix Selected:</source>
-        <translation>zHlix geselecteerd:</translation>
+        <source>zT_cash Selected:</source>
+        <translation>zT_cash geselecteerd:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2143,8 +2143,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Beschikbaar saldo:</translation>
     </message>
     <message>
-        <source>0 zHLIX</source>
-        <translation>0 zHLIX</translation>
+        <source>0 zTCASH</source>
+        <translation>0 zTCASH</translation>
     </message>
     <message>
         <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
@@ -2383,8 +2383,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Succesvol gemint</translation>
     </message>
     <message>
-        <source> zHLIX in </source>
-        <translation> zHLIX in </translation>
+        <source> zTCASH in </source>
+        <translation> zTCASH in </translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2462,8 +2462,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Bestede Zerocoin mislukt met status =</translation>
     </message>
     <message>
-        <source>zHlix Spend #: </source>
-        <translation>zHlix besteed #: </translation>
+        <source>zT_cash Spend #: </source>
+        <translation>zT_cash besteed #: </translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -2486,8 +2486,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>adres:</translation>
     </message>
     <message>
-        <source>zHlix Mint</source>
-        <translation>zHlix Mint</translation>
+        <source>zT_cash Mint</source>
+        <translation>zT_cash Mint</translation>
     </message>
     <message>
         <source>Sending successful, return code: </source>
@@ -3115,8 +3115,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>UTXO grootte:</translation>
     </message>
     <message>
-        <source>0 HLIX</source>
-        <translation>0 HLIX</translation>
+        <source>0 TCASH</source>
+        <translation>0 TCASH</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3167,12 +3167,12 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Munten automatisch geselecteerd</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLIXs in fee,&lt;br /&gt;while "at least" pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uHLIXs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uHLIX's in vergoeding,&lt;br /&gt;terwijl "minstens" 1000 uHLIX's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uTCASHs in fee,&lt;br /&gt;while "at least" pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uTCASHs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uTCASH's in vergoeding,&lt;br /&gt;terwijl "minstens" 1000 uTCASH's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uHLIXs in fee,&lt;br /&gt;while "total at least" pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uHLIXs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uHLIX's in vergoeding,&lt;br /&gt;terwijl "totaal minstens" 1000 uHLIX's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uTCASHs in fee,&lt;br /&gt;while "total at least" pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uTCASHs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uTCASH's in vergoeding,&lt;br /&gt;terwijl "totaal minstens" 1000 uTCASH's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Tcash transactions than the network can process.</source>
@@ -3223,8 +3223,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Voeg &amp;ontvanger toe</translation>
     </message>
     <message>
-        <source>Anonymized HLIX</source>
-        <translation>Geanonimiseerde HLIX</translation>
+        <source>Anonymized TCASH</source>
+        <translation>Geanonimiseerde TCASH</translation>
     </message>
     <message>
         <source>SwiftTX</source>
@@ -3939,32 +3939,32 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Verduisterd</translation>
     </message>
     <message>
-        <source>Converted Hlix to zHlix</source>
-        <translation>Geconverteerde Hlix naar zHlix</translation>
+        <source>Converted T_cash to zT_cash</source>
+        <translation>Geconverteerde T_cash naar zT_cash</translation>
     </message>
     <message>
-        <source>Spent zHlix</source>
-        <translation>Uitgegeven zHlix</translation>
+        <source>Spent zT_cash</source>
+        <translation>Uitgegeven zT_cash</translation>
     </message>
     <message>
-        <source>Received Hlix from zHlix</source>
-        <translation>Verkregen Hlix van zHlix</translation>
+        <source>Received T_cash from zT_cash</source>
+        <translation>Verkregen T_cash van zT_cash</translation>
     </message>
     <message>
-        <source>Minted Change as zHlix from zHlix Spend</source>
-        <translation>Minted wisselgeld als zHlix van uitgegeven zHlix</translation>
+        <source>Minted Change as zT_cash from zT_cash Spend</source>
+        <translation>Minted wisselgeld als zT_cash van uitgegeven zT_cash</translation>
     </message>
     <message>
-        <source>Converted zHlix to Hlix</source>
-        <translation>Geconverteerde zHlix naar Hlix</translation>
+        <source>Converted zT_cash to T_cash</source>
+        <translation>Geconverteerde zT_cash naar T_cash</translation>
     </message>
     <message>
         <source>watch-only</source>
         <translation>watch-only</translation>
     </message>
     <message>
-        <source>zHlix Accumulator</source>
-        <translation>zHlix Accumulator</translation>
+        <source>zT_cash Accumulator</source>
+        <translation>zT_cash Accumulator</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -4074,8 +4074,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Masternode beloning</translation>
     </message>
     <message>
-        <source>Received Hlix from zHlix</source>
-        <translation>Verkregen Hlix van zHlix</translation>
+        <source>Received T_cash from zT_cash</source>
+        <translation>Verkregen T_cash van zT_cash</translation>
     </message>
     <message>
         <source>Zerocoin Mint</source>
@@ -4086,8 +4086,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Zerocoin uitgegeven</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zHlix</source>
-        <translation>Zerocoin uitgegeven, wisselgeld in zHlix</translation>
+        <source>Zerocoin Spend, Change in zT_cash</source>
+        <translation>Zerocoin uitgegeven, wisselgeld in zT_cash</translation>
     </message>
     <message>
         <source>Zerocoin Spend to Self</source>
@@ -4211,8 +4211,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Verzend Munten</translation>
     </message>
     <message>
-        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 HLIX.</source>
-        <translation>SwiftTX ondersteunt geen verzendwaarden die zo hoog zijn. Transacties zijn momenteel beperkt tot %1 HLIX.</translation>
+        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 TCASH.</source>
+        <translation>SwiftTX ondersteunt geen verzendwaarden die zo hoog zijn. Transacties zijn momenteel beperkt tot %1 TCASH.</translation>
     </message>
 </context>
 <context>
@@ -4255,10 +4255,10 @@ Wees alsjeblieft geduldig...</translation>
     </message>
 </context>
 <context>
-    <name>ZHlixControlDialog</name>
+    <name>ZT_cashControlDialog</name>
     <message>
-        <source>Select zHlix to Spend</source>
-        <translation>Selecteer zHlix om te spenderen</translation>
+        <source>Select zT_cash to Spend</source>
+        <translation>Selecteer zT_cash om te spenderen</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4269,8 +4269,8 @@ Wees alsjeblieft geduldig...</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zHlix</source>
-        <translation>zHlix</translation>
+        <source>zT_cash</source>
+        <translation>zT_cash</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>
@@ -4372,12 +4372,12 @@ Wees alsjeblieft geduldig...</translation>
         <translation>Uitvoeren commando wanneer het beste blok verandert (%s in cmd is vervangen door block hash)</translation>
     </message>
     <message>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Kosten (in HLIX/Kb) kleiner dan dit worden beschouwd als zero fee voor heruitzending (standaard: %s)</translation>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Kosten (in TCASH/Kb) kleiner dan dit worden beschouwd als zero fee voor heruitzending (standaard: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Kosten (in HLIX/Kb) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Kosten (in TCASH/Kb) kleiner dan dit worden beschouwd als zero fee voor transactie verrichting (standaard: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4508,12 +4508,12 @@ bijvoorbeeld: alertnotify = echo %%s | mail -s "Tcash Alert" admin@foo.com
         <translation>Kan niet genoeg verduistering gedenomineerde fondsen voor deze transactie vinden.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLIX.</source>
-        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 HLIX.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 TCASH.</source>
+        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 TCASH.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLIX.</source>
-        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 HLIX.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 TCASH.</source>
+        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 TCASH.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -4816,8 +4816,8 @@ bijvoorbeeld: alertnotify = echo %%s | mail -s "Tcash Alert" admin@foo.com
         <translation>Mislukt om block te lezen</translation>
     </message>
     <message>
-        <source>Fee (in HLIX/kB) to add to transactions you send (default: %s)</source>
-        <translation>Fee (in HLIX/kB) om toe te voegen aan transacties die je verzendt (standaard: %s)</translation>
+        <source>Fee (in TCASH/kB) to add to transactions you send (default: %s)</source>
+        <translation>Fee (in TCASH/kB) om toe te voegen aan transacties die je verzendt (standaard: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>

@@ -91,7 +91,7 @@ bool fAlerts = DEFAULT_ALERTS;
 unsigned int nStakeMinAge = 4 * 60 * 60;
 int64_t nReserveBalance = 0;
 
-/** Fees smaller than this (in uhlix) are considered zero fee (for relaying and mining)
+/** Fees smaller than this (in ut_cash) are considered zero fee (for relaying and mining)
  * We are ~100 times smaller then bitcoin now (2015-06-23), set minRelayTxFee only 10 times higher
  * so it's still 10 times lower comparing to bitcoin.
  */
@@ -1246,16 +1246,16 @@ bool ContextualCheckZerocoinMint(const CTransaction& tx, const PublicCoin& coin,
 }
 
 bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend& spend, CBlockIndex* pindex, const uint256& hashBlock) {
-    //Check to see if the zHLIX is properly signed
+    //Check to see if the zTCASH is properly signed
     if (pindex->nHeight > Params().Zerocoin_LastOldParams()) {
         if (!spend.HasValidSignature())
-            return error("%s: V2 zHLIX spend does not have a valid signature", __func__);
+            return error("%s: V2 zTCASH spend does not have a valid signature", __func__);
 
         libzerocoin::SpendType expectedType = libzerocoin::SpendType::SPEND;
         if (tx.IsCoinStake())
             expectedType = libzerocoin::SpendType::STAKE;
         if (spend.getSpendType() != expectedType) {
-            return error("%s: trying to spend zHLIX without the correct spend type. txid=%s", __func__,
+            return error("%s: trying to spend zTCASH without the correct spend type. txid=%s", __func__,
                          tx.GetHash().GetHex());
         }
     }
@@ -1263,13 +1263,13 @@ bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend& spend
     //Reject serial's that are already in the blockchain
     int nHeightTx = 0;
     if (IsSerialInBlockchain(spend.getCoinSerialNumber(), nHeightTx))
-        return error("%s : zHLIX spend with serial %s is already in block %d\n", __func__,
+        return error("%s : zTCASH spend with serial %s is already in block %d\n", __func__,
                      spend.getCoinSerialNumber().GetHex(), nHeightTx);
 
     //Reject serial's that are not in the acceptable value range
     libzerocoin::ZerocoinParams* paramsToUse = spend.getVersion() < libzerocoin::PrivateCoin::PUBKEY_VERSION ? Params().OldZerocoin_Params() : Params().Zerocoin_Params();
     if (!spend.HasValidSerial(paramsToUse))
-        return error("%s : zHLIX spend with serial %s from tx %s is not in valid range\n", __func__,
+        return error("%s : zTCASH spend with serial %s from tx %s is not in valid range\n", __func__,
                      spend.getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
 
     return true;
@@ -1575,7 +1575,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
             //Check that txid is not already in the chain
             int nHeightTx = 0;
             if (IsTransactionInChain(tx.GetHash(), nHeightTx))
-                return state.Invalid(error("AcceptToMemoryPool : zHLIX spend tx %s already in block %d",
+                return state.Invalid(error("AcceptToMemoryPool : zTCASH spend tx %s already in block %d",
                                            tx.GetHash().GetHex(), nHeightTx), REJECT_DUPLICATE, "bad-txns-inputs-spent");
 
             //Check for double spending of serial #'s
@@ -1585,7 +1585,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 CoinSpend spend = TxInToZerocoinSpend(txIn);
                 if (!ContextualCheckZerocoinSpend(tx, spend, chainActive.Tip(), 0))
                     return state.Invalid(error("%s: ContextualCheckZerocoinSpend failed for tx %s", __func__,
-                                               tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zhlix");
+                                               tx.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zt_cash");
             }
         } else {
             LOCK(pool.cs);
@@ -1607,7 +1607,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
                 }
             }
 
-            // Check that zHLIX mints are not already known
+            // Check that zTCASH mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -1874,7 +1874,7 @@ bool AcceptableInputs(CTxMemPool& pool, CValidationState& state, const CTransact
                 }
             }
 
-            // Check that zHLIX mints are not already known
+            // Check that zTCASH mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -2617,7 +2617,7 @@ void ThreadScriptCheck()
     scriptcheckqueue.Thread();
 }
 
-void RecalculateZHLIXMinted()
+void RecalculateZTCASHMinted()
 {
     CBlockIndex *pindex = chainActive[Params().Zerocoin_StartHeight()];
     int nHeightEnd = chainActive.Height();
@@ -2644,14 +2644,14 @@ void RecalculateZHLIXMinted()
     }
 }
 
-void RecalculateZHLIXSpent()
+void RecalculateZTCASHSpent()
 {
     CBlockIndex* pindex = chainActive[Params().Zerocoin_StartHeight()];
     while (true) {
         if (pindex->nHeight % 1000 == 0)
             LogPrintf("%s : block %d...\n", __func__, pindex->nHeight);
 
-        //Rewrite zHLIX supply
+        //Rewrite zTCASH supply
         CBlock block;
         assert(ReadBlockFromDisk(block, pindex));
 
@@ -2660,13 +2660,13 @@ void RecalculateZHLIXSpent()
         //Reset the supply to previous block
         pindex->mapZerocoinSupply = pindex->pprev->mapZerocoinSupply;
 
-        //Add mints to zHLIX supply
+        //Add mints to zTCASH supply
         for (auto denom : libzerocoin::zerocoinDenomList) {
             long nDenomAdded = count(pindex->vMintDenominationsInBlock.begin(), pindex->vMintDenominationsInBlock.end(), denom);
             pindex->mapZerocoinSupply.at(denom) += nDenomAdded;
         }
 
-        //Remove spends from zHLIX supply
+        //Remove spends from zTCASH supply
         for (auto denom : listDenomsSpent)
             pindex->mapZerocoinSupply.at(denom)--;
 
@@ -2680,7 +2680,7 @@ void RecalculateZHLIXSpent()
     }
 }
 
-bool RecalculateHLIXSupply(int nHeightStart)
+bool RecalculateTCASHSupply(int nHeightStart)
 {
     if (nHeightStart > chainActive.Height())
         return false;
@@ -2787,7 +2787,7 @@ bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError
     return true;
 }
 
-bool UpdateZHLIXSupply(const CBlock& block, CBlockIndex* pindex)
+bool UpdateZTCASHSupply(const CBlock& block, CBlockIndex* pindex)
 {
     std::list<CZerocoinMint> listMints;
     BlockToZerocoinMintList(block, listMints);
@@ -3000,7 +3000,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                     return state.DoS(100, error("%s: failed to add block %s with invalid zerocoinspend", __func__, tx.GetHash().GetHex()), REJECT_INVALID);
                 }
 
-            // Check that zHLIX mints are not already known
+            // Check that zTCASH mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -3021,7 +3021,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 return state.DoS(100, error("ConnectBlock() : inputs missing/spent"),
                     REJECT_INVALID, "bad-txns-inputs-missingorspent");
             
-            // Check that zHLIX mints are not already known
+            // Check that zTCASH mints are not already known
             if (tx.IsZerocoinMint()) {
                 for (auto& out : tx.vout) {
                     if (!out.IsZerocoinMint())
@@ -3083,14 +3083,14 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         pos.nTxOffset += ::GetSerializeSize(tx, SER_DISK, CLIENT_VERSION);
     }
 
-    UpdateZHLIXSupply(block, pindex);
+    UpdateZTCASHSupply(block, pindex);
 
     // track money supply and mint amount info
     CAmount nMoneySupplyPrev = pindex->pprev ? pindex->pprev->nMoneySupply : 0;
     pindex->nMoneySupply = nMoneySupplyPrev + nValueOut - nValueIn;
     pindex->nMint = pindex->nMoneySupply - nMoneySupplyPrev + nFees;
 
-//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zHLIXSpent: %s\n",
+//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zTCASHSpent: %s\n",
 //              FormatMoney(nValueOut), FormatMoney(nValueIn),
 //              FormatMoney(nFees), FormatMoney(pindex->nMint), FormatMoney(nAmountZerocoinSpent));
 
@@ -3143,7 +3143,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         setDirtyBlockIndex.insert(pindex);
     }
 
-    //Record zHLIX serials
+    //Record zTCASH serials
     set<uint256> setAddedTx;
     for (pair<CoinSpend, uint256> pSpend : vSpends) {
         //record spend to database
@@ -3283,7 +3283,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
-    // If turned on AutoZeromint will automatically convert HLIX to zHLIX
+    // If turned on AutoZeromint will automatically convert TCASH to zTCASH
     if (pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
 
@@ -4331,13 +4331,13 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
             if (!CheckTransaction(tx, true, chainActive.Height() + 1 >= Params().Zerocoin_StartHeight(), state, GetSporkValue(SPORK_17_SEGWIT_ACTIVATION) < block.nTime))
                 return error("CheckBlock() : CheckTransaction failed");
 
-            // double check that there are no double spent zHLIX spends in this block
+            // double check that there are no double spent zTCASH spends in this block
             if (tx.IsZerocoinSpend()) {
                 for (const CTxIn txIn : tx.vin) {
                     if (txIn.scriptSig.IsZerocoinSpend()) {
                         libzerocoin::CoinSpend spend = TxInToZerocoinSpend(txIn);
                         if (count(vBlockSerials.begin(), vBlockSerials.end(), spend.getCoinSerialNumber()))
-                            return state.DoS(100, error("%s : Double spending of zHLIX serial %s in block\n Block: %s",
+                            return state.DoS(100, error("%s : Double spending of zTCASH serial %s in block\n Block: %s",
                                                         __func__, spend.getCoinSerialNumber().GetHex(), block.ToString()));
                         vBlockSerials.emplace_back(spend.getCoinSerialNumber());
                     }
@@ -4631,7 +4631,7 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
         }
     }
     if (nMints || nSpends)
-        LogPrintf("%s : block contains %d zHLIX mints and %d zHLIX spends\n", __func__, nMints, nSpends);
+        LogPrintf("%s : block contains %d zTCASH mints and %d zTCASH spends\n", __func__, nMints, nSpends);
 
     // ppcoin: check proof-of-stake
     // Limited duplicity on stake: prevents block flood attack

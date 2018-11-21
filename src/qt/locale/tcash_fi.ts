@@ -172,16 +172,16 @@
         <translation>Vahvista lompakon salaus</translation>
     </message>
     <message>
-        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLIXs from being stolen by malware infecting your computer.</source>
-        <translation>Tcash sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella HLIXien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
+        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your TCASHs from being stolen by malware infecting your computer.</source>
+        <translation>Tcash sulkeutuu salausprosessin ajaksi. Muista, että lompakon salaus ei voi täysin suojella TCASHien varkaudelta, jos tietokoneesi sisältää haittaohjelmia.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Oletko varma että tahdot salata lompakkosi?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLIX&lt;/b&gt;!</source>
-        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki HLIXisi&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR TCASH&lt;/b&gt;!</source>
+        <translation>Varoitus: Jos salaat lompakkosi ja unohdat salausavaimesi, &lt;b&gt;menetät kaikki TCASHisi&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1135,11 +1135,11 @@ Please check the address and try again.</source>
         <translation>Valitse yksityisyyden taso.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLIX</source>
+        <source>Use 2 separate masternodes to mix funds up to 10000 TCASH</source>
         <translation>Käytä 2 erillistä masternodea sekoittaaksesi enintään 10000 Tcash</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLIX</source>
+        <source>Use 8 separate masternodes to mix funds up to 10000 TCASH</source>
         <translation>Käytä 8 erillistä masternodea sekoittaaksesi enintään 10000 Tcash</translation>
     </message>
     <message>
@@ -1147,11 +1147,11 @@ Please check the address and try again.</source>
         <translation>Käytä 16 erillistä masternodea</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 HLIX to anonymize 10000 HLIX</source>
-        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 HLIX anonymoidaksesi 10000 Tcash</translation>
+        <source>This option is the quickest and will cost about ~0.025 TCASH to anonymize 10000 TCASH</source>
+        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 TCASH anonymoidaksesi 10000 Tcash</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 HLIX to anonymize 10000 HLIX</source>
+        <source>This option is moderately fast and will cost about 0.05 TCASH to anonymize 10000 TCASH</source>
         <translation>Tämä vaihtoehto on suhteellisen nopea ja maksaa 0.05 Tcash anonymoidaksesi 10000 Tcash</translation>
     </message>
     <message>
@@ -1159,7 +1159,7 @@ Please check the address and try again.</source>
         <translation>Tämä on hitain ja turvallisin vaihtoehto. Täydesti anonymisoiminen ei maksa mitään.</translation>
     </message>
     <message>
-        <source>0.1 HLIX per 10000 HLIX you anonymize.</source>
+        <source>0.1 TCASH per 10000 TCASH you anonymize.</source>
         <translation>0.1 per 10000 Tcash, jotka anonymisoit.</translation>
     </message>
     <message>
@@ -1898,8 +1898,8 @@ Please check the address and try again.</source>
         <translation>Muutos:</translation>
     </message>
     <message>
-        <source>0 HLIX</source>
-        <translation>0 HLIX</translation>
+        <source>0 TCASH</source>
+        <translation>0 TCASH</translation>
     </message>
     <message>
         <source>Choose...</source>
@@ -2534,7 +2534,7 @@ Please check the address and try again.</source>
     </message>
     </context>
 <context>
-    <name>ZHlixControlDialog</name>
+    <name>ZT_cashControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

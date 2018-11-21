@@ -181,7 +181,7 @@
       <string>Asks</string>
      </property>
     </widget>
-    <widget class="QLabel" name="HLIXSupply">
+    <widget class="QLabel" name="TCASHSupply">
      <property name="geometry">
       <rect>
        <x>540</x>
@@ -197,7 +197,7 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="HLIXDemand">
+    <widget class="QLabel" name="TCASHDemand">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -432,7 +432,7 @@
     <attribute name="title">
      <string>Buy</string>
     </attribute>
-    <widget class="QPushButton" name="BuyHLIX">
+    <widget class="QPushButton" name="BuyTCASH">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -442,7 +442,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Buy HLIX</string>
+      <string>Buy TCASH</string>
      </property>
      <property name="icon">
       <iconset resource="../tcash.qrc">
@@ -512,7 +512,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>HLIX</string>
+      <string>TCASH</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -1704,10 +1704,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>HLIX</string>
+      <string>TCASH</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="UnitsInputHLIX">
+    <widget class="QLineEdit" name="UnitsInputTCASH">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -1741,7 +1741,7 @@
       </font>
      </property>
     </widget>
-    <widget class="QPushButton" name="SellHLIXBTN">
+    <widget class="QPushButton" name="SellTCASHBTN">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -1751,7 +1751,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Sell HLIX</string>
+      <string>Sell TCASH</string>
      </property>
      <property name="icon">
       <iconset resource="../tcash">
@@ -1777,12 +1777,12 @@
          </font>
         </property>
         <property name="text">
-         <string>HLIX Available:</string>
+         <string>TCASH Available:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="HLIXAvailableLabel">
+       <widget class="QLabel" name="TCASHAvailableLabel">
         <property name="palette">
          <palette>
           <active>
@@ -2213,7 +2213,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="labelHLIX">
+       <widget class="QLabel" name="labelTCASH">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -2221,7 +2221,7 @@
          </font>
         </property>
         <property name="text">
-         <string>HLIX</string>
+         <string>TCASH</string>
         </property>
        </widget>
       </item>
@@ -2733,7 +2733,7 @@
       <string>TextLabel</string>
      </property>
     </widget>
-    <widget class="QLabel" name="HLIXBalanceLabel">
+    <widget class="QLabel" name="TCASHBalanceLabel">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -2762,7 +2762,7 @@
       </font>
      </property>
      <property name="text">
-      <string>HLIX Balance:</string>
+      <string>TCASH Balance:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_12">
@@ -2784,7 +2784,7 @@
       <string>BTC Balance:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="HLIXAvailableLabel_2">
+    <widget class="QLabel" name="TCASHAvailableLabel_2">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -2813,7 +2813,7 @@
       </font>
      </property>
      <property name="text">
-      <string>HLIX Available:</string>
+      <string>TCASH Available:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_14">
@@ -2832,10 +2832,10 @@
       </font>
      </property>
      <property name="text">
-      <string>HLIX Pending:</string>
+      <string>TCASH Pending:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="HLIXPendingLabel">
+    <widget class="QLabel" name="TCASHPendingLabel">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -2928,7 +2928,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Bittrex HLIX Deposit Address:</string>
+      <string>Bittrex TCASH Deposit Address:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="GenDepositBTN">

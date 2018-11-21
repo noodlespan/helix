@@ -178,16 +178,16 @@
         <translation>ウォレットの再暗号化を行いました</translation>
     </message>
     <message>
-        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your HLIXs from being stolen by malware infecting your computer.</source>
-        <translation>暗号化を完了するためウォレットを閉じます。暗号化されたため、パスワードがなければ攻撃者はHLIXを送金できません。</translation>
+        <source>Tcash will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your TCASHs from being stolen by malware infecting your computer.</source>
+        <translation>暗号化を完了するためウォレットを閉じます。暗号化されたため、パスワードがなければ攻撃者はTCASHを送金できません。</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>ウォレットを暗号化しますか？</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HLIX&lt;/b&gt;!</source>
-        <translation>注意 : もし暗号化した後パスワードを忘れた場合 &lt;b&gt;すべてのHLIXを失います&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR TCASH&lt;/b&gt;!</source>
+        <translation>注意 : もし暗号化した後パスワードを忘れた場合 &lt;b&gt;すべてのTCASHを失います&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -836,8 +836,8 @@ Address: %4
         <translation>&amp;匿名化</translation>
     </message>
     <message>
-        <source>Privacy Actions for zHLIX</source>
-        <translation>zHLIXによる匿名化</translation>
+        <source>Privacy Actions for zTCASH</source>
+        <translation>zTCASHによる匿名化</translation>
     </message>
     <message>
         <source>&amp;Multisignature creation...</source>
@@ -1611,32 +1611,32 @@ Please check the address and try again.</source>
         <translation>Please select a privacy level.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Use 2 separate masternodes to mix funds up to 10000 HLIX</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Use 2 separate masternodes to mix funds up to 10000 TCASH</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 HLIX</source>
-        <translation>Use 8 separate masternodes to mix funds up to 10000 HLIX</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 TCASH</source>
+        <translation>Use 8 separate masternodes to mix funds up to 10000 TCASH</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Use 16 separate masternodes</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 HLIX to anonymize 10000 HLIX</source>
-        <translation>This option is the quickest and will cost about ~0.025 HLIX to anonymize 10000 HLIX</translation>
+        <source>This option is the quickest and will cost about ~0.025 TCASH to anonymize 10000 TCASH</source>
+        <translation>This option is the quickest and will cost about ~0.025 TCASH to anonymize 10000 TCASH</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 HLIX to anonymize 10000 HLIX</source>
-        <translation>This option is moderately fast and will cost about 0.05 HLIX to anonymize 10000 HLIX</translation>
+        <source>This option is moderately fast and will cost about 0.05 TCASH to anonymize 10000 TCASH</source>
+        <translation>This option is moderately fast and will cost about 0.05 TCASH to anonymize 10000 TCASH</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>This is the slowest and most secure option. Using maximum anonymity will cost</translation>
     </message>
     <message>
-        <source>0.1 HLIX per 10000 HLIX you anonymize.</source>
-        <translation>0.1 HLIX per 10000 HLIX you anonymize.</translation>
+        <source>0.1 TCASH per 10000 TCASH you anonymize.</source>
+        <translation>0.1 TCASH per 10000 TCASH you anonymize.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1915,20 +1915,20 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>入力されたプロキシアドレスは正しくありません。</translation>
     </message>
     <message>
-        <source>Percentage of incoming HLIX which get automatically converted to zHLIX via Zerocoin Protocol (min: 10%)</source>
-        <translation>受け取られるHLIXをzHLIX(ゼロコインプロトコル)へ変換する比率(最小: 10%)</translation>
+        <source>Percentage of incoming TCASH which get automatically converted to zTCASH via Zerocoin Protocol (min: 10%)</source>
+        <translation>受け取られるTCASHをzTCASH(ゼロコインプロトコル)へ変換する比率(最小: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zHLIX</source>
-        <translation>zHLIXの自動変換の比率</translation>
+        <source>Percentage of autominted zTCASH</source>
+        <translation>zTCASHの自動変換の比率</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough HLIX for this denomination is available</source>
-        <translation>選択したdenominationへ変換できるまでHLIXの自動変換を中断する</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough TCASH for this denomination is available</source>
+        <translation>選択したdenominationへ変換できるまでTCASHの自動変換を中断する</translation>
     </message>
     <message>
-        <source>Preferred Automint zHLIX Denomination</source>
-        <translation>自動変換するzHLIXのdenomination</translation>
+        <source>Preferred Automint zTCASH Denomination</source>
+        <translation>自動変換するzTCASHのdenomination</translation>
     </message>
     <message>
         <source>I don&apos;t care</source>
@@ -2014,8 +2014,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>Obfuscation Balance:</translation>
     </message>
     <message>
-        <source>0 HLIX / 0 Rounds</source>
-        <translation>0 HLIX / 0 Rounds</translation>
+        <source>0 TCASH / 0 Rounds</source>
+        <translation>0 TCASH / 0 Rounds</translation>
     </message>
     <message>
         <source>Enabled/Disabled</source>
@@ -2160,8 +2160,8 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>N/A</translation>
     </message>
     <message>
-        <source>HLIX Balances</source>
-        <translation>HLIXの残高</translation>
+        <source>TCASH Balances</source>
+        <translation>TCASHの残高</translation>
     </message>
     <message>
         <source>Combined Balances (including unconfirmed and immature coins)</source>
@@ -2176,37 +2176,37 @@ https://www.transifex.com/tcash-project/tcash-project-translations</translation>
         <translation>未確認・未成熟を含んだ全残高。</translation>
     </message>
     <message>
-        <source>HLIX:</source>
-        <translation>HLIX:</translation>
+        <source>TCASH:</source>
+        <translation>TCASH:</translation>
     </message>
     <message>
-        <source>zHLIX:</source>
-        <translation>zHLIX:</translation>
+        <source>zTCASH:</source>
+        <translation>zTCASH:</translation>
     </message>
     <message>
-        <source>Current percentage of zHLIX.
+        <source>Current percentage of zTCASH.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%)</source>
-        <translation>現在のzHLIXの総所持数への比率。自動変換を有効にしている場合、その比率前後になっています。(デフォルト=10%)</translation>
+        <translation>現在のzTCASHの総所持数への比率。自動変換を有効にしている場合、その比率前後になっています。(デフォルト=10%)</translation>
     </message>
     <message>
         <source>0 %</source>
         <translation>0 %</translation>
     </message>
     <message>
-        <source>Locked HLIX or Masternode collaterals. These are excluded from zHLIX minting.</source>
-        <translation>ロックされたHLIX・マスターノードの担保。zHLIXの変換対象から除外されます。</translation>
+        <source>Locked TCASH or Masternode collaterals. These are excluded from zTCASH minting.</source>
+        <translation>ロックされたTCASH・マスターノードの担保。zTCASHの変換対象から除外されます。</translation>
     </message>
     <message>
-        <source>0.000 000 00 HLIX</source>
-        <translation>0 HLIX {0.000 000 00 ?}</translation>
+        <source>0.000 000 00 TCASH</source>
+        <translation>0 TCASH {0.000 000 00 ?}</translation>
     </message>
     <message>
         <source>Locked:</source>
         <translation>ロック済:</translation>
     </message>
     <message>
-        <source>Unlocked HLIXs. These can be used for zHLIX minting.</source>
-        <translation>未ロックのHLIX。zHLIXへの変換に利用可能です。</translation>
+        <source>Unlocked TCASHs. These can be used for zTCASH minting.</source>
+        <translation>未ロックのTCASH。zTCASHへの変換に利用可能です。</translation>
     </message>
     <message>
         <source>Unlocked:</source>
@@ -2218,17 +2218,17 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
     </message>
     <message>
         <source>Mature: more than 20 confirmation and more than 3 mints of the same denomination after it was minted.
-These zHLIX are spendable.</source>
+These zTCASH are spendable.</source>
         <translation>成熟: 20確認と同じdenominationでの3変換が必要です。
-その後zHLIXは使用可能になります。</translation>
+その後zTCASHは使用可能になります。</translation>
     </message>
     <message>
         <source>Mature:</source>
         <translation>成熟:</translation>
     </message>
     <message>
-        <source>All available zHLIX, unconfirmed and immature zHLIX included.</source>
-        <translation>全zHLIXの合計。未確認・未成熟のzHLIXを含みます。</translation>
+        <source>All available zTCASH, unconfirmed and immature zTCASH included.</source>
+        <translation>全zTCASHの合計。未確認・未成熟のzTCASHを含みます。</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -2241,10 +2241,10 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
         <translation>未確認:</translation>
     </message>
     <message>
-        <source>Current percentage of zHLIX.
+        <source>Current percentage of zTCASH.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
-        <translation>現在の所持数とzHLIXの比率です。
+        <translation>現在の所持数とzTCASHの比率です。
 自動変換が有効であれば指定された比率程度になります (デフォルト = 10%)。
 </translation>
     </message>
@@ -3046,8 +3046,8 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>分割ごと枚数:</translation>
     </message>
     <message>
-        <source>0 HLIX</source>
-        <translation>0 HLIX</translation>
+        <source>0 TCASH</source>
+        <translation>0 TCASH</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3094,12 +3094,12 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>確認時間:</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uHLIXs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uHLIXs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uTCASHs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uTCASHs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uHLIXs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>If the custom fee is set to 1000 uHLIXs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uHLIXs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uHLIXs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
+        <source>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uTCASHs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>If the custom fee is set to 1000 uTCASHs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uTCASHs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uTCASHs. For transactions bigger than a kilobyte both pay by kilobyte.</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for Tcash transactions than the network can process.</source>
@@ -3312,8 +3312,8 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>コインは自動で選択されます</translation>
     </message>
     <message>
-        <source>Anonymized HLIX</source>
-        <translation>匿名化されたHLIX</translation>
+        <source>Anonymized TCASH</source>
+        <translation>匿名化されたTCASH</translation>
     </message>
     <message>
         <source>SwiftX</source>
@@ -3974,28 +3974,28 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>枚数は残高から増減されます。</translation>
     </message>
     <message>
-        <source>Converted Hlix to zHlix</source>
-        <translation>HLIXをzHLIXへ変換</translation>
+        <source>Converted T_cash to zT_cash</source>
+        <translation>TCASHをzTCASHへ変換</translation>
     </message>
     <message>
-        <source>Spent zHlix</source>
-        <translation>zHLIXを送金</translation>
+        <source>Spent zT_cash</source>
+        <translation>zTCASHを送金</translation>
     </message>
     <message>
-        <source>Received Hlix from zHlix</source>
-        <translation>zHLIXによる受け取り</translation>
+        <source>Received T_cash from zT_cash</source>
+        <translation>zTCASHによる受け取り</translation>
     </message>
     <message>
-        <source>Minted Change as zHlix from zHlix Spend</source>
-        <translation>zHLIXの送金のお釣りをzHLIXに変換</translation>
+        <source>Minted Change as zT_cash from zT_cash Spend</source>
+        <translation>zTCASHの送金のお釣りをzTCASHに変換</translation>
     </message>
     <message>
-        <source>Converted zHlix to Hlix</source>
-        <translation>zHLIXからHLIXへ変換</translation>
+        <source>Converted zT_cash to T_cash</source>
+        <translation>zTCASHからTCASHへ変換</translation>
     </message>
     <message>
-        <source>zHlix Accumulator</source>
-        <translation>zHLIXアキュムレータ</translation>
+        <source>zT_cash Accumulator</source>
+        <translation>zTCASHアキュムレータ</translation>
     </message>
 </context>
 <context>
@@ -4173,8 +4173,8 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>から</translation>
     </message>
     <message>
-        <source>Received Hlix from zHlix</source>
-        <translation>zHLIXからHLIXへの受け取り</translation>
+        <source>Received T_cash from zT_cash</source>
+        <translation>zTCASHからTCASHへの受け取り</translation>
     </message>
     <message>
         <source>Zerocoin Mint</source>
@@ -4185,8 +4185,8 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>ゼロコインの送金</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zHlix</source>
-        <translation>ゼロコインの送金,お釣りをzHLIXで受け取り</translation>
+        <source>Zerocoin Spend, Change in zT_cash</source>
+        <translation>ゼロコインの送金,お釣りをzTCASHで受け取り</translation>
     </message>
     <message>
         <source>Zerocoin Spend to Self</source>
@@ -4214,12 +4214,12 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>コインの送金</translation>
     </message>
     <message>
-        <source>SwiftTX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 HLIX.</source>
-        <translation>SwiftTXはあまり高額の送金は対応してません。%1 HLIXが上限です。</translation>
+        <source>SwiftTX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 TCASH.</source>
+        <translation>SwiftTXはあまり高額の送金は対応してません。%1 TCASHが上限です。</translation>
     </message>
     <message>
-        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 HLIX.</source>
-        <translation>SwiftTXはあまり高額の送金は対応してません。%1 HLIXが上限です。</translation>
+        <source>SwiftX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 TCASH.</source>
+        <translation>SwiftTXはあまり高額の送金は対応してません。%1 TCASHが上限です。</translation>
     </message>
 </context>
 <context>
@@ -4352,12 +4352,12 @@ To enable AutoMint add &apos;enablezeromint=1&apos; in tcash.conf</source>
         <translation>Execute command when the best block changes (%s in cmd is replaced by block hash)</translation>
     </message>
     <message>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Fees (in HLIX/Kb) smaller than this are considered zero fee for relaying (default: %s)</translation>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Fees (in TCASH/Kb) smaller than this are considered zero fee for relaying (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in HLIX/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Fees (in HLIX/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
+        <source>Fees (in TCASH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Fees (in TCASH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -4494,12 +4494,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>Unable to locate enough Obfuscation denominated funds for this transaction.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLIX.</source>
-        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 HLIX.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 TCASH.</source>
+        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 TCASH.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 HLIX.</source>
-        <translation>Unable to locate enough funds for this transaction that are not equal 10000 HLIX.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 TCASH.</source>
+        <translation>Unable to locate enough funds for this transaction that are not equal 10000 TCASH.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -4786,8 +4786,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>ブロックの読み込みに失敗</translation>
     </message>
     <message>
-        <source>Fee (in HLIX/kB) to add to transactions you send (default: %s)</source>
-        <translation>Fee (in HLIX/kB) to add to transactions you send (default: %s)</translation>
+        <source>Fee (in TCASH/kB) to add to transactions you send (default: %s)</source>
+        <translation>Fee (in TCASH/kB) to add to transactions you send (default: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -4958,8 +4958,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>Enable staking functionality (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Keep N HLIX anonymized (default: %u)</source>
-        <translation>Keep N HLIX anonymized (default: %u)</translation>
+        <source>Keep N TCASH anonymized (default: %u)</source>
+        <translation>Keep N TCASH anonymized (default: %u)</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
@@ -5550,8 +5550,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>Tcashの全特徴を無効化する(マスターノード/匿名化/SwiftX/Budget) (0-1, デフォルト: %u)</translation>
     </message>
     <message>
-        <source>Enable automatic wallet backups triggered after each zHlix minting (0-1, default: %u)</source>
-        <translation>zHLIXへの変換後自動でウォレットをバックアップする( 0-1, デフォルト: %u)</translation>
+        <source>Enable automatic wallet backups triggered after each zT_cash minting (0-1, default: %u)</source>
+        <translation>zTCASHへの変換後自動でウォレットをバックアップする( 0-1, デフォルト: %u)</translation>
     </message>
     <message>
         <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
@@ -5731,10 +5731,10 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
     </message>
 </context>
 <context>
-    <name>zhlixcontroldialog</name>
+    <name>zt_cashcontroldialog</name>
     <message>
-        <source>Select zHlix to Spend</source>
-        <translation>送金したいzHLIXを選択</translation>
+        <source>Select zT_cash to Spend</source>
+        <translation>送金したいzTCASHを選択</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -5752,12 +5752,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>HLIX which were anonymized via Zerocin Protocol</source>
-        <translation>ゼロコインプロトコルにより匿名化されるHLIX</translation>
+        <source>TCASH which were anonymized via Zerocin Protocol</source>
+        <translation>ゼロコインプロトコルにより匿名化されるTCASH</translation>
     </message>
     <message>
-        <source>Zerocoin HLIX (zHLIX)</source>
-        <translation>ゼロコイン HLIX (zHLIX)</translation>
+        <source>Zerocoin TCASH (zTCASH)</source>
+        <translation>ゼロコイン TCASH (zTCASH)</translation>
     </message>
     <message>
         <source>Zerocoin Actions:</source>
@@ -5768,8 +5768,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>表示されている情報は古いものかもしれません。Tcashネットワークに接続後自動的に同期が行われますが、まだ同期は完了していません。</translation>
     </message>
     <message>
-        <source>Enter an amount of Hlix to convert to zHlix</source>
-        <translation>zHLIXへ変換したいHLIXの枚数を入力</translation>
+        <source>Enter an amount of T_cash to convert to zT_cash</source>
+        <translation>zTCASHへ変換したいTCASHの枚数を入力</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -5816,12 +5816,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>ステータス・直前の変換アクションでのメッセージログ。</translation>
     </message>
     <message>
-        <source>zHlix Control</source>
-        <translation>zHLIX コントロール</translation>
+        <source>zT_cash Control</source>
+        <translation>zTCASH コントロール</translation>
     </message>
     <message>
-        <source>zHlix Selected:</source>
-        <translation>選択された zHLIX:</translation>
+        <source>zT_cash Selected:</source>
+        <translation>選択された zTCASH:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -5836,18 +5836,18 @@ for example: alertnotify=echo %%s | mail -s &quot;Tcash Alert&quot; admin@foo.co
         <translation>ゼロコインを送金</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLIX for spending</source>
-        <translation>利用できるzHLIX</translation>
+        <source>Available (mature and spendable) zTCASH for spending</source>
+        <translation>利用できるzTCASH</translation>
     </message>
     <message>
         <source>Available Balance:</source>
         <translation>利用可能な残高:</translation>
     </message>
     <message>
-        <source>Available (mature and spendable) zHLIX for spending
+        <source>Available (mature and spendable) zTCASH for spending
 
-zHLIX are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>zHLIXは20確認と同じdenominationでの3変換がされたのちに利用可能になります</translation>
+zTCASH are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+        <translation>zTCASHは20確認と同じdenominationでの3変換がされたのちに利用可能になります</translation>
     </message>
     <message>
         <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
@@ -5891,7 +5891,7 @@ zHLIX are mature when they have more than 20 confirmations AND more than 2 mints
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
-        <translation>お釣りをzHLIXへ変換(追加で手数料がかかります)</translation>
+        <translation>お釣りをzTCASHへ変換(追加で手数料がかかります)</translation>
     </message>
     <message>
         <source>If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.</source>
@@ -5910,8 +5910,8 @@ zHLIX are mature when they have more than 20 confirmations AND more than 2 mints
         <translation>利用できるゼロコイン残高の情報.</translation>
     </message>
     <message>
-        <source>Total Balance including unconfirmed and immature zHLIX</source>
-        <translation>未確認・未成熟なzHLIXも含んだ全残高</translation>
+        <source>Total Balance including unconfirmed and immature zTCASH</source>
+        <translation>未確認・未成熟なzTCASHも含んだ全残高</translation>
     </message>
     <message>
         <source>Total Zerocoin  Balance:</source>
@@ -5919,11 +5919,11 @@ zHLIX are mature when they have more than 20 confirmations AND more than 2 mints
     </message>
     <message>
         <source>Denominations with value 1:</source>
-        <translation>1 zHLIX の塊(denomination):</translation>
+        <translation>1 zTCASH の塊(denomination):</translation>
     </message>
     <message>
         <source>Denom. with value 1:</source>
-        <translation>1 zHLIX のdenom.:</translation>
+        <translation>1 zTCASH のdenom.:</translation>
     </message>
     <message>
         <source>Unconfirmed: less than 20 confirmations
@@ -5933,59 +5933,59 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
     </message>
     <message>
         <source>Denominations with value 5:</source>
-        <translation>5 zHLIX の塊(denomination):</translation>
+        <translation>5 zTCASH の塊(denomination):</translation>
     </message>
     <message>
         <source>Denom. with value 5:</source>
-        <translation>5 zHLIX のdenom.:</translation>
+        <translation>5 zTCASH のdenom.:</translation>
     </message>
     <message>
         <source>Denominations with value 10:</source>
-        <translation>10 zHLIX の塊(denomination):</translation>
+        <translation>10 zTCASH の塊(denomination):</translation>
     </message>
     <message>
         <source>Denom. with value 10:</source>
-        <translation>10 zHLIX のdenom.:</translation>
+        <translation>10 zTCASH のdenom.:</translation>
     </message>
     <message>
         <source>Denominations with value 50:</source>
-        <translation>50 zHLIX の塊(denomination):</translation>
+        <translation>50 zTCASH の塊(denomination):</translation>
     </message>
     <message>
         <source>Denom. with value 50:</source>
-        <translation>50 zHLIX のdenom.:</translation>
+        <translation>50 zTCASH のdenom.:</translation>
     </message>
     <message>
         <source>Denominations with value 100:</source>
-        <translation>100 zHLIX の塊(denomination):</translation>
+        <translation>100 zTCASH の塊(denomination):</translation>
     </message>
     <message>
         <source>Denom. with value 100:</source>
-        <translation>100 zHLIX のdenom.:</translation>
+        <translation>100 zTCASH のdenom.:</translation>
     </message>
     <message>
         <source>Denominations with value 500:</source>
-        <translation>500 zHLIX の塊(denomination):</translation>
+        <translation>500 zTCASH の塊(denomination):</translation>
     </message>
     <message>
         <source>Denom. with value 500:</source>
-        <translation>500 zHLIX のdenom.:</translation>
+        <translation>500 zTCASH のdenom.:</translation>
     </message>
     <message>
         <source>Denominations with value 1000:</source>
-        <translation>1000 zHLIX の塊(denomination):</translation>
+        <translation>1000 zTCASH の塊(denomination):</translation>
     </message>
     <message>
         <source>Denom. with value 1000:</source>
-        <translation>1000 zHLIX のdenom.:</translation>
+        <translation>1000 zTCASH のdenom.:</translation>
     </message>
     <message>
         <source>Denominations with value 5000:</source>
-        <translation>5000 zHLIX の塊(denomination):</translation>
+        <translation>5000 zTCASH の塊(denomination):</translation>
     </message>
     <message>
         <source>Denom. with value 5000:</source>
-        <translation>5000 zHLIX のdenom.:</translation>
+        <translation>5000 zTCASH のdenom.:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -6131,8 +6131,8 @@ Please be patient after clicking import.</source>
         <translation>アドレス / 枚数:</translation>
     </message>
     <message>
-        <source>Add destinations to send HLIX to</source>
-        <translation>HLIXを送る宛先を追加</translation>
+        <source>Add destinations to send TCASH to</source>
+        <translation>TCASHを送る宛先を追加</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>

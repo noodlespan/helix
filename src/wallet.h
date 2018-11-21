@@ -23,8 +23,8 @@
 #include "validationinterface.h"
 #include "wallet_ismine.h"
 #include "walletdb.h"
-#include "zhlixtracker.h"
-#include "zhlixwallet.h"
+#include "zt_cashtracker.h"
+#include "zt_cashwallet.h"
 
 #include <algorithm>
 #include <map>
@@ -84,30 +84,30 @@ enum AvailableCoinsType {
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NOT10000IFMN = 3,
-    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 HLIX at the same time
+    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 TCASH at the same time
     ONLY_10000 = 5,                        // find masternode outputs including locked ones (use with caution)
     STAKABLE_COINS = 6                          // UTXO's that are valid for staking
 };
 
-// Possible states for zHLIX send
+// Possible states for zTCASH send
 enum ZerocoinSpendStatus {
-    ZHLIX_SPEND_OKAY = 0,                            // No error
-    ZHLIX_SPEND_ERROR = 1,                           // Unspecified class of errors, more details are (hopefully) in the returning text
-    ZHLIX_WALLET_LOCKED = 2,                         // Wallet was locked
-    ZHLIX_COMMIT_FAILED = 3,                         // Commit failed, reset status
-    ZHLIX_ERASE_SPENDS_FAILED = 4,                   // Erasing spends during reset failed
-    ZHLIX_ERASE_NEW_MINTS_FAILED = 5,                // Erasing new mints during reset failed
-    ZHLIX_TRX_FUNDS_PROBLEMS = 6,                    // Everything related to available funds
-    ZHLIX_TRX_CREATE = 7,                            // Everything related to create the transaction
-    ZHLIX_TRX_CHANGE = 8,                            // Everything related to transaction change
-    ZHLIX_TXMINT_GENERAL = 9,                        // General errors in MintToTxIn
-    ZHLIX_INVALID_COIN = 10,                         // Selected mint coin is not valid
-    ZHLIX_FAILED_ACCUMULATOR_INITIALIZATION = 11,    // Failed to initialize witness
-    ZHLIX_INVALID_WITNESS = 12,                      // Spend coin transaction did not verify
-    ZHLIX_BAD_SERIALIZATION = 13,                    // Transaction verification failed
-    ZHLIX_SPENT_USED_ZHLIX = 14,                      // Coin has already been spend
-    ZHLIX_TX_TOO_LARGE = 15,                         // The transaction is larger than the max tx size
-    ZHLIX_SPEND_V1_SEC_LEVEL
+    ZTCASH_SPEND_OKAY = 0,                            // No error
+    ZTCASH_SPEND_ERROR = 1,                           // Unspecified class of errors, more details are (hopefully) in the returning text
+    ZTCASH_WALLET_LOCKED = 2,                         // Wallet was locked
+    ZTCASH_COMMIT_FAILED = 3,                         // Commit failed, reset status
+    ZTCASH_ERASE_SPENDS_FAILED = 4,                   // Erasing spends during reset failed
+    ZTCASH_ERASE_NEW_MINTS_FAILED = 5,                // Erasing new mints during reset failed
+    ZTCASH_TRX_FUNDS_PROBLEMS = 6,                    // Everything related to available funds
+    ZTCASH_TRX_CREATE = 7,                            // Everything related to create the transaction
+    ZTCASH_TRX_CHANGE = 8,                            // Everything related to transaction change
+    ZTCASH_TXMINT_GENERAL = 9,                        // General errors in MintToTxIn
+    ZTCASH_INVALID_COIN = 10,                         // Selected mint coin is not valid
+    ZTCASH_FAILED_ACCUMULATOR_INITIALIZATION = 11,    // Failed to initialize witness
+    ZTCASH_INVALID_WITNESS = 12,                      // Spend coin transaction did not verify
+    ZTCASH_BAD_SERIALIZATION = 13,                    // Transaction verification failed
+    ZTCASH_SPENT_USED_ZTCASH = 14,                      // Coin has already been spend
+    ZTCASH_TX_TOO_LARGE = 15,                         // The transaction is larger than the max tx size
+    ZTCASH_SPEND_V1_SEC_LEVEL
 };
 
 enum OutputType : int
@@ -226,15 +226,15 @@ public:
     std::string ResetMintZerocoin();
     std::string ResetSpentZerocoin();
     void ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored, std::list<CDeterministicMint>& listDMintsRestored);
-    void ZHlixBackupWallet();
+    void ZT_cashBackupWallet();
     bool GetZerocoinKey(const CBigNum& bnSerial, CKey& key);
-    bool CreateZHLIXOutput(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint);
+    bool CreateZTCASHOutput(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint);
     bool GetMint(const uint256& hashSerial, CZerocoinMint& mint);
     bool GetMintFromStakeHash(const uint256& hashStake, CZerocoinMint& mint);
     bool DatabaseMint(CDeterministicMint& dMint);
     bool SetMintUnspent(const CBigNum& bnSerial);
     bool UpdateMint(const CBigNum& bnValue, const int& nHeight, const uint256& txid, const libzerocoin::CoinDenomination& denom);
-    string GetUniqueWalletBackupName(bool fzhlixAuto) const;
+    string GetUniqueWalletBackupName(bool fzt_cashAuto) const;
 
     /** Zerocin entry changed.
     * @note called with lock cs_wallet held.
@@ -249,13 +249,13 @@ public:
      */
     mutable CCriticalSection cs_wallet;
 
-    CzHLIXWallet* zwalletMain;
+    CzTCASHWallet* zwalletMain;
 
     bool fFileBacked;
     bool fWalletUnlockAnonymizeOnly;
     std::string strWalletFile;
     bool fBackupMints;
-    std::unique_ptr<CzHLIXTracker> zhlixTracker;
+    std::unique_ptr<CzTCASHTracker> zt_cashTracker;
 
     std::set<int64_t> setKeyPool;
     std::map<CKeyID, CKeyMetadata> mapKeyMetadata;
@@ -340,13 +340,13 @@ public:
         return nZeromintPercentage;
     }
 
-    void setZWallet(CzHLIXWallet* zwallet)
+    void setZWallet(CzTCASHWallet* zwallet)
     {
         zwalletMain = zwallet;
-        zhlixTracker = std::unique_ptr<CzHLIXTracker>(new CzHLIXTracker(strWalletFile));
+        zt_cashTracker = std::unique_ptr<CzTCASHTracker>(new CzTCASHTracker(strWalletFile));
     }
 
-    CzHLIXWallet* getZWallet() { return zwalletMain; }
+    CzTCASHWallet* getZWallet() { return zwalletMain; }
 
 
     bool isZeromintEnabled()
@@ -354,7 +354,7 @@ public:
         return fEnableZeromint;
     }
 
-    void setZHlixAutoBackups(bool fEnabled)
+    void setZT_cashAutoBackups(bool fEnabled)
     {
         fBackupMints = fEnabled;
     }
